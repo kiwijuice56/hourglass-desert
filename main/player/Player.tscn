@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://cngwi34j4mrbs"]
+
+[ext_resource type="Script" path="res://main/player/player.gd" id="1_kr53t"]
+[ext_resource type="Script" path="res://main/state_machine/state_machine.gd" id="1_yo2a4"]
+[ext_resource type="Texture2D" uid="uid://cfprfaab8oat2" path="res://main/player/sprites/player.png" id="2_kal8n"]
+[ext_resource type="Script" path="res://main/player/states/player_idling.gd" id="2_van3p"]
+[ext_resource type="Script" path="res://main/player/states/player_walking.gd" id="3_hbhg8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkfs7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ocfgh"]
+radius = 32.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_kr53t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_nkfs7")
+
+[node name="BodySprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kal8n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BodySprite2D"]
+root_node = NodePath("../..")
+
+[node name="DetectionArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
+shape = SubResource("CircleShape2D_ocfgh")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "controller", "state_label")]
+script = ExtResource("1_yo2a4")
+initial_state = NodePath("PlayerIdling")
+controller = NodePath("..")
+state_label = NodePath("../StateLabel")
+
+[node name="PlayerIdling" type="Node" parent="StateMachine"]
+script = ExtResource("2_van3p")
+
+[node name="PlayerWalking" type="Node" parent="StateMachine"]
+script = ExtResource("3_hbhg8")
+walking_time = 0.26
+walking_distance = 16.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+
+[node name="StateLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="hourglass-desert"
+run/main_scene="res://main/Main.tscn"
+config/features=PackedStringArray("4.0", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=316
+window/size/viewport_height=244
+window/size/resizable=false
+window/size/window_width_override=632
+window/size/window_height_override=488
+window/stretch/mode="canvas_items"
+
+[layer_names]
+
+2d_physics/layer_1="map"
+2d_physics/layer_2="player_body"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
