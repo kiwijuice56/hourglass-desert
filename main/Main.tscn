@@ -6,7 +6,9 @@
 [node name="Main" type="Node"]
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-28, 27)
+position = Vector2(144, 288)
+scale = Vector2(12.9073, 10.0594)
 texture = ExtResource("1_iagnf")
 
 [node name="Player" parent="." instance=ExtResource("1_pq31x")]
+position = Vector2(80, 32)
