@@ -24,6 +24,7 @@ func _on_moved() -> void:
 		move(key_history.back())
 
 func enter(_data: Dictionary = {}):
+	key_history.clear()
 	# Register key presses from before entering walking state
 	for direction in DIRECTION_MAP.keys():
 		if Input.is_action_pressed("ui_" + direction):
@@ -38,7 +39,22 @@ func physics_process(_delta: float) -> void:
 			key_history.remove_at(key_history.find(direction))
 
 func move(direction: String) -> void:
+	# Detect walls and prevent movement
+	player.raycast.target_position = DIRECTION_MAP[direction] * 16
+	player.raycast.force_raycast_update()
+	if player.raycast.is_colliding():
+		player.anim.play("idle_" + direction) 
+		# A small delay prevents infinite recursion
+		player.bump_timer.start()
+		await player.bump_timer.timeout
+		moved.emit()
+		return
+	
+	# Flip which foot is moving
 	odd_step = not odd_step
+	
+	# Play walking audio
+	player.step_player.play_step()
 	
 	player.anim.speed_scale = speed_multiplier
 	player.anim.play("walk_" + direction + ("_odd" if odd_step else "_even"))

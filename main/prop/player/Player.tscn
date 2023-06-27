@@ -1,10 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://cngwi34j4mrbs"]
+[gd_scene load_steps=25 format=3 uid="uid://cngwi34j4mrbs"]
 
 [ext_resource type="Script" path="res://main/prop/player/player.gd" id="1_8wc3p"]
 [ext_resource type="Texture2D" uid="uid://bbcv6luufvpkf" path="res://main/prop/player/sprites/normal.png" id="2_ot6jj"]
 [ext_resource type="Script" path="res://main/prop/state_machine/state_machine.gd" id="3_4ub1g"]
 [ext_resource type="Script" path="res://main/prop/player/states/player_idling.gd" id="4_xeslo"]
 [ext_resource type="Script" path="res://main/prop/player/states/player_walking.gd" id="5_f5daj"]
+[ext_resource type="Theme" uid="uid://bhdkt3j7lwgn1" path="res://main/ui/theme/main_theme.tres" id="6_ssni6"]
+[ext_resource type="Script" path="res://main/prop/player/step_audio_stream_player.gd" id="7_hvgt5"]
+[ext_resource type="AudioStream" uid="uid://deouhrtpg2peo" path="res://main/prop/player/sounds/default_step.WAV" id="8_cekf5"]
+[ext_resource type="AudioStream" uid="uid://ca0hgrj4wioca" path="res://main/prop/player/sounds/soft_step.WAV" id="9_d6ckj"]
 
 [sub_resource type="Animation" id="Animation_qxr6w"]
 length = 0.001
@@ -157,9 +161,73 @@ tracks/0/keys = {
 "values": [11, 10]
 }
 
+[sub_resource type="Animation" id="Animation_lfdrv"]
+resource_name = "idle_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_0l8tb"]
+resource_name = "idle_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_12v0d"]
+resource_name = "idle_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_hopjj"]
+resource_name = "idle_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pi2e8"]
 _data = {
 "RESET": SubResource("Animation_qxr6w"),
+"idle_down": SubResource("Animation_lfdrv"),
+"idle_left": SubResource("Animation_0l8tb"),
+"idle_right": SubResource("Animation_12v0d"),
+"idle_up": SubResource("Animation_hopjj"),
 "walk_down_even": SubResource("Animation_utaes"),
 "walk_down_odd": SubResource("Animation_dgabv"),
 "walk_left_even": SubResource("Animation_3cc2q"),
@@ -176,21 +244,9 @@ radius = 32.0
 [node name="Player" type="Node2D"]
 script = ExtResource("1_8wc3p")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_pi2e8")
-}
-
-[node name="BodySprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
-texture = ExtResource("2_ot6jj")
-hframes = 12
-
-[node name="DetectionArea2D" type="Area2D" parent="."]
-position = Vector2(0, -9)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
-shape = SubResource("CircleShape2D_ocfgh")
+[node name="BumpTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "controller", "state_label")]
 script = ExtResource("3_4ub1g")
@@ -205,9 +261,33 @@ script = ExtResource("4_xeslo")
 script = ExtResource("5_f5daj")
 speed_multiplier = 0.85
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pi2e8")
+}
+
+[node name="BodySprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_ot6jj")
+hframes = 12
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 26)
+
+[node name="DetectionArea2D" type="Area2D" parent="."]
+position = Vector2(0, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
+shape = SubResource("CircleShape2D_ocfgh")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="StateLabel" type="Label" parent="."]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
+theme = ExtResource("6_ssni6")
+
+[node name="StepAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("7_hvgt5")
+sounds = Array[Resource]([ExtResource("8_cekf5"), ExtResource("9_d6ckj")])
