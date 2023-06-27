@@ -15,6 +15,11 @@ run/main_scene="res://main/Main.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalMemory="*res://main/memory/global_memory.gd"
+MemoryManager="*res://main/memory/memory_manager.gd"
+
 [display]
 
 window/size/viewport_width=316
@@ -23,6 +28,10 @@ window/size/resizable=false
 window/size/window_width_override=632
 window/size/window_height_override=488
 window/stretch/mode="canvas_items"
+
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
 
 [layer_names]
 

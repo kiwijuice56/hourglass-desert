@@ -1,14 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci427rwi47y3v"]
+[gd_scene load_steps=4 format=3 uid="uid://ci427rwi47y3v"]
 
-[ext_resource type="Texture2D" uid="uid://cnmitrbybvys0" path="res://icon.svg" id="1_iagnf"]
-[ext_resource type="PackedScene" uid="uid://cngwi34j4mrbs" path="res://main/player/Player.tscn" id="1_pq31x"]
+[ext_resource type="Script" path="res://main/main.gd" id="1_7he0i"]
+[ext_resource type="PackedScene" uid="uid://cngwi34j4mrbs" path="res://main/prop/player/Player.tscn" id="1_pq31x"]
+[ext_resource type="PackedScene" uid="uid://q0n3euyfn8jh" path="res://main/world/silver_beach/0/SilverBeach0.tscn" id="2_hrkk2"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_7he0i")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(144, 288)
-scale = Vector2(12.9073, 10.0594)
-texture = ExtResource("1_iagnf")
+[node name="SilverBeach0" parent="." instance=ExtResource("2_hrkk2")]
 
 [node name="Player" parent="." instance=ExtResource("1_pq31x")]
-position = Vector2(80, 32)
+position = Vector2(24, 8)

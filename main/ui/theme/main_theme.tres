@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bhdkt3j7lwgn1"]
+
+[ext_resource type="FontFile" uid="uid://cscxx0x60xayc" path="res://main/ui/theme/font/pixel_serif.ttf" id="1_6iyxi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3y5a"]
+bg_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("1_6iyxi")
+default_font_size = 10
+Button/styles/normal = SubResource("StyleBoxFlat_l3y5a")

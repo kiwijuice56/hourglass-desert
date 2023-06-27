@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cngwi34j4mrbs"]
+[gd_scene load_steps=17 format=3 uid="uid://cngwi34j4mrbs"]
 
-[ext_resource type="Script" path="res://main/player/player.gd" id="1_kr53t"]
-[ext_resource type="Script" path="res://main/state_machine/state_machine.gd" id="1_yo2a4"]
-[ext_resource type="Texture2D" uid="uid://ct3g4ajma0hnu" path="res://main/player/sprites/normal.png" id="2_ua6kf"]
-[ext_resource type="Script" path="res://main/player/states/player_idling.gd" id="2_van3p"]
-[ext_resource type="Script" path="res://main/player/states/player_walking.gd" id="3_hbhg8"]
+[ext_resource type="Script" path="res://main/prop/player/player.gd" id="1_8wc3p"]
+[ext_resource type="Texture2D" uid="uid://bbcv6luufvpkf" path="res://main/prop/player/sprites/normal.png" id="2_ot6jj"]
+[ext_resource type="Script" path="res://main/prop/state_machine/state_machine.gd" id="3_4ub1g"]
+[ext_resource type="Script" path="res://main/prop/player/states/player_idling.gd" id="4_xeslo"]
+[ext_resource type="Script" path="res://main/prop/player/states/player_walking.gd" id="5_f5daj"]
 
 [sub_resource type="Animation" id="Animation_qxr6w"]
 length = 0.001
@@ -19,6 +19,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_utaes"]
+resource_name = "walk_down_even"
+length = 0.24
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 1]
 }
 
 [sub_resource type="Animation" id="Animation_dgabv"]
@@ -38,8 +55,8 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="Animation" id="Animation_utaes"]
-resource_name = "walk_down_even"
+[sub_resource type="Animation" id="Animation_3cc2q"]
+resource_name = "walk_left_even"
 length = 0.24
 step = 0.01
 tracks/0/type = "value"
@@ -52,7 +69,24 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.12),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [2, 1]
+"values": [8, 7]
+}
+
+[sub_resource type="Animation" id="Animation_35fst"]
+resource_name = "walk_left_odd"
+length = 0.24
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [6, 7]
 }
 
 [sub_resource type="Animation" id="Animation_srqto"]
@@ -87,40 +121,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [5, 4]
-}
-
-[sub_resource type="Animation" id="Animation_35fst"]
-resource_name = "walk_left_odd"
-length = 0.24
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [6, 7]
-}
-
-[sub_resource type="Animation" id="Animation_3cc2q"]
-resource_name = "walk_left_even"
-length = 0.24
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [8, 7]
 }
 
 [sub_resource type="Animation" id="Animation_mg1h2"]
@@ -170,47 +170,42 @@ _data = {
 "walk_up_odd": SubResource("Animation_vyrf7")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkfs7"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ocfgh"]
 radius = 32.0
 
-[node name="Player" type="CharacterBody2D"]
-collision_layer = 2
-script = ExtResource("1_kr53t")
+[node name="Player" type="Node2D"]
+script = ExtResource("1_8wc3p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_pi2e8")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_nkfs7")
-
 [node name="BodySprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ua6kf")
+position = Vector2(0, -8)
+texture = ExtResource("2_ot6jj")
 hframes = 12
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
+position = Vector2(0, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
 shape = SubResource("CircleShape2D_ocfgh")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "controller", "state_label")]
-script = ExtResource("1_yo2a4")
+script = ExtResource("3_4ub1g")
 initial_state = NodePath("PlayerIdling")
 controller = NodePath("..")
 state_label = NodePath("../StateLabel")
 
 [node name="PlayerIdling" type="Node" parent="StateMachine"]
-script = ExtResource("2_van3p")
+script = ExtResource("4_xeslo")
 
 [node name="PlayerWalking" type="Node" parent="StateMachine"]
-script = ExtResource("3_hbhg8")
+script = ExtResource("5_f5daj")
 speed_multiplier = 0.85
 
 [node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
 
 [node name="StateLabel" type="Label" parent="."]
 visible = false

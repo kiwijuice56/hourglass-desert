@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct3g4ajma0hnu"
-path="res://.godot/imported/normal.png-d3ff34b4293e0ab288ecfd837726c8b9.ctex"
+uid="uid://dpa8660hbddpf"
+path="res://.godot/imported/neon_tileset.png-841e26f6da32387a5a63ccf71db07456.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/player/sprites/normal.png"
-dest_files=["res://.godot/imported/normal.png-d3ff34b4293e0ab288ecfd837726c8b9.ctex"]
+source_file="res://main/prop/tilesets/neon/neon_tileset.png"
+dest_files=["res://.godot/imported/neon_tileset.png-841e26f6da32387a5a63ccf71db07456.ctex"]
 
 [params]
 
