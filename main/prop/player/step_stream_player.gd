@@ -1,4 +1,4 @@
-class_name StepAudioStreamPlayer
+class_name StepStreamPlayer
 extends AudioStreamPlayer
 
 @export var sounds: Array[Resource]

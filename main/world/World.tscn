@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://xtqh5yahqo5k"]
+[gd_scene load_steps=3 format=3 uid="uid://xtqh5yahqo5k"]
 
 [ext_resource type="Script" path="res://main/world/world.gd" id="1_xhuf4"]
+[ext_resource type="TileSet" uid="uid://bm5dbj0i55o4f" path="res://main/prop/tilesets/collision/collision_tileset.tres" id="2_8mdaq"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_xhuf4")
 
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="FloorTileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="CollisionTileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_8mdaq")
+collision_visibility_mode = 1
 format = 2
 
 [node name="Anchors" type="Node" parent="."]
