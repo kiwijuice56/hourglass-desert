@@ -1,23 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://bc4ppj4rwi7ad"]
-
-[ext_resource type="Script" path="res://main/prop/player/player.gd" id="1_8wc3p"]
-[ext_resource type="Texture2D" uid="uid://bbcv6luufvpkf" path="res://main/prop/player/sprites/normal.png" id="2_ot6jj"]
-[ext_resource type="Script" path="res://main/prop/state_machine/state_machine.gd" id="3_4ub1g"]
-[ext_resource type="Script" path="res://main/prop/player/states/player_idling.gd" id="4_xeslo"]
-[ext_resource type="Script" path="res://main/prop/player/states/player_walking.gd" id="5_f5daj"]
-[ext_resource type="Theme" uid="uid://bhdkt3j7lwgn1" path="res://main/ui/theme/main_theme.tres" id="6_ssni6"]
-[ext_resource type="Script" path="res://main/prop/player/step_stream_player.gd" id="7_k760m"]
-[ext_resource type="AudioStream" uid="uid://deouhrtpg2peo" path="res://main/prop/player/sounds/default_step.WAV" id="8_cekf5"]
-[ext_resource type="AudioStream" uid="uid://ca0hgrj4wioca" path="res://main/prop/player/sounds/soft_step.WAV" id="9_d6ckj"]
-[ext_resource type="AudioStream" uid="uid://dldevuqol5331" path="res://main/prop/player/sounds/weird_step.WAV" id="10_684ml"]
-[ext_resource type="AudioStream" uid="uid://2p21srgewygf" path="res://main/prop/player/sounds/04_bubble_step.WAV" id="11_g5mku"]
+[gd_resource type="AnimationLibrary" load_steps=14 format=3 uid="uid://bkw5al5wt7qq3"]
 
 [sub_resource type="Animation" id="Animation_qxr6w"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -32,7 +20,7 @@ resource_name = "idle_down"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -47,7 +35,7 @@ resource_name = "idle_left"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -62,7 +50,7 @@ resource_name = "idle_right"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -77,7 +65,7 @@ resource_name = "idle_up"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -94,7 +82,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -111,7 +99,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -128,7 +116,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -145,7 +133,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -162,7 +150,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -179,7 +167,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -196,7 +184,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -213,7 +201,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("BodySprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -223,7 +211,7 @@ tracks/0/keys = {
 "values": [11, 10]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pi2e8"]
+[resource]
 _data = {
 "RESET": SubResource("Animation_qxr6w"),
 "idle_down": SubResource("Animation_lfdrv"),
@@ -239,66 +227,3 @@ _data = {
 "walk_up_even": SubResource("Animation_mg1h2"),
 "walk_up_odd": SubResource("Animation_vyrf7")
 }
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ocfgh"]
-radius = 32.0
-
-[node name="Player" type="Node2D"]
-script = ExtResource("1_8wc3p")
-
-[node name="BumpTimer" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
-
-[node name="WalkTimer" type="Timer" parent="."]
-process_callback = 0
-one_shot = true
-
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "controller", "state_label")]
-script = ExtResource("3_4ub1g")
-initial_state = NodePath("PlayerIdling")
-controller = NodePath("..")
-state_label = NodePath("../StateLabel")
-
-[node name="PlayerIdling" type="Node" parent="StateMachine"]
-script = ExtResource("4_xeslo")
-
-[node name="PlayerWalking" type="Node" parent="StateMachine"]
-script = ExtResource("5_f5daj")
-speed_multiplier = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_pi2e8")
-}
-
-[node name="BodySprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
-texture = ExtResource("2_ot6jj")
-hframes = 12
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 26)
-
-[node name="DetectionArea2D" type="Area2D" parent="."]
-position = Vector2(0, -9)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
-shape = SubResource("CircleShape2D_ocfgh")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-drag_left_margin = 0.0
-drag_top_margin = 0.0
-drag_right_margin = 0.0
-drag_bottom_margin = 0.0
-
-[node name="StateLabel" type="Label" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-theme = ExtResource("6_ssni6")
-
-[node name="StepStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -12.0
-script = ExtResource("7_k760m")
-sounds = Array[Resource]([ExtResource("8_cekf5"), ExtResource("9_d6ckj"), ExtResource("9_d6ckj"), ExtResource("10_684ml"), ExtResource("11_g5mku")])

@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=3 uid="uid://bncwc62wkr0vt"]
+
+[ext_resource type="Script" path="res://main/prop/actor/player/player.gd" id="1_gotwe"]
+[ext_resource type="PackedScene" uid="uid://bookvidqcl221" path="res://main/prop/actor/Actor.tscn" id="1_mpvfg"]
+[ext_resource type="Script" path="res://main/prop/actor/player/states/player_idling.gd" id="3_1j4eo"]
+[ext_resource type="Script" path="res://main/prop/actor/player/states/player_walking.gd" id="4_gntfi"]
+[ext_resource type="Texture2D" uid="uid://bbcv6luufvpkf" path="res://main/prop/actor/player/sprites/normal.png" id="5_6qlow"]
+[ext_resource type="AnimationLibrary" uid="uid://bkw5al5wt7qq3" path="res://main/prop/actor/player/player_animation_library.tres" id="7_0hvfw"]
+[ext_resource type="Script" path="res://main/prop/actor/player/step_stream_player.gd" id="7_ng2ce"]
+[ext_resource type="AudioStream" uid="uid://deouhrtpg2peo" path="res://main/prop/actor/player/sounds/00_default_step.WAV" id="8_ihpny"]
+[ext_resource type="AudioStream" uid="uid://ca0hgrj4wioca" path="res://main/prop/actor/player/sounds/01_soft_step.WAV" id="9_ag2kn"]
+[ext_resource type="AudioStream" uid="uid://dldevuqol5331" path="res://main/prop/actor/player/sounds/03_weird_step.WAV" id="10_jslu6"]
+[ext_resource type="AudioStream" uid="uid://2p21srgewygf" path="res://main/prop/actor/player/sounds/04_bubble_step.WAV" id="11_664cc"]
+
+[node name="Player" instance=ExtResource("1_mpvfg")]
+script = ExtResource("1_gotwe")
+
+[node name="AnimationPlayer" parent="." index="0"]
+root_node = NodePath("..")
+libraries = {
+"": ExtResource("7_0hvfw")
+}
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(0, -8)
+texture = ExtResource("5_6qlow")
+hframes = 12
+
+[node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("PlayerIdling")
+
+[node name="PlayerWalking" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("4_gntfi")
+
+[node name="PlayerIdling" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("3_1j4eo")
+
+[node name="WalkTimer" type="Timer" parent="." index="6"]
+process_callback = 0
+one_shot = true
+
+[node name="BumpTimer" type="Timer" parent="." index="7"]
+wait_time = 0.2
+one_shot = true
+
+[node name="StepStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+volume_db = -12.0
+script = ExtResource("7_ng2ce")
+sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc")])
+
+[node name="Camera2D" type="Camera2D" parent="." index="9"]

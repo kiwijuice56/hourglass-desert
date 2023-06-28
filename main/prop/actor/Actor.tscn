@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bookvidqcl221"]
+
+[ext_resource type="Script" path="res://main/prop/actor/actor.gd" id="1_0jaie"]
+[ext_resource type="Script" path="res://main/prop/state_machine/state_machine.gd" id="2_4j1pl"]
+[ext_resource type="Theme" uid="uid://bhdkt3j7lwgn1" path="res://main/ui/theme/main_theme.tres" id="3_7lvrp"]
+
+[node name="Actor" type="Node2D"]
+script = ExtResource("1_0jaie")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionRayCast2D" type="RayCast2D" parent="."]
+
+[node name="DetectionArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea2D"]
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("controller", "state_label")]
+script = ExtResource("2_4j1pl")
+controller = NodePath("..")
+state_label = NodePath("../StateLabel")
+
+[node name="StateLabel" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("3_7lvrp")

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dldevuqol5331"
-path="res://.godot/imported/weird_step.WAV-0950d8ea620a8f63a43a924db60e78da.sample"
+path="res://.godot/imported/03_weird_step.WAV-084fcaf057b82a7aed4df6df6d36f0b7.sample"
 
 [deps]
 
-source_file="res://main/prop/player/sounds/weird_step.WAV"
-dest_files=["res://.godot/imported/weird_step.WAV-0950d8ea620a8f63a43a924db60e78da.sample"]
+source_file="res://main/prop/actor/player/sounds/03_weird_step.WAV"
+dest_files=["res://.godot/imported/03_weird_step.WAV-084fcaf057b82a7aed4df6df6d36f0b7.sample"]
 
 [params]
 

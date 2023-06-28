@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ca0hgrj4wioca"
-path="res://.godot/imported/soft_step.WAV-51ad3a4f8ae1572441b3eedd9a36b03a.sample"
+path="res://.godot/imported/01_soft_step.WAV-f981fa25700803d73f607b6fcdeccfd2.sample"
 
 [deps]
 
-source_file="res://main/prop/player/sounds/soft_step.WAV"
-dest_files=["res://.godot/imported/soft_step.WAV-51ad3a4f8ae1572441b3eedd9a36b03a.sample"]
+source_file="res://main/prop/actor/player/sounds/01_soft_step.WAV"
+dest_files=["res://.godot/imported/01_soft_step.WAV-f981fa25700803d73f607b6fcdeccfd2.sample"]
 
 [params]
 

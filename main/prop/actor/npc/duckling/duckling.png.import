@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbcv6luufvpkf"
-path="res://.godot/imported/normal.png-bbbc8ac6613e9c75f63e5ca92d7fe376.ctex"
+uid="uid://d4fho5v8apuu1"
+path="res://.godot/imported/duckling.png-12dce7efcf94c53fbdb657695f4b5952.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/player/sprites/normal.png"
-dest_files=["res://.godot/imported/normal.png-bbbc8ac6613e9c75f63e5ca92d7fe376.ctex"]
+source_file="res://main/prop/actor/npc/duckling/duckling.png"
+dest_files=["res://.godot/imported/duckling.png-12dce7efcf94c53fbdb657695f4b5952.ctex"]
 
 [params]
 
