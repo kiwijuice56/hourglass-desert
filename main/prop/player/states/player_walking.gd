@@ -60,7 +60,7 @@ func move(direction: String) -> void:
 	player.anim.play("walk_" + direction + ("_odd" if odd_step else "_even"))
 	
 	for i in range(16 / speed_multiplier):
-		player.walk_timer.start(0.26 / 16.0)
+		player.walk_timer.start(0.24 / 16.0)
 		await player.walk_timer.timeout
 		player.global_position += speed_multiplier * DIRECTION_MAP[direction]
 	var bounding_box: Vector2 = player.main.current_world.bounding_box
