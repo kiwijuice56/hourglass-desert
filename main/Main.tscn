@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci427rwi47y3v"]
+[gd_scene load_steps=4 format=3 uid="uid://ci427rwi47y3v"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_7he0i"]
 [ext_resource type="PackedScene" uid="uid://bc4ppj4rwi7ad" path="res://main/prop/player/Player.tscn" id="1_pq31x"]
+[ext_resource type="PackedScene" uid="uid://bx16we0b51mtm" path="res://main/prop/canvas_mirror/CanvasMirror.tscn" id="3_8j6v2"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7he0i")
+
+[node name="CanvasMirror" parent="." instance=ExtResource("3_8j6v2")]
 
 [node name="Player" parent="." instance=ExtResource("1_pq31x")]
 position = Vector2(8, 8)

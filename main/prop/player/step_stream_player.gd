@@ -10,8 +10,12 @@ func play_step() -> void:
 	var data: TileData = main.current_world.tilemap.get_cell_tile_data(0, 
 	main.current_world.tilemap.local_to_map(player.global_position))
 	
-	var id: int = data.get_custom_data("sound")
-	if id > len(sounds):
+	var id: int = 0
+	
+	if data != null:
+		id = data.get_custom_data("sound")
+	
+	if id >= len(sounds):
 		return
 	
 	stream = sounds[id]

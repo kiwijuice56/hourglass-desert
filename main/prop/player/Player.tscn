@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bc4ppj4rwi7ad"]
+[gd_scene load_steps=27 format=3 uid="uid://bc4ppj4rwi7ad"]
 
 [ext_resource type="Script" path="res://main/prop/player/player.gd" id="1_8wc3p"]
 [ext_resource type="Texture2D" uid="uid://bbcv6luufvpkf" path="res://main/prop/player/sprites/normal.png" id="2_ot6jj"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://main/prop/player/step_stream_player.gd" id="7_k760m"]
 [ext_resource type="AudioStream" uid="uid://deouhrtpg2peo" path="res://main/prop/player/sounds/default_step.WAV" id="8_cekf5"]
 [ext_resource type="AudioStream" uid="uid://ca0hgrj4wioca" path="res://main/prop/player/sounds/soft_step.WAV" id="9_d6ckj"]
+[ext_resource type="AudioStream" uid="uid://dldevuqol5331" path="res://main/prop/player/sounds/weird_step.WAV" id="10_684ml"]
+[ext_resource type="AudioStream" uid="uid://2p21srgewygf" path="res://main/prop/player/sounds/04_bubble_step.WAV" id="11_g5mku"]
 
 [sub_resource type="Animation" id="Animation_qxr6w"]
 length = 0.001
@@ -248,6 +250,8 @@ script = ExtResource("1_8wc3p")
 wait_time = 0.2
 one_shot = true
 
+[node name="WalkTimer" type="Timer" parent="."]
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "controller", "state_label")]
 script = ExtResource("3_4ub1g")
 initial_state = NodePath("PlayerIdling")
@@ -259,7 +263,6 @@ script = ExtResource("4_xeslo")
 
 [node name="PlayerWalking" type="Node" parent="StateMachine"]
 script = ExtResource("5_f5daj")
-speed_multiplier = 0.85
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -281,6 +284,10 @@ position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_ocfgh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
 
 [node name="StateLabel" type="Label" parent="."]
 visible = false
@@ -289,6 +296,6 @@ offset_bottom = 23.0
 theme = ExtResource("6_ssni6")
 
 [node name="StepStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -6.0
+volume_db = -12.0
 script = ExtResource("7_k760m")
-sounds = Array[Resource]([ExtResource("8_cekf5"), ExtResource("9_d6ckj"), ExtResource("9_d6ckj")])
+sounds = Array[Resource]([ExtResource("8_cekf5"), ExtResource("9_d6ckj"), ExtResource("9_d6ckj"), ExtResource("10_684ml"), ExtResource("11_g5mku")])

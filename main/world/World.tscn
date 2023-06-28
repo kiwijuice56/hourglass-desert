@@ -6,8 +6,6 @@
 [node name="World" type="Node2D"]
 script = ExtResource("1_xhuf4")
 
-[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
-
 [node name="FloorTileMap" type="TileMap" parent="."]
 format = 2
 
@@ -15,6 +13,11 @@ format = 2
 tile_set = ExtResource("2_8mdaq")
 collision_visibility_mode = 1
 format = 2
+
+[node name="WorldSizeMarker" type="Marker2D" parent="."]
+position = Vector2(352, 272)
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Anchors" type="Node" parent="."]
 

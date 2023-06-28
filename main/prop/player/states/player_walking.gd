@@ -59,9 +59,11 @@ func move(direction: String) -> void:
 	player.anim.speed_scale = speed_multiplier
 	player.anim.play("walk_" + direction + ("_odd" if odd_step else "_even"))
 	
-	var tween: Tween = get_tree().create_tween()
-	tween.tween_property(player, "global_position", 
-	player.global_position + DIRECTION_MAP[direction] * 16, 0.24 * (1.0 / speed_multiplier))
-	await tween.finished
+	for i in range(16 / speed_multiplier):
+		player.walk_timer.start(0.26 / 16.0)
+		await player.walk_timer.timeout
+		player.global_position += speed_multiplier * DIRECTION_MAP[direction]
+	var bounding_box: Vector2 = player.main.current_world.bounding_box
+	player.global_position = player.global_position.posmodv(bounding_box)
 	
 	moved.emit()

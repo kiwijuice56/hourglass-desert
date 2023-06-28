@@ -13,12 +13,17 @@ config_version=5
 config/name="hourglass-desert"
 run/main_scene="res://main/Main.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalMemory="*res://main/memory/global_memory.gd"
 MemoryManager="*res://main/memory/memory_manager.gd"
+
+[debug]
+
+settings/stdout/print_fps=true
 
 [display]
 
@@ -27,7 +32,7 @@ window/size/viewport_height=244
 window/size/resizable=false
 window/size/window_width_override=632
 window/size/window_height_override=488
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [gui]
 
