@@ -90,7 +90,6 @@ copy_y = false
 [node name="LeftViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
 size = Vector2i(316, 244)
-render_target_update_mode = 4
 
 [node name="LeftCamera" type="Camera2D" parent="LeftViewport"]
 unique_name_in_owner = true
@@ -104,7 +103,6 @@ copy_x = false
 [node name="RightViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
 size = Vector2i(316, 244)
-render_target_update_mode = 4
 
 [node name="RightCamera" type="Camera2D" parent="RightViewport"]
 unique_name_in_owner = true
@@ -114,7 +112,6 @@ copy_x = false
 [node name="TopViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
 size = Vector2i(316, 244)
-render_target_update_mode = 4
 
 [node name="TopCamera" type="Camera2D" parent="TopViewport"]
 unique_name_in_owner = true
@@ -124,7 +121,6 @@ copy_y = false
 [node name="BottomViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
 size = Vector2i(316, 244)
-render_target_update_mode = 4
 
 [node name="BottomCamera" type="Camera2D" parent="BottomViewport"]
 unique_name_in_owner = true
@@ -134,7 +130,6 @@ copy_y = false
 [node name="TopLeftViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
 size = Vector2i(316, 244)
-render_target_update_mode = 4
 
 [node name="TopLeftCamera" type="Camera2D" parent="TopLeftViewport"]
 unique_name_in_owner = true
@@ -145,7 +140,6 @@ copy_y = false
 [node name="TopRightViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
 size = Vector2i(316, 244)
-render_target_update_mode = 4
 
 [node name="TopRightCamera" type="Camera2D" parent="TopRightViewport"]
 unique_name_in_owner = true
@@ -156,7 +150,6 @@ copy_y = false
 [node name="BottomLeftViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
 size = Vector2i(316, 244)
-render_target_update_mode = 4
 
 [node name="BottomLeftCamera" type="Camera2D" parent="BottomLeftViewport"]
 unique_name_in_owner = true
@@ -167,7 +160,6 @@ copy_y = false
 [node name="BottomRightViewport" type="SubViewport" parent="."]
 canvas_item_default_texture_filter = 0
 size = Vector2i(316, 244)
-render_target_update_mode = 4
 
 [node name="BottomRightCamera" type="Camera2D" parent="BottomRightViewport"]
 unique_name_in_owner = true

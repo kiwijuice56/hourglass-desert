@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cnmitrbybvys0" path="res://icon.svg" id="5_q27r4"]
 
 [node name="Debug0" instance=ExtResource("1_x6gq6")]
+mirrors = true
 
 [node name="FloorTileMap" parent="." index="0"]
 tile_set = ExtResource("2_orshb")

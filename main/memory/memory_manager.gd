@@ -1,4 +1,5 @@
 extends Node
+# Handles saving and loading of save data
 
 func save_memory(slot: int) -> void:
 	var new_memory_slot: MemorySlot = MemorySlot.new()

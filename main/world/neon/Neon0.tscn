@@ -10,6 +10,7 @@ shader = ExtResource("2_xxwa2")
 shader_parameter/img = ExtResource("3_g0m5x")
 
 [node name="Neon0" instance=ExtResource("1_fawr6")]
+mirrors = true
 
 [node name="FloorTileMap" parent="." index="0"]
 material = SubResource("ShaderMaterial_1s0w3")

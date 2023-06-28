@@ -265,6 +265,7 @@ script = ExtResource("4_xeslo")
 
 [node name="PlayerWalking" type="Node" parent="StateMachine"]
 script = ExtResource("5_f5daj")
+speed_multiplier = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

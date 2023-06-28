@@ -1,4 +1,5 @@
 extends Node
+# Stores the currently loaded save data
 
 var data: Dictionary
 
