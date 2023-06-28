@@ -13,6 +13,11 @@ root_node = NodePath("../Sprite2D")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionRayCast2D" type="RayCast2D" parent="."]
+collide_with_areas = true
+
+[node name="HitboxArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea2D"]
 
 [node name="DetectionArea2D" type="Area2D" parent="."]
 

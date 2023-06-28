@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://tl87ves0fngs"]
+[gd_scene load_steps=7 format=3 uid="uid://tl87ves0fngs"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_fawr6"]
 [ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/prop/tilesets/neon/neon_tileset.tres" id="2_voe2d"]
 [ext_resource type="Shader" path="res://main/prop/shader/neon.gdshader" id="2_xxwa2"]
 [ext_resource type="Texture2D" uid="uid://4cph15eltotb" path="res://main/prop/shader/neon/water_ripple.png" id="3_g0m5x"]
+[ext_resource type="PackedScene" uid="uid://brhvwow1s5y6" path="res://main/prop/actor/npc/duckling/Duckling.tscn" id="5_6nphv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1s0w3"]
 shader = ExtResource("2_xxwa2")
@@ -22,3 +23,15 @@ position = Vector2(1600, 1088)
 
 [node name="Default" type="Marker2D" parent="Anchors" index="0"]
 position = Vector2(376, 376)
+
+[node name="Duckling" parent="Life" index="0" instance=ExtResource("5_6nphv")]
+position = Vector2(424, 472)
+
+[node name="Duckling2" parent="Life" index="1" instance=ExtResource("5_6nphv")]
+position = Vector2(440, 520)
+
+[node name="Duckling3" parent="Life" index="2" instance=ExtResource("5_6nphv")]
+position = Vector2(392, 504)
+
+[node name="Duckling4" parent="Life" index="3" instance=ExtResource("5_6nphv")]
+position = Vector2(472, 584)

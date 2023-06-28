@@ -42,6 +42,7 @@ fonts/dynamic_fonts/use_oversampling=false
 
 2d_physics/layer_1="map"
 2d_physics/layer_2="player_body"
+2d_physics/layer_3="npc_body"
 
 [rendering]
 

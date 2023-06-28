@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bncwc62wkr0vt"]
+[gd_scene load_steps=15 format=3 uid="uid://bncwc62wkr0vt"]
 
 [ext_resource type="Script" path="res://main/prop/actor/player/player.gd" id="1_gotwe"]
 [ext_resource type="PackedScene" uid="uid://bookvidqcl221" path="res://main/prop/actor/Actor.tscn" id="1_mpvfg"]
@@ -11,6 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://ca0hgrj4wioca" path="res://main/prop/actor/player/sounds/01_soft_step.WAV" id="9_ag2kn"]
 [ext_resource type="AudioStream" uid="uid://dldevuqol5331" path="res://main/prop/actor/player/sounds/03_weird_step.WAV" id="10_jslu6"]
 [ext_resource type="AudioStream" uid="uid://2p21srgewygf" path="res://main/prop/actor/player/sounds/04_bubble_step.WAV" id="11_664cc"]
+[ext_resource type="AudioStream" uid="uid://tsbuh0x8rdmn" path="res://main/prop/actor/player/sounds/05_fun_step.WAV" id="12_10m4k"]
+[ext_resource type="AudioStream" uid="uid://d17x7qjwft1k4" path="res://main/prop/actor/player/sounds/06_fluffy_step.WAV" id="13_vpxig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cx4"]
+size = Vector2(16, 16)
 
 [node name="Player" instance=ExtResource("1_mpvfg")]
 script = ExtResource("1_gotwe")
@@ -26,11 +31,23 @@ position = Vector2(0, -8)
 texture = ExtResource("5_6qlow")
 hframes = 12
 
-[node name="StateMachine" parent="." index="4" node_paths=PackedStringArray("initial_state")]
+[node name="CollisionRayCast2D" parent="." index="2"]
+collision_mask = 5
+
+[node name="HitboxArea2D" parent="." index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
+shape = SubResource("RectangleShape2D_m3cx4")
+
+[node name="StateMachine" parent="." index="5" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("PlayerIdling")
 
-[node name="PlayerWalking" type="Node" parent="StateMachine" index="0"]
+[node name="PlayerWalking" type="Node" parent="StateMachine" index="0" node_paths=PackedStringArray("bump_timer", "walk_timer")]
 script = ExtResource("4_gntfi")
+bump_timer = NodePath("../../BumpTimer")
+walk_timer = NodePath("../../WalkTimer")
 
 [node name="PlayerIdling" type="Node" parent="StateMachine" index="1"]
 script = ExtResource("3_1j4eo")
@@ -46,6 +63,6 @@ one_shot = true
 [node name="StepStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
 volume_db = -12.0
 script = ExtResource("7_ng2ce")
-sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc")])
+sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc"), ExtResource("12_10m4k"), ExtResource("13_vpxig")])
 
 [node name="Camera2D" type="Camera2D" parent="." index="9"]

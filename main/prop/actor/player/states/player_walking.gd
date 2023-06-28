@@ -9,7 +9,10 @@ const DIRECTION_MAP: Dictionary = {
 }
 
 @export_range(1, 2) var speed_multiplier: int = 1
+@export var bump_timer: Timer
+@export var walk_timer: Timer
 
+var player: Player
 var key_history: Array = []
 var odd_step: bool = false
 
@@ -17,6 +20,7 @@ signal moved
 
 func _ready() -> void:
 	moved.connect(_on_moved)
+	player = state_machine.controller as Player
 
 func _on_moved() -> void:
 	if key_history.is_empty():
@@ -44,13 +48,13 @@ func physics_process(_delta: float) -> void:
 
 func move(direction: String) -> void:
 	# Detect walls and prevent movement
-	CommonReference.player.raycast.target_position = DIRECTION_MAP[direction] * 16
-	CommonReference.player.raycast.force_raycast_update()
-	if CommonReference.player.raycast.is_colliding():
-		CommonReference.player.anim.play("idle_" + direction) 
+	player.raycast.target_position = DIRECTION_MAP[direction] * 16
+	player.raycast.force_raycast_update()
+	if player.raycast.is_colliding():
+		player.anim.play("idle_" + direction) 
 		# A small delay prevents infinite recursion when bumping
-		CommonReference.player.bump_timer.start()
-		await CommonReference.player.bump_timer.timeout
+		bump_timer.start()
+		await bump_timer.timeout
 		moved.emit()
 		return
 	
@@ -58,20 +62,20 @@ func move(direction: String) -> void:
 	odd_step = not odd_step
 	
 	# Play walking audio
-	CommonReference.player.step_player.play_step()
+	player.step_player.play_step(DIRECTION_MAP[direction] * 16)
 	
 	# Play animation
-	CommonReference.player.anim.speed_scale = speed_multiplier
-	CommonReference.player.anim.play("walk_" + direction + ("_odd" if odd_step else "_even"))
+	player.anim.speed_scale = speed_multiplier
+	player.anim.play("walk_" + direction + ("_odd" if odd_step else "_even"))
 	
 	for i in range(16.0 / speed_multiplier):
-		CommonReference.player.walk_timer.start(0.24 / 16.0)
-		await CommonReference.player.walk_timer.timeout
-		CommonReference.player.global_position += speed_multiplier * DIRECTION_MAP[direction]
+		walk_timer.start(0.24 / 16.0)
+		await walk_timer.timeout
+		player.global_position += speed_multiplier * DIRECTION_MAP[direction]
 	
 	# Loop the player positiont to keep within the bounding box of a looping world
 	if CommonReference.main.current_world.mirrors:
 		var bounding_box: Vector2 = CommonReference.main.current_world.bounding_box
-		CommonReference.player.global_position = CommonReference.player.global_position.posmodv(bounding_box)
+		player.global_position = player.global_position.posmodv(bounding_box)
 	
 	moved.emit()
