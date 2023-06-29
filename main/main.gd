@@ -9,7 +9,6 @@ const WORLD_PATH: String = "res://main/world/"
 var current_world: World
 
 func _ready() -> void:
-	await get_tree().get_root().ready
 	GlobalMemory.reset_memory()
 	switch_world("Neon", "Default")
 

@@ -15,6 +15,7 @@ const DIRECTION_MAP: Dictionary = {
 var player: Player
 var key_history: Array = []
 var odd_step: bool = false
+var pause_movement: bool = false
 
 signal moved
 
@@ -28,9 +29,8 @@ func _on_moved() -> void:
 	else:
 		move(key_history.back())
 
-func enter(_data: Dictionary = {}):
-	interruptible = false
-	
+func enter(_data: Dictionary = {}) -> void:
+	pause_movement = false
 	remove_unpressed_keys()
 	
 	# Register key presses from before entering walking state
@@ -38,6 +38,9 @@ func enter(_data: Dictionary = {}):
 		if not direction in key_history and Input.is_action_pressed("ui_" + direction):
 			key_history.append(direction)
 	move(key_history.back())
+
+func exit(_data: Dictionary = {}) -> void:
+	pause_movement = true
 
 func physics_process(_delta: float) -> void:
 	# Maintain key_history so that the last item is the most recently pressed direction
@@ -59,14 +62,11 @@ func move(direction: String) -> void:
 	if player.raycast.is_colliding():
 		player.anim.play("idle_" + direction) 
 		# A small delay prevents infinite recursion when bumping
-		# Since the player isn't moving while bumping into something, it is interruptible
-		interruptible = true
 		bump_timer.start()
 		await bump_timer.timeout
 		
 		if state_machine.was_interrupted(self):
 			return
-		interruptible = false
 		
 		moved.emit() 
 		return
@@ -83,6 +83,9 @@ func move(direction: String) -> void:
 	
 	# Move pixel by pixel... 100% guaranteed to eliminate jitter!!!
 	for i in range(16.0 / speed_multiplier):
+		if pause_movement:
+			return
+		
 		# 0.24 is a magic number for player speed, and 16 is how many pixels in a tile
 		walk_timer.start(0.24 / 16.0)
 		await walk_timer.timeout

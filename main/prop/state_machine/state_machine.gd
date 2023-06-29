@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		return
 	active_state.physics_process(delta)
 	if is_instance_valid(active_state) and is_instance_valid(state_label) and state_label.visible:
-		state_label.text = active_state.name + "(" + str(active_state.interruptable) + ")"
+		state_label.text = active_state.name
 
 func _input(event: InputEvent) -> void:
 	if active_state == null:
