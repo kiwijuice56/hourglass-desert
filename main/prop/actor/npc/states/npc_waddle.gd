@@ -33,6 +33,10 @@ func enter(data: Dictionary = {}) -> void:
 		waddle_timer.start(waddle_time / 16.0)
 		await waddle_timer.timeout
 		npc.global_position += speed_multiplier * direction
+		if CommonReference.main.current_world.mirrors:
+			var bounding_box: Vector2 = CommonReference.main.current_world.bounding_box
+			npc.global_position = npc.global_position.posmodv(bounding_box)
+	
 	state_machine.transition_to(data.previous_state)
 
 func exit(_data: Dictionary = {}) -> void:

@@ -67,6 +67,3 @@ script = ExtResource("7_ng2ce")
 sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc"), ExtResource("12_10m4k"), ExtResource("13_vpxig")])
 
 [node name="Camera2D" type="Camera2D" parent="." index="9"]
-
-[node name="StateLabel" parent="." index="10"]
-visible = true

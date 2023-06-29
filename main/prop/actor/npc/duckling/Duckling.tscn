@@ -7,6 +7,21 @@
 [ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_idle.gd" id="5_i7xwl"]
 [ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_waddle.gd" id="6_ci1eh"]
 
+[sub_resource type="Animation" id="Animation_7738m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_5hwef"]
 resource_name = "waddle"
 length = 0.36
@@ -22,21 +37,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 1]
-}
-
-[sub_resource type="Animation" id="Animation_7738m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wsiw7"]

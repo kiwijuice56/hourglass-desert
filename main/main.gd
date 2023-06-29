@@ -9,8 +9,9 @@ const WORLD_PATH: String = "res://main/world/"
 var current_world: World
 
 func _ready() -> void:
+	randomize()
 	GlobalMemory.reset_memory()
-	switch_world("Neon", "Default")
+	switch_world("Highway", "Default")
 
 # world_name must match the name of a folder within WORLD_PATH
 func switch_world(world_name: String, anchor_name: String) -> void:
