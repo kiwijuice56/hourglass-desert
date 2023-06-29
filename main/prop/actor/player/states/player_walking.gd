@@ -29,10 +29,13 @@ func _on_moved() -> void:
 		move(key_history.back())
 
 func enter(_data: Dictionary = {}):
-	key_history.clear()
+	interruptible = false
+	
+	remove_unpressed_keys()
+	
 	# Register key presses from before entering walking state
 	for direction in DIRECTION_MAP.keys():
-		if Input.is_action_pressed("ui_" + direction):
+		if not direction in key_history and Input.is_action_pressed("ui_" + direction):
 			key_history.append(direction)
 	move(key_history.back())
 
@@ -41,6 +44,9 @@ func physics_process(_delta: float) -> void:
 	for direction in DIRECTION_MAP.keys():
 		if Input.is_action_just_pressed("ui_" + direction):
 			key_history.append(direction)
+	remove_unpressed_keys()
+
+func remove_unpressed_keys() -> void:
 	for i in range(len(key_history)):
 		if i < len(key_history) and not Input.is_action_pressed("ui_" + key_history[i]):
 			key_history.remove_at(i)
@@ -48,14 +54,21 @@ func physics_process(_delta: float) -> void:
 
 func move(direction: String) -> void:
 	# Detect walls and prevent movement
-	player.raycast.target_position = DIRECTION_MAP[direction] * 16
+	player.raycast.target_position = DIRECTION_MAP[direction] * 23
 	player.raycast.force_raycast_update()
 	if player.raycast.is_colliding():
 		player.anim.play("idle_" + direction) 
 		# A small delay prevents infinite recursion when bumping
+		# Since the player isn't moving while bumping into something, it is interruptible
+		interruptible = true
 		bump_timer.start()
 		await bump_timer.timeout
-		moved.emit()
+		
+		if state_machine.was_interrupted(self):
+			return
+		interruptible = false
+		
+		moved.emit() 
 		return
 	
 	# Flip which foot is moving
@@ -68,12 +81,14 @@ func move(direction: String) -> void:
 	player.anim.speed_scale = speed_multiplier
 	player.anim.play("walk_" + direction + ("_odd" if odd_step else "_even"))
 	
+	# Move pixel by pixel... 100% guaranteed to eliminate jitter!!!
 	for i in range(16.0 / speed_multiplier):
+		# 0.24 is a magic number for player speed, and 16 is how many pixels in a tile
 		walk_timer.start(0.24 / 16.0)
 		await walk_timer.timeout
 		player.global_position += speed_multiplier * DIRECTION_MAP[direction]
 	
-	# Loop the player positiont to keep within the bounding box of a looping world
+	# Loop the player position to keep within the bounding box of a looping world
 	if CommonReference.main.current_world.mirrors:
 		var bounding_box: Vector2 = CommonReference.main.current_world.bounding_box
 		player.global_position = player.global_position.posmodv(bounding_box)

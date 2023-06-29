@@ -7,6 +7,7 @@ extends State
 @export var idle_timer: Timer
 
 func enter(_data: Dictionary = {}) -> void:
+	interruptible = true
 	idle_timer.start(idle_time + randf() * idle_time_range - idle_time_range / 2.0)
 	await idle_timer.timeout
 	state_machine.transition_to(transition_candidates.pick_random())

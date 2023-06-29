@@ -3,6 +3,8 @@ extends Node
 
 @onready var state_machine: StateMachine = get_parent()
 
+var interruptible: bool = false
+
 func enter(_data: Dictionary = {}) -> void:
 	pass
 
