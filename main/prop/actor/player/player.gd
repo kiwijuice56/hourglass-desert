@@ -10,6 +10,8 @@ const DIRECTION_MAP: Dictionary = {
 	"right": Vector2.RIGHT 
 }
 
+signal interacted
+
 @onready var step_player: StepStreamPlayer = $StepStreamPlayer
 @onready var interact_hitbox: Area2D = $InteractHitboxArea2D
 
