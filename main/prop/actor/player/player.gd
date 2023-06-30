@@ -21,3 +21,4 @@ signal interacted
 
 var direction: String = "down"
 var effect: Effect = Effect.NORMAL
+var frozen: bool = false

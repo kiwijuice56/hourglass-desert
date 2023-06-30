@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://tl87ves0fngs"]
+[gd_scene load_steps=8 format=3 uid="uid://tl87ves0fngs"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_ejlcm"]
 [ext_resource type="Shader" path="res://main/prop/shader/neon/neon.gdshader" id="2_h71x5"]
 [ext_resource type="Texture2D" uid="uid://4cph15eltotb" path="res://main/prop/shader/neon/water_ripple.png" id="3_bn30k"]
 [ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/prop/tileset/neon/neon_tileset.tres" id="4_h01bc"]
 [ext_resource type="PackedScene" uid="uid://gesp14e7bl63" path="res://main/prop/actor/npc/duckling/Duckling.tscn" id="5_ojtw5"]
+[ext_resource type="PackedScene" uid="uid://bqrg5hqm65mjn" path="res://main/prop/actor/npc/shelmet/Shelmet.tscn" id="5_om6dr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1s0w3"]
 shader = ExtResource("2_h71x5")
@@ -24,74 +25,55 @@ position = Vector2(1680, 1568)
 [node name="Default" type="Marker2D" parent="Anchors" index="0"]
 position = Vector2(376, 376)
 
-[node name="Duckling" parent="Life" index="0" instance=ExtResource("5_ojtw5")]
+[node name="Shelmet" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(696, 600)
+
+[node name="Shelmet" parent="Life" index="0" instance=ExtResource("5_om6dr")]
+position = Vector2(696, 584)
+
+[node name="Duckling" parent="Life" index="1" instance=ExtResource("5_ojtw5")]
 position = Vector2(264, 1144)
 
-[node name="Duckling2" parent="Life" index="1" instance=ExtResource("5_ojtw5")]
-position = Vector2(296, 1176)
-
-[node name="Duckling3" parent="Life" index="2" instance=ExtResource("5_ojtw5")]
-position = Vector2(296, 1128)
-
-[node name="Duckling4" parent="Life" index="3" instance=ExtResource("5_ojtw5")]
-position = Vector2(328, 1160)
-
-[node name="Duckling5" parent="Life" index="4" instance=ExtResource("5_ojtw5")]
-position = Vector2(200, 1192)
-
-[node name="Duckling6" parent="Life" index="5" instance=ExtResource("5_ojtw5")]
-position = Vector2(232, 1224)
-
-[node name="Duckling7" parent="Life" index="6" instance=ExtResource("5_ojtw5")]
-position = Vector2(232, 1176)
-
-[node name="Duckling8" parent="Life" index="7" instance=ExtResource("5_ojtw5")]
+[node name="Duckling8" parent="Life" index="2" instance=ExtResource("5_ojtw5")]
 position = Vector2(264, 1208)
 
-[node name="Duckling9" parent="Life" index="8" instance=ExtResource("5_ojtw5")]
-position = Vector2(296, 1208)
-
-[node name="Duckling10" parent="Life" index="9" instance=ExtResource("5_ojtw5")]
-position = Vector2(328, 1240)
-
-[node name="Duckling11" parent="Life" index="10" instance=ExtResource("5_ojtw5")]
+[node name="Duckling11" parent="Life" index="3" instance=ExtResource("5_ojtw5")]
 position = Vector2(328, 1192)
 
-[node name="Duckling12" parent="Life" index="11" instance=ExtResource("5_ojtw5")]
-position = Vector2(360, 1224)
-
-[node name="Duckling13" parent="Life" index="12" instance=ExtResource("5_ojtw5")]
+[node name="Duckling13" parent="Life" index="4" instance=ExtResource("5_ojtw5")]
 position = Vector2(1112, 536)
 
-[node name="Duckling14" parent="Life" index="13" instance=ExtResource("5_ojtw5")]
+[node name="Duckling14" parent="Life" index="5" instance=ExtResource("5_ojtw5")]
 position = Vector2(1144, 568)
 
-[node name="Duckling15" parent="Life" index="14" instance=ExtResource("5_ojtw5")]
+[node name="Duckling15" parent="Life" index="6" instance=ExtResource("5_ojtw5")]
 position = Vector2(1144, 520)
 
-[node name="Duckling16" parent="Life" index="15" instance=ExtResource("5_ojtw5")]
+[node name="Duckling16" parent="Life" index="7" instance=ExtResource("5_ojtw5")]
 position = Vector2(1176, 552)
 
-[node name="Duckling17" parent="Life" index="16" instance=ExtResource("5_ojtw5")]
+[node name="Duckling17" parent="Life" index="8" instance=ExtResource("5_ojtw5")]
 position = Vector2(1048, 584)
 
-[node name="Duckling18" parent="Life" index="17" instance=ExtResource("5_ojtw5")]
+[node name="Duckling18" parent="Life" index="9" instance=ExtResource("5_ojtw5")]
 position = Vector2(1080, 616)
 
-[node name="Duckling19" parent="Life" index="18" instance=ExtResource("5_ojtw5")]
+[node name="Duckling19" parent="Life" index="10" instance=ExtResource("5_ojtw5")]
 position = Vector2(1080, 568)
 
-[node name="Duckling20" parent="Life" index="19" instance=ExtResource("5_ojtw5")]
+[node name="Duckling20" parent="Life" index="11" instance=ExtResource("5_ojtw5")]
 position = Vector2(1112, 600)
 
-[node name="Duckling21" parent="Life" index="20" instance=ExtResource("5_ojtw5")]
+[node name="Duckling21" parent="Life" index="12" instance=ExtResource("5_ojtw5")]
 position = Vector2(1144, 600)
 
-[node name="Duckling22" parent="Life" index="21" instance=ExtResource("5_ojtw5")]
+[node name="Duckling22" parent="Life" index="13" instance=ExtResource("5_ojtw5")]
 position = Vector2(1176, 632)
 
-[node name="Duckling23" parent="Life" index="22" instance=ExtResource("5_ojtw5")]
+[node name="Duckling23" parent="Life" index="14" instance=ExtResource("5_ojtw5")]
 position = Vector2(1176, 584)
 
-[node name="Duckling24" parent="Life" index="23" instance=ExtResource("5_ojtw5")]
+[node name="Duckling24" parent="Life" index="15" instance=ExtResource("5_ojtw5")]
 position = Vector2(1208, 616)
+
+[editable path="Life/Shelmet"]

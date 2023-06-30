@@ -1,0 +1,141 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqrg5hqm65mjn"]
+
+[ext_resource type="PackedScene" uid="uid://i3ndgvf3xdxk" path="res://main/prop/actor/npc/Npc.tscn" id="1_6m474"]
+[ext_resource type="Texture2D" uid="uid://b5ecrssogbdp0" path="res://main/prop/actor/npc/shelmet/shelmet.png" id="2_h2wth"]
+[ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_idling.gd" id="3_du5ia"]
+[ext_resource type="Script" path="res://main/prop/actor/npc/triggers/npc_interact_teleport.gd" id="4_kiqmu"]
+[ext_resource type="AudioStream" uid="uid://t6c33b4xqy0j" path="res://main/prop/actor/npc/shelmet/pow.WAV" id="5_olo07"]
+
+[sub_resource type="Animation" id="Animation_juokj"]
+resource_name = "idle"
+length = 0.48
+loop_mode = 1
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_ujijr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TeleportStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5b0td"]
+resource_name = "npc_interact_teleport_trigger"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TeleportStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5qy57"]
+_data = {
+"RESET": SubResource("Animation_ujijr"),
+"idle": SubResource("Animation_juokj"),
+"npc_interact_teleport_trigger": SubResource("Animation_5b0td")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32ea8"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1dbm"]
+size = Vector2(16, 16)
+
+[node name="Shelmet" instance=ExtResource("1_6m474")]
+
+[node name="AnimationPlayer" parent="." index="0"]
+autoplay = "idle"
+speed_scale = 0.4
+libraries = {
+"": SubResource("AnimationLibrary_5qy57")
+}
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(0, -6)
+texture = ExtResource("2_h2wth")
+hframes = 7
+
+[node name="HitboxArea2D" parent="." index="3"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_32ea8")
+
+[node name="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]
+shape = SubResource("RectangleShape2D_x1dbm")
+
+[node name="StateMachine" parent="." index="5" node_paths=PackedStringArray("initial_state")]
+initial_state = NodePath("NpcIdling")
+
+[node name="NpcIdling" type="Node" parent="StateMachine" index="0" node_paths=PackedStringArray("idle_timer")]
+script = ExtResource("3_du5ia")
+transition_candidates = Array[String](["NpcIdling"])
+idle_time = 10.0
+idle_time_range = 0.0
+idle_timer = NodePath("../../Timer")
+
+[node name="NpcInteractTeleport" type="Node" parent="Triggers" index="0" node_paths=PackedStringArray("sound_player", "controller")]
+script = ExtResource("4_kiqmu")
+sound_player = NodePath("../../TeleportStreamPlayer")
+world = "Fractal"
+anchor = "Default"
+controller = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="." index="8"]
+
+[node name="TeleportStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+stream = ExtResource("5_olo07")
+pitch_scale = 2.0

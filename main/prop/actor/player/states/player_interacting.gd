@@ -1,7 +1,6 @@
 class_name PlayerInteracting
 extends State
 
-
 var player: Player
 
 func _ready() -> void:

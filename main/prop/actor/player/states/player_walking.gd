@@ -23,6 +23,10 @@ func _on_moved() -> void:
 		move(key_history.back())
 
 func enter(_data: Dictionary = {}) -> void:
+	if player.frozen:
+		state_machine.transition_to("PlayerIdling")
+		return
+	
 	player.position = player.position.snapped(Vector2(16, 16)) - Vector2(8, 8)
 	
 	pause_movement = false
