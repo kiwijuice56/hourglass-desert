@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://i3ndgvf3xdxk" path="res://main/prop/actor/npc/Npc.tscn" id="1_bbajf"]
 [ext_resource type="Texture2D" uid="uid://b6tf51wddgyiw" path="res://main/prop/actor/npc/duckling/duckling.png" id="2_54woe"]
-[ext_resource type="Shader" path="res://main/prop/shader/neon.gdshader" id="2_oevde"]
+[ext_resource type="Shader" path="res://main/prop/shader/neon/neon.gdshader" id="2_nq1x1"]
 [ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_waddling.gd" id="2_pft8a"]
 [ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_idling.gd" id="3_6ey2u"]
 [ext_resource type="Texture2D" uid="uid://dua6srbvh1p41" path="res://main/prop/shader/neon/water_ripple2.png" id="3_he2k4"]
@@ -48,7 +48,7 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ilyn"]
-shader = ExtResource("2_oevde")
+shader = ExtResource("2_nq1x1")
 shader_parameter/img = ExtResource("3_he2k4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0jyy"]

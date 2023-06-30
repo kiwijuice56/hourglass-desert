@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://celv5bpehlkj4"]
+
+[ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_cx21k"]
+[ext_resource type="Shader" path="res://main/prop/shader/fractal/fractal.gdshader" id="3_0r4in"]
+[ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/prop/tileset/neon/neon_tileset.tres" id="3_4e57g"]
+[ext_resource type="Script" path="res://main/prop/shader/fractal/fractal_navigation.gd" id="4_yhv5s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4eiv"]
+shader = ExtResource("3_0r4in")
+shader_parameter/cam_pos = Vector3(0, 0, 6.1)
+shader_parameter/cam_mat = Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)
+shader_parameter/width = 1024.0
+shader_parameter/height = 1024.0
+shader_parameter/palette = 5
+shader_parameter/ambient_occlusion = true
+shader_parameter/glow = true
+shader_parameter/mirror = false
+shader_parameter/collision_threshold = 0.0009
+
+[node name="Fractal0" instance=ExtResource("1_cx21k")]
+mirrors = true
+
+[node name="FloorTileMap" parent="." index="0"]
+tile_set = ExtResource("3_4e57g")
+
+[node name="WorldSizeMarker" parent="." index="2"]
+position = Vector2(768, 768)
+
+[node name="Default" type="Marker2D" parent="Anchors" index="0"]
+position = Vector2(184, 152)
+
+[node name="Fractal" type="ColorRect" parent="." index="8"]
+material = SubResource("ShaderMaterial_y4eiv")
+offset_right = 768.0
+offset_bottom = 768.0
+script = ExtResource("4_yhv5s")
+
+[node name="Camera3D" type="Camera3D" parent="Fractal" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.5)

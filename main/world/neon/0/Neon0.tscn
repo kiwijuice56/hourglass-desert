@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://tl87ves0fngs"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_ejlcm"]
-[ext_resource type="Shader" path="res://main/prop/shader/neon.gdshader" id="2_n0o7d"]
+[ext_resource type="Shader" path="res://main/prop/shader/neon/neon.gdshader" id="2_h71x5"]
 [ext_resource type="Texture2D" uid="uid://4cph15eltotb" path="res://main/prop/shader/neon/water_ripple.png" id="3_bn30k"]
 [ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/prop/tileset/neon/neon_tileset.tres" id="4_h01bc"]
 [ext_resource type="PackedScene" uid="uid://gesp14e7bl63" path="res://main/prop/actor/npc/duckling/Duckling.tscn" id="5_ojtw5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1s0w3"]
-shader = ExtResource("2_n0o7d")
+shader = ExtResource("2_h71x5")
 shader_parameter/img = ExtResource("3_bn30k")
 
 [node name="Neon0" instance=ExtResource("1_ejlcm")]
