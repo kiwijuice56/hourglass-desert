@@ -11,7 +11,7 @@ var current_world: World
 func _ready() -> void:
 	randomize()
 	GlobalMemory.reset_memory()
-	switch_world("Neon", "Default")
+	switch_world("Dot", "Default")
 
 # world_name must match the name of a folder within WORLD_PATH
 func switch_world(world_name: String, anchor_name: String) -> void:
