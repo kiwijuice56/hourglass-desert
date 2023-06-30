@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci427rwi47y3v"]
+[gd_scene load_steps=5 format=3 uid="uid://ci427rwi47y3v"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_7he0i"]
 [ext_resource type="PackedScene" uid="uid://bx16we0b51mtm" path="res://main/prop/canvas_mirror/CanvasMirror.tscn" id="2_qes7u"]
 [ext_resource type="PackedScene" uid="uid://bncwc62wkr0vt" path="res://main/prop/actor/player/Player.tscn" id="3_e6qln"]
+[ext_resource type="PackedScene" uid="uid://3sm8t0okpbw1" path="res://main/ui/transition/Transition.tscn" id="4_5rr0d"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7he0i")
@@ -10,3 +11,5 @@ script = ExtResource("1_7he0i")
 [node name="CanvasMirror" parent="." instance=ExtResource("2_qes7u")]
 
 [node name="Player" parent="." instance=ExtResource("3_e6qln")]
+
+[node name="Transition" parent="." instance=ExtResource("4_5rr0d")]

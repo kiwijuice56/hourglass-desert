@@ -11,10 +11,14 @@ var current_world: World
 func _ready() -> void:
 	randomize()
 	GlobalMemory.reset_memory()
-	switch_world("Neon", "Default")
+	switch_world("Fractal", "Default")
 
 # world_name must match the name of a folder within WORLD_PATH
-func switch_world(world_name: String, anchor_name: String) -> void:
+func switch_world(world_name: String, anchor_name: String, transition: int = -1) -> void:
+	CommonReference.player.frozen = true
+	if transition != -1:
+		await CommonReference.transition.trans_in(transition)
+	
 	# Remove old world (does not exist at the start of the game)
 	if is_instance_valid(current_world):
 		remove_child(current_world)
@@ -42,3 +46,6 @@ func switch_world(world_name: String, anchor_name: String) -> void:
 	
 	# Set the player's position
 	CommonReference.player.global_position = current_world.anchors.get_node(anchor_name).global_position
+	if transition != -1:
+		await CommonReference.transition.trans_out(transition)
+	CommonReference.player.frozen = false

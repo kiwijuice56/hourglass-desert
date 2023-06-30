@@ -13,6 +13,7 @@ func _ready() -> void:
 	npc.interact_detection.area_entered.connect(_on_area_entered)
 
 func _on_area_entered(_area: Area2D) -> void:
+	CommonReference.player.frozen = true
 	npc.anim.play("npc_interact_teleport_trigger")
 	await npc.anim.animation_finished
-	CommonReference.main.call_deferred("switch_world", world, anchor)
+	CommonReference.main.call_deferred("switch_world", world, anchor, 0)
