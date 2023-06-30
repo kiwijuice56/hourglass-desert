@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bncwc62wkr0vt"]
+[gd_scene load_steps=17 format=3 uid="uid://bncwc62wkr0vt"]
 
 [ext_resource type="Script" path="res://main/prop/actor/player/player.gd" id="1_gotwe"]
 [ext_resource type="PackedScene" uid="uid://bookvidqcl221" path="res://main/prop/actor/Actor.tscn" id="1_mpvfg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbcv6luufvpkf" path="res://main/prop/actor/player/sprites/normal.png" id="5_6qlow"]
 [ext_resource type="AnimationLibrary" uid="uid://bkw5al5wt7qq3" path="res://main/prop/actor/player/player_animation_library.tres" id="7_0hvfw"]
 [ext_resource type="Script" path="res://main/prop/actor/player/step_stream_player.gd" id="7_ng2ce"]
+[ext_resource type="Script" path="res://main/prop/actor/player/states/player_interacting.gd" id="7_nnxjo"]
 [ext_resource type="AudioStream" uid="uid://deouhrtpg2peo" path="res://main/prop/actor/player/sounds/00_default_step.WAV" id="8_ihpny"]
 [ext_resource type="AudioStream" uid="uid://ca0hgrj4wioca" path="res://main/prop/actor/player/sounds/01_soft_step.WAV" id="9_ag2kn"]
 [ext_resource type="AudioStream" uid="uid://dldevuqol5331" path="res://main/prop/actor/player/sounds/03_weird_step.WAV" id="10_jslu6"]
@@ -15,6 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://d17x7qjwft1k4" path="res://main/prop/actor/player/sounds/06_fluffy_step.WAV" id="13_vpxig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cx4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpmfk"]
 size = Vector2(16, 16)
 
 [node name="Player" instance=ExtResource("1_mpvfg")]
@@ -27,9 +31,9 @@ libraries = {
 }
 
 [node name="Sprite2D" parent="." index="1"]
-position = Vector2(0, -8)
+position = Vector2(0, -7)
 texture = ExtResource("5_6qlow")
-hframes = 12
+hframes = 24
 
 [node name="CollisionRayCast2D" parent="." index="2"]
 target_position = Vector2(0, 32)
@@ -42,6 +46,14 @@ collision_mask = 0
 [node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
 shape = SubResource("RectangleShape2D_m3cx4")
 
+[node name="InteractHitboxArea2D" type="Area2D" parent="." index="4"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractHitboxArea2D" index="0"]
+shape = SubResource("RectangleShape2D_qpmfk")
+disabled = true
+
 [node name="StateMachine" parent="." index="5" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("PlayerIdling")
 
@@ -53,17 +65,20 @@ walk_timer = NodePath("../../WalkTimer")
 [node name="PlayerIdling" type="Node" parent="StateMachine" index="1"]
 script = ExtResource("3_1j4eo")
 
-[node name="WalkTimer" type="Timer" parent="." index="6"]
+[node name="PlayerInteracting" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("7_nnxjo")
+
+[node name="WalkTimer" type="Timer" parent="." index="7"]
 process_callback = 0
 one_shot = true
 
-[node name="BumpTimer" type="Timer" parent="." index="7"]
+[node name="BumpTimer" type="Timer" parent="." index="8"]
 wait_time = 0.1
 one_shot = true
 
-[node name="StepStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+[node name="StepStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
 volume_db = -12.0
 script = ExtResource("7_ng2ce")
 sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc"), ExtResource("12_10m4k"), ExtResource("13_vpxig")])
 
-[node name="Camera2D" type="Camera2D" parent="." index="9"]
+[node name="Camera2D" type="Camera2D" parent="." index="10"]

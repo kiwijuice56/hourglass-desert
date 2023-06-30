@@ -1,17 +1,19 @@
-class_name NpcWaddle
+class_name NpcWaddling
 extends State
 
 @export var waddle_time: float
 @export_range(1, 2) var speed_multiplier: int = 1
 @export var waddle_timer: Timer
 
-var npc: Actor
+var npc: Npc
 var pause_movement: bool = false
 
 func _ready() -> void:
-	npc = state_machine.controller as Actor
+	npc = state_machine.controller as Npc
 
 func enter(data: Dictionary = {}) -> void:
+	npc.position = npc.position.snapped(Vector2(16, 16)) - Vector2(8, 8)
+	
 	pause_movement = false
 	
 	var direction: Vector2 = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT].pick_random()

@@ -1,4 +1,4 @@
-class_name NpcIdle
+class_name NpcIdling
 extends State
 
 @export var transition_candidates: Array[String]

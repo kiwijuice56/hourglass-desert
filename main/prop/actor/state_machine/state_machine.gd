@@ -1,8 +1,8 @@
 class_name StateMachine
 extends Node
 
-@export var initial_state: State
 @export var controller: Node
+@export var initial_state: State
 @export var state_label: Label
 
 var active_state: State

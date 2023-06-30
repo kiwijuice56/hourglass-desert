@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w3lw21abv5j1"
-path="res://.godot/imported/silver_water.png-6ab416ba41ff1f0fd1ad96cfe164a501.ctex"
+uid="uid://c01h37cfdjdk1"
+path="res://.godot/imported/highway.png-c651315e01d6813d10d6d1b02aafed66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tilesets/silver_water/silver_water.png"
-dest_files=["res://.godot/imported/silver_water.png-6ab416ba41ff1f0fd1ad96cfe164a501.ctex"]
+source_file="res://main/prop/tileset/highway/highway.png"
+dest_files=["res://.godot/imported/highway.png-c651315e01d6813d10d6d1b02aafed66.ctex"]
 
 [params]
 

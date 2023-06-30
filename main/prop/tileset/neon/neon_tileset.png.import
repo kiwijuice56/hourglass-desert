@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c01h37cfdjdk1"
-path="res://.godot/imported/highway.png-7c95cbc6eac4e29b63f9cea2f1cd1f10.ctex"
+uid="uid://dpa8660hbddpf"
+path="res://.godot/imported/neon_tileset.png-026aef5d0060704e738cbda3effbe184.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tilesets/highway/highway.png"
-dest_files=["res://.godot/imported/highway.png-7c95cbc6eac4e29b63f9cea2f1cd1f10.ctex"]
+source_file="res://main/prop/tileset/neon/neon_tileset.png"
+dest_files=["res://.godot/imported/neon_tileset.png-026aef5d0060704e738cbda3effbe184.ctex"]
 
 [params]
 

@@ -1,97 +1,67 @@
-[gd_scene load_steps=12 format=3 uid="uid://brhvwow1s5y6"]
+[gd_scene load_steps=13 format=3 uid="uid://gesp14e7bl63"]
 
-[ext_resource type="PackedScene" uid="uid://bookvidqcl221" path="res://main/prop/actor/Actor.tscn" id="1_qowoa"]
+[ext_resource type="PackedScene" uid="uid://i3ndgvf3xdxk" path="res://main/prop/actor/npc/Npc.tscn" id="1_bbajf"]
 [ext_resource type="Texture2D" uid="uid://b6tf51wddgyiw" path="res://main/prop/actor/npc/duckling/duckling.png" id="2_54woe"]
+[ext_resource type="AnimationLibrary" uid="uid://b3x1ttjy1l7na" path="res://main/prop/actor/npc/duckling/duckling_animation_library.tres" id="2_nhuom"]
 [ext_resource type="Shader" path="res://main/prop/shader/neon.gdshader" id="2_oevde"]
+[ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_waddling.gd" id="2_pft8a"]
+[ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_idling.gd" id="3_6ey2u"]
 [ext_resource type="Texture2D" uid="uid://dua6srbvh1p41" path="res://main/prop/shader/neon/water_ripple2.png" id="3_he2k4"]
-[ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_idle.gd" id="5_i7xwl"]
-[ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_waddle.gd" id="6_ci1eh"]
+[ext_resource type="AudioStream" uid="uid://0mfwheb6ugll" path="res://main/prop/actor/player/sounds/02_water_step.WAV" id="6_jkikc"]
+[ext_resource type="Script" path="res://main/prop/actor/npc/triggers/npc_interact_sound.gd" id="6_n64tb"]
 
-[sub_resource type="Animation" id="Animation_7738m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_5hwef"]
-resource_name = "waddle"
-length = 0.36
-step = 0.09
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.09, 0.18, 0.27),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wsiw7"]
-_data = {
-"RESET": SubResource("Animation_7738m"),
-"waddle": SubResource("Animation_5hwef")
-}
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q5e2c"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ilyn"]
 shader = ExtResource("2_oevde")
 shader_parameter/img = ExtResource("3_he2k4")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7crf3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0jyy"]
 size = Vector2(16, 16)
 
-[node name="Duckling" instance=ExtResource("1_qowoa")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crvoh"]
+size = Vector2(16, 16)
+
+[node name="Duckling" instance=ExtResource("1_bbajf")]
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
-"": SubResource("AnimationLibrary_wsiw7")
+"": ExtResource("2_nhuom")
 }
 
 [node name="Sprite2D" parent="." index="1"]
-material = SubResource("ShaderMaterial_q5e2c")
+material = SubResource("ShaderMaterial_8ilyn")
 texture = ExtResource("2_54woe")
 hframes = 3
 frame = 1
 
-[node name="CollisionRayCast2D" parent="." index="2"]
-collision_mask = 7
-
-[node name="HitboxArea2D" parent="." index="3"]
-collision_layer = 4
-collision_mask = 0
-
 [node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
-shape = SubResource("RectangleShape2D_7crf3")
+shape = SubResource("RectangleShape2D_o0jyy")
+
+[node name="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]
+shape = SubResource("RectangleShape2D_crvoh")
 
 [node name="StateMachine" parent="." index="5" node_paths=PackedStringArray("initial_state")]
-initial_state = NodePath("NpcIdle")
+initial_state = NodePath("NpcIdling")
 
-[node name="NpcIdle" type="Node" parent="StateMachine" index="0" node_paths=PackedStringArray("idle_timer")]
-script = ExtResource("5_i7xwl")
-transition_candidates = Array[String](["NpcWaddle"])
-idle_time = 5.0
-idle_time_range = 3.0
-idle_timer = NodePath("../../IdleTimer")
-
-[node name="NpcWaddle" type="Node" parent="StateMachine" index="1" node_paths=PackedStringArray("waddle_timer")]
-script = ExtResource("6_ci1eh")
+[node name="NpcWaddling" type="Node" parent="StateMachine" index="0" node_paths=PackedStringArray("waddle_timer")]
+script = ExtResource("2_pft8a")
 waddle_time = 0.36
 waddle_timer = NodePath("../../WaddleTimer")
 
-[node name="IdleTimer" type="Timer" parent="." index="6"]
-one_shot = true
+[node name="NpcIdling" type="Node" parent="StateMachine" index="1" node_paths=PackedStringArray("idle_timer")]
+script = ExtResource("3_6ey2u")
+transition_candidates = Array[String](["NpcWaddling"])
+idle_time = 6.0
+idle_time_range = 4.0
+idle_timer = NodePath("../../IdleTimer")
 
-[node name="WaddleTimer" type="Timer" parent="." index="7"]
-one_shot = true
+[node name="NpcInteractSound" type="Node" parent="Triggers" index="0" node_paths=PackedStringArray("sound_player", "controller")]
+script = ExtResource("6_n64tb")
+sound_player = NodePath("../../AudioStreamPlayer")
+controller = NodePath("../..")
+
+[node name="WaddleTimer" type="Timer" parent="." index="8"]
+
+[node name="IdleTimer" type="Timer" parent="." index="9"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
+stream = ExtResource("6_jkikc")

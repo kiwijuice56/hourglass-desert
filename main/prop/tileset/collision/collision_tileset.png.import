@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clad74gdri8c0"
-path="res://.godot/imported/silver_sand.png-e47fda2d9f7972ffac233f3f604dd393.ctex"
+uid="uid://cvuqqsulo3wii"
+path="res://.godot/imported/collision_tileset.png-461301edf423a0471078fec4d30b117a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tilesets/silver_water/silver_sand.png"
-dest_files=["res://.godot/imported/silver_sand.png-e47fda2d9f7972ffac233f3f604dd393.ctex"]
+source_file="res://main/prop/tileset/collision/collision_tileset.png"
+dest_files=["res://.godot/imported/collision_tileset.png-461301edf423a0471078fec4d30b117a.ctex"]
 
 [params]
 

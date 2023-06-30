@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_2r11y"]
 [ext_resource type="AudioStream" uid="uid://do41ocrltb536" path="res://main/prop/music/silver_ocean.mp3" id="2_mq1n1"]
-[ext_resource type="Texture2D" uid="uid://w3lw21abv5j1" path="res://main/prop/tilesets/silver_water/silver_water.png" id="2_p2c84"]
-[ext_resource type="Texture2D" uid="uid://clad74gdri8c0" path="res://main/prop/tilesets/silver_water/silver_sand.png" id="3_8sm8k"]
+[ext_resource type="Texture2D" uid="uid://w3lw21abv5j1" path="res://main/prop/tileset/silver_water/silver_water.png" id="2_p2c84"]
+[ext_resource type="Texture2D" uid="uid://clad74gdri8c0" path="res://main/prop/tileset/silver_water/silver_sand.png" id="3_8sm8k"]
 [ext_resource type="Texture2D" uid="uid://bqip3meem4m7j" path="res://main/prop/decoration/root.png" id="4_7yx1v"]
 [ext_resource type="Texture2D" uid="uid://bdyjdqghnigdj" path="res://main/prop/decoration/water_girl.png" id="4_h0c6t"]
 [ext_resource type="Texture2D" uid="uid://b0cuocjy2avk3" path="res://main/prop/decoration/rock2.png" id="5_4dqel"]

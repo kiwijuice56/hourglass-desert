@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpa8660hbddpf"
-path="res://.godot/imported/neon_tileset.png-841e26f6da32387a5a63ccf71db07456.ctex"
+uid="uid://clad74gdri8c0"
+path="res://.godot/imported/silver_sand.png-773a66bd8181643b84b0126f622dda6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tilesets/neon/neon_tileset.png"
-dest_files=["res://.godot/imported/neon_tileset.png-841e26f6da32387a5a63ccf71db07456.ctex"]
+source_file="res://main/prop/tileset/silver_water/silver_sand.png"
+dest_files=["res://.godot/imported/silver_sand.png-773a66bd8181643b84b0126f622dda6c.ctex"]
 
 [params]
 

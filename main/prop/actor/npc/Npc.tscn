@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://i3ndgvf3xdxk"]
+
+[ext_resource type="PackedScene" uid="uid://bookvidqcl221" path="res://main/prop/actor/Actor.tscn" id="1_glhkc"]
+[ext_resource type="Script" path="res://main/prop/actor/npc/npc.gd" id="2_8d2hk"]
+
+[node name="Npc" instance=ExtResource("1_glhkc")]
+script = ExtResource("2_8d2hk")
+
+[node name="InteractDetectionArea2D" type="Area2D" parent="." index="4"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]

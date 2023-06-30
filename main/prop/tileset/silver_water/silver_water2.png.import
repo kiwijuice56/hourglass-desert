@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8kltb6r34tcp"
-path="res://.godot/imported/silver_water2.png-ac15cc5e8bdbc5e2c81b33a571b9e2d9.ctex"
+path="res://.godot/imported/silver_water2.png-d919d0381dd566d910071c36335a838f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tilesets/silver_water/silver_water2.png"
-dest_files=["res://.godot/imported/silver_water2.png-ac15cc5e8bdbc5e2c81b33a571b9e2d9.ctex"]
+source_file="res://main/prop/tileset/silver_water/silver_water2.png"
+dest_files=["res://.godot/imported/silver_water2.png-d919d0381dd566d910071c36335a838f.ctex"]
 
 [params]
 
