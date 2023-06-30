@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ci427rwi47y3v"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_7he0i"]
-[ext_resource type="PackedScene" uid="uid://bx16we0b51mtm" path="res://main/world/canvas_mirror/CanvasMirror.tscn" id="2_qes7u"]
+[ext_resource type="PackedScene" uid="uid://bx16we0b51mtm" path="res://main/prop/canvas_mirror/CanvasMirror.tscn" id="2_qes7u"]
 [ext_resource type="PackedScene" uid="uid://bncwc62wkr0vt" path="res://main/prop/actor/player/Player.tscn" id="3_e6qln"]
 
 [node name="Main" type="Node"]

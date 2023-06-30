@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalMemory="*res://main/memory/global_memory.gd"
 MemoryManager="*res://main/memory/memory_manager.gd"
-CommonReference="*res://main/autoload/common_reference.gd"
+CommonReference="*res://main/common_reference.gd"
 
 [debug]
 

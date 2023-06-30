@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bx16we0b51mtm"]
 
-[ext_resource type="Script" path="res://main/world/canvas_mirror/canvas_mirror.gd" id="1_v6q1o"]
-[ext_resource type="Script" path="res://main/world/canvas_mirror/movement_copier/movement_copier.gd" id="2_pfv0h"]
+[ext_resource type="Script" path="res://main/prop/canvas_mirror/canvas_mirror.gd" id="1_v6q1o"]
+[ext_resource type="Script" path="res://main/prop/canvas_mirror/movement_copier/movement_copier.gd" id="2_pfv0h"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_mafs1"]
 viewport_path = NodePath("LeftViewport")
