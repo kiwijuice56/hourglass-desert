@@ -5,6 +5,7 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nfk0p"]
 fractal_octaves = 4
 domain_warp_enabled = true
+domain_warp_fractal_octaves = 4
 
 [resource]
 generate_mipmaps = false

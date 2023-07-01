@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://77c26kovsdhj"]
+
+[ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_ldkps"]
+[ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/prop/tileset/neon/neon_tileset.tres" id="2_iikxy"]
+[ext_resource type="AudioStream" uid="uid://ccp00vh1hmfc2" path="res://main/prop/music/wind_hum.mp3" id="3_efbmm"]
+[ext_resource type="PackedScene" uid="uid://bqrg5hqm65mjn" path="res://main/prop/actor/npc/shelmet/Shelmet.tscn" id="4_dfn8k"]
+[ext_resource type="Shader" path="res://main/prop/shader/julia/julia.gdshader" id="5_33h3d"]
+[ext_resource type="Script" path="res://main/prop/shader/julia/julia_fractal_navigation.gd" id="6_tfgdq"]
+[ext_resource type="Shader" path="res://main/prop/shader/chromatic/chromatic.gdshader" id="7_qiy3g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4eiv"]
+shader = ExtResource("5_33h3d")
+shader_parameter/x_min = -3.0
+shader_parameter/x_max = 3.0
+shader_parameter/y_min = -3.0
+shader_parameter/y_max = 3.0
+shader_parameter/width = 768.0
+shader_parameter/height = 768.0
+shader_parameter/angle = 0.0
+shader_parameter/mouse_pos = Vector2(0.736, 0)
+shader_parameter/shimmer_speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hs2ot"]
+shader = ExtResource("7_qiy3g")
+shader_parameter/r_displacement = Vector2(1, 0)
+shader_parameter/g_displacement = Vector2(0, 0)
+shader_parameter/b_displacement = Vector2(-1, 0)
+
+[node name="Julia0" instance=ExtResource("1_ldkps")]
+
+[node name="FloorTileMap" parent="." index="0"]
+tile_set = ExtResource("2_iikxy")
+
+[node name="CollisionTileMap" parent="." index="1"]
+collision_visibility_mode = 2
+layer_0/tile_data = PackedInt32Array(1441801, 0, 0, 1376265, 0, 0, 1310729, 0, 0, 1245193, 0, 0, 1179657, 0, 0, 983049, 0, 0, 917513, 0, 0, 1114121, 0, 0, 1048585, 0, 0, 851977, 0, 0, 786441, 0, 0, 720905, 0, 0, 655369, 0, 0, 589833, 0, 0, 1507337, 0, 0, 1572873, 0, 0, 1638409, 0, 0, 1703945, 0, 0, 1769481, 0, 0, 1835017, 0, 0, 1900553, 0, 0, 1966089, 0, 0, 2031625, 0, 0, 2097161, 0, 0, 2162697, 0, 0, 2228233, 0, 0, 2293769, 0, 0, 2359305, 0, 0, 2424841, 0, 0, 2424870, 0, 0, 2359334, 0, 0, 2293798, 0, 0, 2228262, 0, 0, 2162726, 0, 0, 2097190, 0, 0, 2031654, 0, 0, 1966118, 0, 0, 1900582, 0, 0, 1835046, 0, 0, 1769510, 0, 0, 1703974, 0, 0, 1638438, 0, 0, 1572902, 0, 0, 1507366, 0, 0, 1441830, 0, 0, 1376294, 0, 0, 1310758, 0, 0, 1245222, 0, 0, 1179686, 0, 0, 1114150, 0, 0, 1048614, 0, 0, 983078, 0, 0, 917542, 0, 0, 852006, 0, 0, 786470, 0, 0, 720934, 0, 0, 655398, 0, 0, 589862, 0, 0, 589861, 0, 0, 589860, 0, 0, 589859, 0, 0, 589858, 0, 0, 589857, 0, 0, 589856, 0, 0, 589855, 0, 0, 589854, 0, 0, 589853, 0, 0, 589852, 0, 0, 589851, 0, 0, 589850, 0, 0, 589849, 0, 0, 589848, 0, 0, 589847, 0, 0, 589846, 0, 0, 589845, 0, 0, 589844, 0, 0, 589843, 0, 0, 589842, 0, 0, 589841, 0, 0, 589840, 0, 0, 589839, 0, 0, 589838, 0, 0, 589837, 0, 0, 589836, 0, 0, 589835, 0, 0, 589834, 0, 0, 2490378, 0, 0, 2490379, 0, 0, 2490380, 0, 0, 2490381, 0, 0, 2490382, 0, 0, 2490383, 0, 0, 2490384, 0, 0, 2490385, 0, 0, 2490386, 0, 0, 2490387, 0, 0, 2490388, 0, 0, 2490389, 0, 0, 2490390, 0, 0, 2490391, 0, 0, 2490392, 0, 0, 2490393, 0, 0, 2490394, 0, 0, 2490395, 0, 0, 2490396, 0, 0, 2490397, 0, 0, 2490398, 0, 0, 2490399, 0, 0, 2490400, 0, 0, 2490401, 0, 0, 2490402, 0, 0, 2490403, 0, 0, 2490404, 0, 0, 2490405, 0, 0, 2490377, 0, 0, 2490406, 0, 0)
+
+[node name="WorldSizeMarker" parent="." index="2"]
+position = Vector2(768, 640)
+
+[node name="MusicStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_efbmm")
+autoplay = true
+
+[node name="Default" type="Marker2D" parent="Anchors" index="0"]
+position = Vector2(376, 328)
+
+[node name="Shelmet" parent="Life" index="0" instance=ExtResource("4_dfn8k")]
+position = Vector2(376, 312)
+
+[node name="NpcInteractTeleport" parent="Life/Shelmet/Triggers" index="0"]
+world = "Neon"
+anchor = "Shelmet"
+
+[node name="Fractal" type="ColorRect" parent="." index="8" node_paths=PackedStringArray("world_marker")]
+material = SubResource("ShaderMaterial_y4eiv")
+offset_right = 768.0
+offset_bottom = 768.0
+script = ExtResource("6_tfgdq")
+world_marker = NodePath("../WorldSizeMarker")
+
+[node name="Camera3D" type="Camera3D" parent="Fractal" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="9"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0"]
+material = SubResource("ShaderMaterial_hs2ot")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[editable path="Life/Shelmet"]

@@ -7,6 +7,10 @@ func _ready() -> void:
 	player = state_machine.controller as Player
 
 func enter(_data: Dictionary = {}) -> void:
+	if player.frozen:
+		state_machine.transition_to("PlayerIdling")
+		return
+	
 	player.raycast.target_position = player.DIRECTION_MAP[player.direction] * 23
 	player.raycast.force_raycast_update()
 	

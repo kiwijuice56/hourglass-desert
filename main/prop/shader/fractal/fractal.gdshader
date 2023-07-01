@@ -13,7 +13,7 @@ const float shimmer_speed = 0.1;
 const float scale_speed = 0.05;
 const float scale_range = 0.25;
 const float scale_center = 2.25;
-const float glow_range = 0.03;
+const float glow_range = 0.01;
 
 // Calculation constants
 const float fov = 95.0;

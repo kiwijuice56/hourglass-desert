@@ -117,7 +117,7 @@ shader_parameter/starting_frequency = 1.0
 shader_parameter/shift = -0.2
 shader_parameter/velocity = Vector2(-0.01, 0.02)
 shader_parameter/position = Vector2(0.065, 0)
-shader_parameter/fog_color = Color(1, 1, 1, 0.709804)
+shader_parameter/fog_color = Color(1, 1, 1, 0.392157)
 shader_parameter/noise = ExtResource("13_4c3yy")
 
 [node name="SilverBeach0" instance=ExtResource("1_2r11y")]
