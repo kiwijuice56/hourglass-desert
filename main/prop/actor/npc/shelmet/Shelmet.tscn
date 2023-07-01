@@ -6,24 +6,6 @@
 [ext_resource type="Script" path="res://main/prop/actor/npc/triggers/npc_interact_teleport.gd" id="4_kiqmu"]
 [ext_resource type="AudioStream" uid="uid://t6c33b4xqy0j" path="res://main/prop/actor/npc/shelmet/pow.WAV" id="5_olo07"]
 
-[sub_resource type="Animation" id="Animation_juokj"]
-resource_name = "idle"
-length = 0.48
-loop_mode = 1
-step = 0.08
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
 [sub_resource type="Animation" id="Animation_ujijr"]
 length = 0.001
 tracks/0/type = "value"
@@ -49,6 +31,24 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_juokj"]
+resource_name = "idle"
+length = 0.48
+loop_mode = 1
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="Animation" id="Animation_5b0td"]

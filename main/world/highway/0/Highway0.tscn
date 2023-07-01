@@ -78,7 +78,7 @@ texture_scale = 0.79
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="12"]
 color = Color(0.25098, 0.215686, 0.309804, 1)
-energy = 0.8
+energy = 0.6
 blend_mode = 2
 
 [node name="Icon" type="Sprite2D" parent="." index="13"]

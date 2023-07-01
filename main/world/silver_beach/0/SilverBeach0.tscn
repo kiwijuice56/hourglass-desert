@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://q0n3euyfn8jh"]
+[gd_scene load_steps=22 format=3 uid="uid://q0n3euyfn8jh"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_2r11y"]
 [ext_resource type="AudioStream" uid="uid://do41ocrltb536" path="res://main/prop/music/silver_ocean.mp3" id="2_mq1n1"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://d0k38ry2vytt6" path="res://main/prop/decoration/rock3.png" id="6_s3jf2"]
 [ext_resource type="Texture2D" uid="uid://dte57vtisb417" path="res://main/prop/decoration/rock4.png" id="7_cetnt"]
 [ext_resource type="Texture2D" uid="uid://drmr7rttrab50" path="res://main/prop/decoration/rock_wall.png" id="8_pdd2q"]
+[ext_resource type="Shader" path="res://main/prop/shader/fog/fog.gdshader" id="12_k7eay"]
+[ext_resource type="Texture2D" uid="uid://inm73hb8glbc" path="res://main/prop/shader/fog/noise_texture.tres" id="13_4c3yy"]
+[ext_resource type="Script" path="res://main/prop/shader/fog/fog_effect.gd" id="13_omqbh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ky72m"]
 texture = ExtResource("2_p2c84")
@@ -105,6 +108,17 @@ _data = {
 "RESET": SubResource("Animation_2kqvd"),
 "swim": SubResource("Animation_ce03f")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vrg2s"]
+shader = ExtResource("12_k7eay")
+shader_parameter/octaves = 4
+shader_parameter/starting_amplitude = 0.5
+shader_parameter/starting_frequency = 1.0
+shader_parameter/shift = -0.2
+shader_parameter/velocity = Vector2(-0.01, 0.02)
+shader_parameter/position = Vector2(0.065, 0)
+shader_parameter/fog_color = Color(1, 1, 1, 0.709804)
+shader_parameter/noise = ExtResource("13_4c3yy")
 
 [node name="SilverBeach0" instance=ExtResource("1_2r11y")]
 
@@ -713,3 +727,15 @@ speed_scale = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_s7sio")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="8"]
+
+[node name="FogEffect" type="ColorRect" parent="CanvasLayer" index="0"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_vrg2s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_omqbh")

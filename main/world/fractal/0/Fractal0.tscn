@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://celv5bpehlkj4"]
+[gd_scene load_steps=10 format=3 uid="uid://celv5bpehlkj4"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_cx21k"]
 [ext_resource type="Shader" path="res://main/prop/shader/fractal/fractal.gdshader" id="3_0r4in"]
 [ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/prop/tileset/neon/neon_tileset.tres" id="3_4e57g"]
 [ext_resource type="PackedScene" uid="uid://bqrg5hqm65mjn" path="res://main/prop/actor/npc/shelmet/Shelmet.tscn" id="3_wpit5"]
+[ext_resource type="AudioStream" uid="uid://ccp00vh1hmfc2" path="res://main/prop/music/wind_hum.mp3" id="3_yajxm"]
 [ext_resource type="Script" path="res://main/prop/shader/fractal/fractal_navigation.gd" id="4_yhv5s"]
+[ext_resource type="Shader" path="res://main/prop/shader/chromatic/chromatic.gdshader" id="7_ohmlx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y4eiv"]
 shader = ExtResource("3_0r4in")
@@ -18,6 +20,12 @@ shader_parameter/glow = true
 shader_parameter/mirror = false
 shader_parameter/collision_threshold = 0.0009
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hs2ot"]
+shader = ExtResource("7_ohmlx")
+shader_parameter/r_displacement = Vector2(1, 0)
+shader_parameter/g_displacement = Vector2(0, 0)
+shader_parameter/b_displacement = Vector2(-1, 0)
+
 [node name="Fractal0" instance=ExtResource("1_cx21k")]
 mirrors = true
 
@@ -27,11 +35,18 @@ tile_set = ExtResource("3_4e57g")
 [node name="WorldSizeMarker" parent="." index="2"]
 position = Vector2(768, 768)
 
+[node name="MusicStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_yajxm")
+autoplay = true
+
 [node name="Default" type="Marker2D" parent="Anchors" index="0"]
 position = Vector2(376, 328)
 
 [node name="Shelmet" parent="Life" index="0" instance=ExtResource("3_wpit5")]
 position = Vector2(376, 312)
+
+[node name="CollisionRayCast2D" parent="Life/Shelmet" index="2"]
+collision_mask = 1
 
 [node name="NpcInteractTeleport" parent="Life/Shelmet/Triggers" index="0"]
 world = "Neon"
@@ -45,5 +60,15 @@ script = ExtResource("4_yhv5s")
 
 [node name="Camera3D" type="Camera3D" parent="Fractal" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="9"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0"]
+material = SubResource("ShaderMaterial_hs2ot")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [editable path="Life/Shelmet"]

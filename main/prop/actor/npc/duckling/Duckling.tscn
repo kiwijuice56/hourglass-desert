@@ -102,3 +102,4 @@ controller = NodePath("../..")
 
 [node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 stream = ExtResource("8_rqfp8")
+volume_db = 4.0
