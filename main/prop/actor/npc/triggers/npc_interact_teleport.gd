@@ -1,5 +1,5 @@
 class_name NpcInteractTeleport
-extends Trigger
+extends NpcInteract
 
 @export var sound_player: AudioStreamPlayer
 @export var world: String

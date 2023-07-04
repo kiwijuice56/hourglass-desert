@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dua6srbvh1p41"
-path.s3tc="res://.godot/imported/water_ripple2.png-d0a8eee0dcab9f8d4ade93a4ef0d07a5.s3tc.ctex"
+uid="uid://m704t6ie1p6"
+path.s3tc="res://.godot/imported/stars.png-ac732739559c27a69118ffb0f47e4313.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://main/prop/shader/neon/water_ripple2.png"
-dest_files=["res://.godot/imported/water_ripple2.png-d0a8eee0dcab9f8d4ade93a4ef0d07a5.s3tc.ctex"]
+source_file="res://main/prop/shader/neon/stars.png"
+dest_files=["res://.godot/imported/stars.png-ac732739559c27a69118ffb0f47e4313.s3tc.ctex"]
 
 [params]
 

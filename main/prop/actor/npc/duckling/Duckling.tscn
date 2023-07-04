@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b6tf51wddgyiw" path="res://main/prop/actor/npc/duckling/duckling.png" id="2_54woe"]
 [ext_resource type="Shader" path="res://main/prop/shader/neon/neon.gdshader" id="2_nq1x1"]
 [ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_waddling.gd" id="2_pft8a"]
+[ext_resource type="Texture2D" uid="uid://bbbo0xiekkrwp" path="res://main/prop/shader/neon/img.png" id="3_3gmpc"]
 [ext_resource type="Script" path="res://main/prop/actor/npc/states/npc_idling.gd" id="3_6ey2u"]
-[ext_resource type="Texture2D" uid="uid://dua6srbvh1p41" path="res://main/prop/shader/neon/water_ripple2.png" id="3_he2k4"]
 [ext_resource type="Script" path="res://main/prop/actor/npc/triggers/npc_interact_sound.gd" id="6_n64tb"]
 [ext_resource type="AudioStream" uid="uid://cu1hufyat83nj" path="res://main/prop/actor/npc/duckling/rabbit_noise.wav" id="8_rqfp8"]
 
@@ -49,7 +49,7 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ilyn"]
 shader = ExtResource("2_nq1x1")
-shader_parameter/img = ExtResource("3_he2k4")
+shader_parameter/img = ExtResource("3_3gmpc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0jyy"]
 size = Vector2(16, 16)

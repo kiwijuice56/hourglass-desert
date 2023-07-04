@@ -15,7 +15,11 @@ func enter(_data: Dictionary = {}) -> void:
 	player.raycast.force_raycast_update()
 	
 	if player.raycast.is_colliding():
-		player.anim.play("interact_" + player.direction)
+		var anim_name: String = "interact_%s_%s" % [player.direction, player.EFFECT_MAP[player.effect]]
+		if not player.anim.has_animation(anim_name):
+			anim_name = "interact_%s_normal" % [player.direction]
+		player.anim.play(anim_name)
+		
 		await player.interacted
 		player.interact_hitbox.position = player.DIRECTION_MAP[player.direction] * 16
 		player.interact_hitbox.get_child(0).disabled = false

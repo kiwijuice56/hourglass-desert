@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4cph15eltotb"
-path.s3tc="res://.godot/imported/water_ripple.png-a752907a6a091b7ff7ba6c71af195935.s3tc.ctex"
+uid="uid://clad74gdri8c0"
+path="res://.godot/imported/sand.png-5693116cb672004d5210c730d7c79d5f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/shader/neon/water_ripple.png"
-dest_files=["res://.godot/imported/water_ripple.png-a752907a6a091b7ff7ba6c71af195935.s3tc.ctex"]
+source_file="res://main/prop/tileset/silver_water/sand.png"
+dest_files=["res://.godot/imported/sand.png-5693116cb672004d5210c730d7c79d5f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

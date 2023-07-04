@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bxc3dqw51teuy"]
+
+[ext_resource type="Texture2D" uid="uid://b6b78ete7tgxi" path="res://main/prop/tileset/basic/basic.png" id="1_e8stc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6emij"]
+texture = ExtResource("1_e8stc")
+0:0/0 = 0
+1:0/0 = 0
+
+[resource]
+custom_data_layer_0/name = "sound"
+custom_data_layer_0/type = 2
+sources/0 = SubResource("TileSetAtlasSource_6emij")

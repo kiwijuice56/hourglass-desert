@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clad74gdri8c0"
-path="res://.godot/imported/silver_sand.png-773a66bd8181643b84b0126f622dda6c.ctex"
+uid="uid://7u74ismg5hid"
+path="res://.godot/imported/duck.png-8676b6a641b464d151c84897c3d9db2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/silver_water/silver_sand.png"
-dest_files=["res://.godot/imported/silver_sand.png-773a66bd8181643b84b0126f622dda6c.ctex"]
+source_file="res://main/prop/actor/player/sprites/duck.png"
+dest_files=["res://.godot/imported/duck.png-8676b6a641b464d151c84897c3d9db2c.ctex"]
 
 [params]
 

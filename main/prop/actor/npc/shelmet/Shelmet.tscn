@@ -132,6 +132,7 @@ script = ExtResource("4_kiqmu")
 sound_player = NodePath("../../TeleportStreamPlayer")
 world = "Fractal"
 anchor = "Default"
+supported_effects = 3
 controller = NodePath("../..")
 
 [node name="Timer" type="Timer" parent="." index="8"]
