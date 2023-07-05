@@ -18,12 +18,13 @@ const DIRECTION_MAP: Dictionary = {
 const EFFECT_MAP: Dictionary = {
 	Effect.NORMAL: "normal",
 	Effect.DUCKLING: "duckling"
+	
 }
 
 const SPRITE_DIR: String = "res://main/prop/actor/player/sprites/"
 
 enum Effect {
-	NORMAL, DUCKLING
+	NORMAL, DUCKLING, NONE1, NONE2, NONE3, NONE4, NONE5
 }
 
 signal interacted
@@ -32,7 +33,7 @@ signal interacted
 @onready var interact_hitbox: Area2D = $InteractHitboxArea2D
 
 var direction: String = "down"
-var effect: Effect = Effect.DUCKLING
+var effect: Effect = Effect.NORMAL
 
 func disable() -> void:
 	super.disable()

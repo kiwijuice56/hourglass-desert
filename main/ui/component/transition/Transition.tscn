@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://3sm8t0okpbw1"]
 
-[ext_resource type="Script" path="res://main/ui/transition/transition.gd" id="1_c7h3c"]
+[ext_resource type="Script" path="res://main/ui/component/transition/transition.gd" id="1_c7h3c"]
 
 [sub_resource type="Animation" id="Animation_cil8w"]
 resource_name = "0in"
