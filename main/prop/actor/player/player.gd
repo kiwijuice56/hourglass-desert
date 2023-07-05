@@ -37,6 +37,3 @@ var effect: Effect = Effect.DUCKLING
 func disable() -> void:
 	super.disable()
 	interact_hitbox.call_deferred("set", "disabled", true)
-
-func enable() -> void:
-	super.enable()

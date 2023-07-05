@@ -1,5 +1,6 @@
 class_name CollisionDetector
 extends Node2D
+# Detects collisions with two rays on opposite ends of a sprite to increase accuracy
 
 @onready var ray1: RayCast2D = $RayCast2D
 @onready var ray2: RayCast2D = $RayCast2D2

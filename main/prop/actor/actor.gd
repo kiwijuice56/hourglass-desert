@@ -13,8 +13,8 @@ signal moved
 # A disabled actor is intended to be uninteractable and unchangeable, although
 # their state may still change. In order to prevent glitches while keeping code complexity
 # low, the disable/enable methods will prevent any form of interactions by disabling nodes
-# that allow states to influence thier controllers. In some cases, it is still worth
-# adding some code to states in order to prevent small visual glitches
+# that allow states to influence thier controllers. States should still check if they
+# are disabled with the was_interrupted method 
 var disabled: bool:
 	set(val):
 		disabled = val

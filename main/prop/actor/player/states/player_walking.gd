@@ -8,7 +8,6 @@ extends State
 var player: Player
 var key_history: Array = []
 var odd_step: bool = false
-var pause_movement: bool = false
 
 signal moved
 
@@ -23,7 +22,6 @@ func _on_moved() -> void:
 		move(key_history.back())
 
 func enter(_data: Dictionary = {}) -> void:
-	pause_movement = false
 	remove_unpressed_keys()
 	
 	# Register key presses from before entering walking state
@@ -31,9 +29,6 @@ func enter(_data: Dictionary = {}) -> void:
 		if not direction in key_history and Input.is_action_pressed("ui_" + direction):
 			key_history.append(direction)
 	move(key_history.back())
-
-func exit(_data: Dictionary = {}) -> void:
-	pause_movement = true
 
 func physics_process(_delta: float) -> void:
 	# Maintain key_history so that the last item is the most recently pressed direction
@@ -49,8 +44,8 @@ func remove_unpressed_keys() -> void:
 			i -= 1
 
 func move(direction: String) -> void:
-	if player.disabled:
-		state_machine.transition_to("PlayerInteracting")
+	if state_machine.was_interrupted(self):
+		state_machine.transition_to("PlayerIdling")
 		return
 	
 	player.direction = direction
@@ -62,11 +57,12 @@ func move(direction: String) -> void:
 		bump_timer.start()
 		await bump_timer.timeout
 		
-		if Input.is_action_pressed("ui_accept"):
-			state_machine.transition_to("PlayerInteracting")
+		if state_machine.was_interrupted(self):
+			state_machine.transition_to("PlayerIdling")
 			return
 		
-		if state_machine.was_interrupted(self):
+		if Input.is_action_pressed("ui_accept"):
+			state_machine.transition_to("PlayerInteracting")
 			return
 		
 		moved.emit() 

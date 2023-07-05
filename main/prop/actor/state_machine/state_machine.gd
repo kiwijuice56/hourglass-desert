@@ -1,7 +1,7 @@
 class_name StateMachine
 extends Node
 
-@export var controller: Node
+@export var controller: Actor
 @export var initial_state: State
 @export var state_label: Label
 
@@ -38,4 +38,4 @@ func transition_to(state_name: String, data: Dictionary = {}) -> void:
 	await to_state.enter(data)
 
 func was_interrupted(state: State) -> bool:
-	return state != active_state
+	return state != active_state or controller.disabled

@@ -18,12 +18,13 @@ func enter(_data: Dictionary = {}) -> void:
 		player.anim.play(anim_name)
 		
 		await player.interacted
+		if state_machine.was_interrupted(self):
+			state_machine.transition_to("PlayerIdling")
+			return
 		player.interact_hitbox.position = player.DIRECTION_MAP[player.direction] * 16
 		player.interact_hitbox.get_child(0).disabled = false
 		
 		await player.anim.animation_finished
-		if state_machine.was_interrupted(self):
-			return
 	state_machine.transition_to("PlayerIdling")
 
 func exit(_data: Dictionary = {}) -> void:

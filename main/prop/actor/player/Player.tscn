@@ -658,9 +658,6 @@ size = Vector2(16, 16)
 [node name="Player" instance=ExtResource("1_mpvfg")]
 script = ExtResource("1_gotwe")
 
-[node name="StateLabel" parent="." index="0"]
-visible = true
-
 [node name="AnimationPlayer" parent="." index="1"]
 root_node = NodePath("..")
 libraries = {
