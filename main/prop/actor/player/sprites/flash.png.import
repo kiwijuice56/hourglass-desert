@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7u74ismg5hid"
-path="res://.godot/imported/duck.png-8676b6a641b464d151c84897c3d9db2c.ctex"
+uid="uid://bf64iol6iupw3"
+path="res://.godot/imported/flash.png-dd2a2c38b7bc7a4185bfe32db62dc24b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/actor/player/sprites/duck.png"
-dest_files=["res://.godot/imported/duck.png-8676b6a641b464d151c84897c3d9db2c.ctex"]
+source_file="res://main/prop/actor/player/sprites/flash.png"
+dest_files=["res://.godot/imported/flash.png-dd2a2c38b7bc7a4185bfe32db62dc24b.ctex"]
 
 [params]
 

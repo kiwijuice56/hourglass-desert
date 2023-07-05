@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci427rwi47y3v"]
+[gd_scene load_steps=8 format=3 uid="uid://ci427rwi47y3v"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_7he0i"]
 [ext_resource type="PackedScene" uid="uid://bx16we0b51mtm" path="res://main/prop/canvas_mirror/CanvasMirror.tscn" id="2_qes7u"]
 [ext_resource type="PackedScene" uid="uid://bncwc62wkr0vt" path="res://main/prop/actor/player/Player.tscn" id="3_e6qln"]
 [ext_resource type="PackedScene" uid="uid://3sm8t0okpbw1" path="res://main/ui/transition/Transition.tscn" id="4_5rr0d"]
+[ext_resource type="Script" path="res://main/ui/fps_label/fps_label.gd" id="5_etifi"]
+[ext_resource type="Theme" uid="uid://bhdkt3j7lwgn1" path="res://main/ui/theme/main_theme.tres" id="5_xhmq2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5qfa"]
+content_margin_left = 4.0
+content_margin_top = 4.0
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7he0i")
@@ -13,3 +19,21 @@ script = ExtResource("1_7he0i")
 [node name="Player" parent="." instance=ExtResource("3_e6qln")]
 
 [node name="Transition" parent="." instance=ExtResource("4_5rr0d")]
+
+[node name="FpsLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="FpsLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p5qfa")
+
+[node name="FpsLabel" type="Label" parent="FpsLayer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_xhmq2")
+text = "fps:"
+script = ExtResource("5_etifi")
+
+[node name="Timer" type="Timer" parent="FpsLayer/PanelContainer/FpsLabel"]
+autostart = true

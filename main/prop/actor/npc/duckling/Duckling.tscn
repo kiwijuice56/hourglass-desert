@@ -51,38 +51,45 @@ _data = {
 shader = ExtResource("2_nq1x1")
 shader_parameter/img = ExtResource("3_3gmpc")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0jyy"]
-size = Vector2(16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crvoh"]
 size = Vector2(16, 16)
 
-[node name="Duckling" instance=ExtResource("1_bbajf")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0jyy"]
+size = Vector2(16, 16)
 
-[node name="AnimationPlayer" parent="." index="0"]
+[node name="Duckling" instance=ExtResource("1_bbajf")]
+visible = false
+
+[node name="AnimationPlayer" parent="." index="1"]
 libraries = {
 "": SubResource("AnimationLibrary_sh02w")
 }
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="2"]
 material = SubResource("ShaderMaterial_8ilyn")
 texture = ExtResource("2_54woe")
 hframes = 3
 frame = 1
 
-[node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
-shape = SubResource("RectangleShape2D_o0jyy")
+[node name="RayCast2D" parent="CollisionDetector" index="0"]
+collision_mask = 3
+
+[node name="RayCast2D2" parent="CollisionDetector" index="1"]
+collision_mask = 3
 
 [node name="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]
 shape = SubResource("RectangleShape2D_crvoh")
 
-[node name="StateMachine" parent="." index="5" node_paths=PackedStringArray("initial_state")]
+[node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
+shape = SubResource("RectangleShape2D_o0jyy")
+
+[node name="StateMachine" parent="." index="6" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("NpcIdling")
 
 [node name="NpcWaddling" type="Node" parent="StateMachine" index="0" node_paths=PackedStringArray("waddle_timer")]
 script = ExtResource("2_pft8a")
 waddle_time = 0.36
-waddle_timer = NodePath("../../WaddleTimer")
+waddle_timer = NodePath("")
 
 [node name="NpcIdling" type="Node" parent="StateMachine" index="1" node_paths=PackedStringArray("idle_timer")]
 script = ExtResource("3_6ey2u")
@@ -91,15 +98,13 @@ idle_time = 6.0
 idle_time_range = 4.0
 idle_timer = NodePath("../../IdleTimer")
 
+[node name="IdleTimer" type="Timer" parent="." index="7"]
+
+[node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("8_rqfp8")
+volume_db = 4.0
+
 [node name="NpcInteractSound" type="Node" parent="Triggers" index="0" node_paths=PackedStringArray("sound_player", "controller")]
 script = ExtResource("6_n64tb")
 sound_player = NodePath("../../QuackStreamPlayer")
 controller = NodePath("../..")
-
-[node name="WaddleTimer" type="Timer" parent="." index="8"]
-
-[node name="IdleTimer" type="Timer" parent="." index="9"]
-
-[node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
-stream = ExtResource("8_rqfp8")
-volume_db = 4.0

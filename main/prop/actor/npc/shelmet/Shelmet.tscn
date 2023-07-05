@@ -86,27 +86,30 @@ _data = {
 "npc_interact_teleport_trigger": SubResource("Animation_5b0td")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_32ea8"]
-size = Vector2(16, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1dbm"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32ea8"]
+size = Vector2(16, 32)
+
 [node name="Shelmet" instance=ExtResource("1_6m474")]
 
-[node name="AnimationPlayer" parent="." index="0"]
+[node name="AnimationPlayer" parent="." index="1"]
 autoplay = "idle"
 speed_scale = 0.4
 libraries = {
 "": SubResource("AnimationLibrary_5qy57")
 }
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="2"]
 position = Vector2(0, -6)
 texture = ExtResource("2_h2wth")
 hframes = 7
 
-[node name="HitboxArea2D" parent="." index="3"]
+[node name="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]
+shape = SubResource("RectangleShape2D_x1dbm")
+
+[node name="HitboxArea2D" parent="." index="5"]
 collision_layer = 4
 collision_mask = 0
 
@@ -114,10 +117,7 @@ collision_mask = 0
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_32ea8")
 
-[node name="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]
-shape = SubResource("RectangleShape2D_x1dbm")
-
-[node name="StateMachine" parent="." index="5" node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" parent="." index="6" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("NpcIdling")
 
 [node name="NpcIdling" type="Node" parent="StateMachine" index="0" node_paths=PackedStringArray("idle_timer")]
@@ -127,6 +127,12 @@ idle_time = 10.0
 idle_time_range = 0.0
 idle_timer = NodePath("../../Timer")
 
+[node name="Timer" type="Timer" parent="." index="7"]
+
+[node name="TeleportStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource("5_olo07")
+pitch_scale = 2.0
+
 [node name="NpcInteractTeleport" type="Node" parent="Triggers" index="0" node_paths=PackedStringArray("sound_player", "controller")]
 script = ExtResource("4_kiqmu")
 sound_player = NodePath("../../TeleportStreamPlayer")
@@ -134,9 +140,3 @@ world = "Fractal"
 anchor = "Default"
 supported_effects = 3
 controller = NodePath("../..")
-
-[node name="Timer" type="Timer" parent="." index="8"]
-
-[node name="TeleportStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
-stream = ExtResource("5_olo07")
-pitch_scale = 2.0

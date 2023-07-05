@@ -1,10 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://bncwc62wkr0vt"]
+[gd_scene load_steps=41 format=3 uid="uid://bncwc62wkr0vt"]
 
 [ext_resource type="Script" path="res://main/prop/actor/player/player.gd" id="1_gotwe"]
 [ext_resource type="PackedScene" uid="uid://bookvidqcl221" path="res://main/prop/actor/Actor.tscn" id="1_mpvfg"]
 [ext_resource type="Script" path="res://main/prop/actor/player/states/player_idling.gd" id="3_1j4eo"]
-[ext_resource type="Texture2D" uid="uid://7u74ismg5hid" path="res://main/prop/actor/player/sprites/duck.png" id="3_wopsj"]
+[ext_resource type="Texture2D" uid="uid://7u74ismg5hid" path="res://main/prop/actor/player/sprites/duckling.png" id="3_qx48d"]
 [ext_resource type="Script" path="res://main/prop/actor/player/states/player_walking.gd" id="4_gntfi"]
+[ext_resource type="Texture2D" uid="uid://bf64iol6iupw3" path="res://main/prop/actor/player/sprites/flash.png" id="4_pybtf"]
 [ext_resource type="Script" path="res://main/prop/actor/player/step_stream_player.gd" id="7_ng2ce"]
 [ext_resource type="Script" path="res://main/prop/actor/player/states/player_interacting.gd" id="7_nnxjo"]
 [ext_resource type="AudioStream" uid="uid://deouhrtpg2peo" path="res://main/prop/actor/player/sounds/00_default_step.WAV" id="8_ihpny"]
@@ -28,6 +29,54 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TransformSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TransformSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_lfdrv"]
@@ -90,6 +139,49 @@ tracks/0/keys = {
 "values": [10]
 }
 
+[sub_resource type="Animation" id="Animation_mdh8v"]
+resource_name = "interact_down_duckling"
+length = 0.6
+step = 0.18
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [12, 13, 1]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.18),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"interacted"],
+"method": &"emit_signal"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QuackStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.18),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_psfbt"]
 resource_name = "interact_down_normal"
 length = 0.6
@@ -101,10 +193,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.11, 0.24, 0.36, 0.48),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.11, 0.24, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [12, 13, 14, 13, 12]
+"values": [12, 13, 12, 1]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -113,12 +205,55 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.24),
+"times": PackedFloat32Array(0.12),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"interacted"],
 "method": &"emit_signal"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_n4ovi"]
+resource_name = "interact_left_duckling"
+length = 0.6
+step = 0.18
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [14, 15, 7]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.18),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"interacted"],
+"method": &"emit_signal"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QuackStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.18),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_12ahx"]
@@ -132,10 +267,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.12, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [18, 19, 20, 19, 18]
+"values": [16, 17, 7]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -144,7 +279,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.24),
+"times": PackedFloat32Array(0.12),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"interacted"],
@@ -166,7 +301,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.18, 0.36),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [15, 16, 17]
+"values": [16, 17, 4]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -206,10 +341,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [15, 16, 17, 16, 15]
+"values": [14, 15, 14, 4]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -218,12 +353,55 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.24),
+"times": PackedFloat32Array(0.12),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"interacted"],
 "method": &"emit_signal"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_nl4tr"]
+resource_name = "interact_up_duckling"
+length = 0.6
+step = 0.18
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [18, 19, 10]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.18),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"interacted"],
+"method": &"emit_signal"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("QuackStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.18),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_rr182"]
@@ -237,10 +415,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [21, 22, 23, 22, 21]
+"values": [18, 19, 18, 10]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -249,12 +427,64 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.24),
+"times": PackedFloat32Array(0.12),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"interacted"],
 "method": &"emit_signal"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_uek8a"]
+resource_name = "transform"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransformSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TransformSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(3, 3, 3, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_utaes"]
@@ -393,135 +623,6 @@ tracks/0/keys = {
 "values": [11, 10]
 }
 
-[sub_resource type="Animation" id="Animation_mdh8v"]
-resource_name = "interact_down_duckling"
-length = 0.6
-step = 0.18
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.18, 0.36),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [12, 13, 14]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.18),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"interacted"],
-"method": &"emit_signal"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("QuackStreamPlayer:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.18),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_nl4tr"]
-resource_name = "interact_up_duckling"
-length = 0.6
-step = 0.18
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.18, 0.36),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [21, 22, 23]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.18),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"interacted"],
-"method": &"emit_signal"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("QuackStreamPlayer:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.18),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_n4ovi"]
-resource_name = "interact_left_duckling"
-length = 0.6
-step = 0.18
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.18, 0.36),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [18, 19, 20]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.18),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"interacted"],
-"method": &"emit_signal"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("QuackStreamPlayer:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.18),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hb1mx"]
 _data = {
 "RESET": SubResource("Animation_qxr6w"),
@@ -537,6 +638,7 @@ _data = {
 "interact_right_normal": SubResource("Animation_idi52"),
 "interact_up_duckling": SubResource("Animation_nl4tr"),
 "interact_up_normal": SubResource("Animation_rr182"),
+"transform": SubResource("Animation_uek8a"),
 "walk_down_even": SubResource("Animation_utaes"),
 "walk_down_odd": SubResource("Animation_dgabv"),
 "walk_left_even": SubResource("Animation_3cc2q"),
@@ -547,36 +649,34 @@ _data = {
 "walk_up_odd": SubResource("Animation_vyrf7")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cx4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpmfk"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpmfk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3cx4"]
 size = Vector2(16, 16)
 
 [node name="Player" instance=ExtResource("1_mpvfg")]
 script = ExtResource("1_gotwe")
 
-[node name="AnimationPlayer" parent="." index="0"]
+[node name="StateLabel" parent="." index="0"]
+visible = true
+
+[node name="AnimationPlayer" parent="." index="1"]
 root_node = NodePath("..")
 libraries = {
 "": SubResource("AnimationLibrary_hb1mx")
 }
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="2"]
 position = Vector2(0, -7)
-texture = ExtResource("3_wopsj")
-hframes = 24
+texture = ExtResource("3_qx48d")
+hframes = 20
 
-[node name="CollisionRayCast2D" parent="." index="2"]
-target_position = Vector2(0, 32)
+[node name="RayCast2D" parent="CollisionDetector" index="0"]
 collision_mask = 5
 
-[node name="HitboxArea2D" parent="." index="3"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
-shape = SubResource("RectangleShape2D_m3cx4")
+[node name="RayCast2D2" parent="CollisionDetector" index="1"]
+collision_mask = 5
 
 [node name="InteractHitboxArea2D" type="Area2D" parent="." index="4"]
 collision_layer = 8
@@ -586,13 +686,28 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_qpmfk")
 disabled = true
 
-[node name="StateMachine" parent="." index="5" node_paths=PackedStringArray("initial_state")]
+[node name="TransformSprite2D" type="Sprite2D" parent="." index="5"]
+visible = false
+position = Vector2(0, -7)
+texture = ExtResource("4_pybtf")
+hframes = 4
+
+[node name="Camera2D" type="Camera2D" parent="." index="6"]
+
+[node name="HitboxArea2D" parent="." index="7"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
+shape = SubResource("RectangleShape2D_m3cx4")
+
+[node name="StateMachine" parent="." index="8" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("PlayerIdling")
 
 [node name="PlayerWalking" type="Node" parent="StateMachine" index="0" node_paths=PackedStringArray("bump_timer", "walk_timer")]
 script = ExtResource("4_gntfi")
 bump_timer = NodePath("../../BumpTimer")
-walk_timer = NodePath("../../WalkTimer")
+walk_timer = NodePath("")
 
 [node name="PlayerIdling" type="Node" parent="StateMachine" index="1"]
 script = ExtResource("3_1j4eo")
@@ -600,21 +715,15 @@ script = ExtResource("3_1j4eo")
 [node name="PlayerInteracting" type="Node" parent="StateMachine" index="2"]
 script = ExtResource("7_nnxjo")
 
-[node name="WalkTimer" type="Timer" parent="." index="7"]
-process_callback = 0
-one_shot = true
-
-[node name="BumpTimer" type="Timer" parent="." index="8"]
+[node name="BumpTimer" type="Timer" parent="." index="9"]
 wait_time = 0.1
 one_shot = true
 
-[node name="StepStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+[node name="StepStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 volume_db = -12.0
 script = ExtResource("7_ng2ce")
 sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc"), ExtResource("12_10m4k"), ExtResource("13_vpxig")])
 
-[node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
+[node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
 stream = ExtResource("14_125i7")
 volume_db = -4.0
-
-[node name="Camera2D" type="Camera2D" parent="." index="11"]

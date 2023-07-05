@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://q0n3euyfn8jh"]
+[gd_scene load_steps=24 format=3 uid="uid://q0n3euyfn8jh"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_2r11y"]
 [ext_resource type="AudioStream" uid="uid://do41ocrltb536" path="res://main/prop/music/silver_ocean.mp3" id="2_mq1n1"]
@@ -14,6 +14,8 @@
 [ext_resource type="Shader" path="res://main/prop/shader/fog/fog.gdshader" id="12_k7eay"]
 [ext_resource type="Texture2D" uid="uid://inm73hb8glbc" path="res://main/prop/shader/fog/noise_texture.tres" id="13_4c3yy"]
 [ext_resource type="Script" path="res://main/prop/shader/fog/fog_effect.gd" id="13_omqbh"]
+[ext_resource type="PackedScene" uid="uid://gesp14e7bl63" path="res://main/prop/actor/npc/duckling/Duckling.tscn" id="15_pvc07"]
+[ext_resource type="PackedScene" uid="uid://bqrg5hqm65mjn" path="res://main/prop/actor/npc/shelmet/Shelmet.tscn" id="16_h3et4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ky72m"]
 texture = ExtResource("2_p2c84")
@@ -739,3 +741,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("13_omqbh")
+
+[node name="Duckling" parent="." index="9" instance=ExtResource("15_pvc07")]
+visible = true
+position = Vector2(-520, 40)
+
+[node name="Duckling2" parent="." index="10" instance=ExtResource("15_pvc07")]
+visible = true
+position = Vector2(-472, 72)
+
+[node name="Shelmet" parent="." index="11" instance=ExtResource("16_h3et4")]
+position = Vector2(-520, -8)

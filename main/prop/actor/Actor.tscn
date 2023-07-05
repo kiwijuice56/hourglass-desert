@@ -1,19 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://bookvidqcl221"]
+[gd_scene load_steps=5 format=3 uid="uid://bookvidqcl221"]
 
 [ext_resource type="Script" path="res://main/prop/actor/actor.gd" id="1_0jaie"]
 [ext_resource type="Script" path="res://main/prop/actor/state_machine/state_machine.gd" id="2_bkyej"]
 [ext_resource type="Theme" uid="uid://bhdkt3j7lwgn1" path="res://main/ui/theme/main_theme.tres" id="3_7lvrp"]
+[ext_resource type="Script" path="res://main/prop/actor/collision_detector.gd" id="3_lxxvr"]
 
 [node name="Actor" type="Node2D"]
 script = ExtResource("1_0jaie")
+
+[node name="StateLabel" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("3_7lvrp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="CollisionRayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 23)
+[node name="CollisionDetector" type="Node2D" parent="."]
+script = ExtResource("3_lxxvr")
+
+[node name="RayCast2D" type="RayCast2D" parent="CollisionDetector"]
+position = Vector2(0, -7)
+target_position = Vector2(23.5, 0)
+collide_with_areas = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="CollisionDetector"]
+position = Vector2(0, 7)
+target_position = Vector2(23.5, 0)
 collide_with_areas = true
 
 [node name="HitboxArea2D" type="Area2D" parent="."]
@@ -27,8 +43,6 @@ state_label = NodePath("../StateLabel")
 
 [node name="Triggers" type="Node" parent="."]
 
-[node name="StateLabel" type="Label" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-theme = ExtResource("3_7lvrp")
+[node name="MovementTimer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true

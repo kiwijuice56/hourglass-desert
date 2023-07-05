@@ -23,7 +23,6 @@ CommonReference="*res://main/common_reference.gd"
 
 [debug]
 
-settings/stdout/print_fps=true
 gdscript/warnings/redundant_await=0
 
 [display]

@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # world_name must match the name of a folder within WORLD_PATH
 func switch_world(world_name: String, anchor_name: String, transition: int = -1) -> void:
-	CommonReference.player.frozen = true
+	CommonReference.player.disabled = true
 	if transition != -1:
 		await CommonReference.transition.trans_in(transition)
 	
@@ -48,4 +48,8 @@ func switch_world(world_name: String, anchor_name: String, transition: int = -1)
 	CommonReference.player.global_position = current_world.anchors.get_node(anchor_name).global_position
 	if transition != -1:
 		await CommonReference.transition.trans_out(transition)
-	CommonReference.player.frozen = false
+	CommonReference.player.disabled = false
+
+func _input(event) -> void:
+	if event.is_action_pressed("ui_cancel", false):
+		CommonReference.player.disabled = not CommonReference.player.disabled

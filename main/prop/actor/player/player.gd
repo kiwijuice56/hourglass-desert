@@ -14,11 +14,13 @@ const DIRECTION_MAP: Dictionary = {
 	"right": Vector2.RIGHT 
 }
 
-# Enum -> String is useful when determing what animations should be played 
+# Enum -> String is useful when loading animations and sprites
 const EFFECT_MAP: Dictionary = {
 	Effect.NORMAL: "normal",
 	Effect.DUCKLING: "duckling"
 }
+
+const SPRITE_DIR: String = "res://main/prop/actor/player/sprites/"
 
 enum Effect {
 	NORMAL, DUCKLING
@@ -31,4 +33,10 @@ signal interacted
 
 var direction: String = "down"
 var effect: Effect = Effect.DUCKLING
-var frozen: bool = false
+
+func disable() -> void:
+	super.disable()
+	interact_hitbox.call_deferred("set", "disabled", true)
+
+func enable() -> void:
+	super.enable()

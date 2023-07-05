@@ -23,12 +23,6 @@ func _on_moved() -> void:
 		move(key_history.back())
 
 func enter(_data: Dictionary = {}) -> void:
-	if player.frozen:
-		state_machine.transition_to("PlayerIdling")
-		return
-	
-	player.position = player.position.snapped(Vector2(16, 16)) - Vector2(8, 8)
-	
 	pause_movement = false
 	remove_unpressed_keys()
 	
@@ -55,12 +49,14 @@ func remove_unpressed_keys() -> void:
 			i -= 1
 
 func move(direction: String) -> void:
+	if player.disabled:
+		state_machine.transition_to("PlayerInteracting")
+		return
+	
 	player.direction = direction
 	
 	# Detect walls and prevent movement
-	player.raycast.target_position = player.DIRECTION_MAP[direction] * 23
-	player.raycast.force_raycast_update()
-	if player.raycast.is_colliding():
+	if player.collision.is_colliding(player.DIRECTION_MAP[direction]):
 		player.anim.play("idle_" + direction) 
 		# A small delay prevents infinite recursion when bumping
 		bump_timer.start()
@@ -86,15 +82,9 @@ func move(direction: String) -> void:
 	player.anim.speed_scale = speed_multiplier
 	player.anim.play("walk_" + direction + ("_odd" if odd_step else "_even"))
 	
-	# Move pixel by pixel... 100% guaranteed to eliminate jitter!!!
-	for i in range(16.0 / speed_multiplier):
-		if pause_movement:
-			return
-		
-		# 0.24 is a magic number for player speed, and 16 is how many pixels in a tile
-		walk_timer.start(0.24 / 16.0)
-		await walk_timer.timeout
-		player.global_position += speed_multiplier * player.DIRECTION_MAP[direction]
+	# Move the player
+	player.move(player.DIRECTION_MAP[direction], 0.24, speed_multiplier)
+	await player.moved
 	
 	# Loop the player position to keep within the bounding box of a looping world
 	if CommonReference.main.current_world.mirrors:

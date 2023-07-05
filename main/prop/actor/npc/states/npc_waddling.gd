@@ -12,32 +12,23 @@ func _ready() -> void:
 	npc = state_machine.controller as Npc
 
 func enter(data: Dictionary = {}) -> void:
-	npc.position = npc.position.snapped(Vector2(16, 16)) - Vector2(8, 8)
-	
 	pause_movement = false
 	
 	var direction: Vector2 = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT].pick_random()
 	
-	# 23 is one less pixel than a tile and a half
-	npc.raycast.target_position = direction * 23
-	npc.raycast.force_raycast_update()
-	if npc.raycast.is_colliding():
+	if npc.collision.is_colliding(direction):
 		state_machine.transition_to(data.previous_state)
 		return
 	
 	npc.anim.speed_scale = speed_multiplier
 	npc.anim.play("waddle")
 	
-	for i in range(16.0 / speed_multiplier):
-		if pause_movement:
-			return
-		
-		waddle_timer.start(waddle_time / 16.0)
-		await waddle_timer.timeout
-		npc.global_position += speed_multiplier * direction
-		if CommonReference.main.current_world.mirrors:
-			var bounding_box: Vector2 = CommonReference.main.current_world.bounding_box
-			npc.global_position = npc.global_position.posmodv(bounding_box)
+	npc.move(direction, waddle_time, speed_multiplier)
+	await npc.moved
+	
+	if CommonReference.main.current_world.mirrors:
+		var bounding_box: Vector2 = CommonReference.main.current_world.bounding_box
+		npc.global_position = npc.global_position.posmodv(bounding_box)
 	
 	state_machine.transition_to(data.previous_state)
 

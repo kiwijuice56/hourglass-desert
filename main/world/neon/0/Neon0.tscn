@@ -32,6 +32,10 @@ position = Vector2(1480, 1256)
 [node name="Shelmet" parent="Life" index="0" instance=ExtResource("5_om6dr")]
 position = Vector2(1480, 1240)
 
+[node name="CollisionRayCast2D" parent="Life/Shelmet" index="2"]
+target_position = Vector2(0, 23)
+collide_with_areas = true
+
 [node name="Duckling21" parent="Life" index="1" instance=ExtResource("5_ojtw5")]
 position = Vector2(1384, 824)
 

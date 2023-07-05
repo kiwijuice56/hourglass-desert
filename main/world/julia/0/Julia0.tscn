@@ -48,6 +48,10 @@ position = Vector2(376, 328)
 [node name="Shelmet" parent="Life" index="0" instance=ExtResource("4_dfn8k")]
 position = Vector2(376, 312)
 
+[node name="CollisionRayCast2D" parent="Life/Shelmet" index="2"]
+target_position = Vector2(0, 23)
+collide_with_areas = true
+
 [node name="NpcInteractTeleport" parent="Life/Shelmet/Triggers" index="0"]
 world = "Neon"
 anchor = "Shelmet"
