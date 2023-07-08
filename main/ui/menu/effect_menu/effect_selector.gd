@@ -1,7 +1,7 @@
 class_name EffectSelector
 extends HBoxContainer
 
-const ICON_DIR: String = "res://main/ui/effect_menu/icons/"
+const ICON_DIR: String = "res://main/ui/menu/effect_menu/icons/"
 const ICON_SIZE: int = 38
 const OFFSET: int = 139
 
@@ -10,11 +10,24 @@ const OFFSET: int = 139
 var tween: Tween
 var idx: int = 0
 
+signal selected(effect)
+
 func _ready() -> void:
 	await get_tree().get_root().ready
 	initialize()
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept", false):
+		if idx >= len(GlobalMemory.data.unlocked_effects):
+			idx = CommonReference.player.effect
+		selected.emit(GlobalMemory.data.unlocked_effects[idx])
+		return
+	if event.is_action_pressed("ui_cancel", false) or event.is_action_pressed("menu", false):
+		if idx >= len(GlobalMemory.data.unlocked_effects):
+			idx = CommonReference.player.effect
+		selected.emit(GlobalMemory.data.unlocked_effects[idx])
+		return
+	
 	var last_idx: int = idx
 	if event.is_action_pressed("ui_left", false):
 		idx -= 1
@@ -46,4 +59,7 @@ func initialize() -> void:
 	
 	idx = GlobalMemory.data.unlocked_effects.find(CommonReference.player.effect)
 	
-	position.x = OFFSET + idx * ICON_SIZE
+	position.x = OFFSET + idx * -ICON_SIZE
+
+func prompt() -> void:
+	set_process_input(true)

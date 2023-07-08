@@ -31,6 +31,7 @@ signal interacted
 
 @onready var step_player: StepStreamPlayer = $StepStreamPlayer
 @onready var interact_hitbox: Area2D = $InteractHitboxArea2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 var direction: String = "down"
 var effect: Effect = Effect.NORMAL
@@ -38,3 +39,11 @@ var effect: Effect = Effect.NORMAL
 func disable() -> void:
 	super.disable()
 	interact_hitbox.call_deferred("set", "disabled", true)
+
+func switch_effect(new_effect: Effect) -> void:
+	effect = new_effect
+	anim.play("transform_in")
+	await anim.animation_finished
+	sprite.texture = load(SPRITE_DIR + EFFECT_MAP[effect] + ".png")
+	anim.play("transform_out")
+	await anim.animation_finished

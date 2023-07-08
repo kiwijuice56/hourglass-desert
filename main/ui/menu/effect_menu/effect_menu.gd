@@ -6,16 +6,17 @@ extends Menu
 @onready var selector: EffectSelector = $EffectSelector
 
 func _ready() -> void:
-	exit()
+	modulate.a = 0.0
+	selector.set_process_input(false)
 
 func enter() -> void:
 	selector.initialize()
 	modulate.a = 0.0
-	super.enter()
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, transition_time)
 	await tween.finished
-	selector.set_process_input(true)
+	super.enter()
+	selector.prompt()
 
 func exit() -> void:
 	modulate.a = 1.0

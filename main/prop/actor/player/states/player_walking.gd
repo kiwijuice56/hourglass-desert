@@ -65,6 +65,10 @@ func move(direction: String) -> void:
 			state_machine.transition_to("PlayerInteracting")
 			return
 		
+		if Input.is_action_pressed("menu"):
+			state_machine.transition_to("PlayerSelecting")
+			return
+		
 		moved.emit() 
 		return
 	

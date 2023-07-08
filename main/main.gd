@@ -1,12 +1,15 @@
 class_name Main
 extends Node
-# Handles world switching and initial game state
+# Handles world switching, initial game state, and top-level world control
 
 const WORLD_PATH: String = "res://main/world/"
 
 @onready var canvas_mirror: CanvasMirror = $CanvasMirror
 
 var current_world: World
+
+signal disabled
+signal enabled
 
 func _ready() -> void:
 	randomize()
@@ -15,7 +18,7 @@ func _ready() -> void:
 
 # world_name must match the name of a folder within WORLD_PATH
 func switch_world(world_name: String, anchor_name: String, transition: int = -1) -> void:
-	CommonReference.player.disabled = true
+	disable_all_actors()
 	if transition != -1:
 		await CommonReference.transition.trans_in(transition)
 	
@@ -48,8 +51,10 @@ func switch_world(world_name: String, anchor_name: String, transition: int = -1)
 	CommonReference.player.global_position = current_world.anchors.get_node(anchor_name).global_position
 	if transition != -1:
 		await CommonReference.transition.trans_out(transition)
-	CommonReference.player.disabled = false
+	enable_all_actors()
 
-func _input(event) -> void:
-	if event.is_action_pressed("ui_cancel", false):
-		CommonReference.player.disabled = not CommonReference.player.disabled
+func disable_all_actors() -> void:
+	disabled.emit()
+
+func enable_all_actors() -> void:
+	enabled.emit()

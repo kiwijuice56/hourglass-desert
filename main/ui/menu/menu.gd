@@ -1,8 +1,11 @@
 class_name Menu
 extends Control
 
+signal exited
+signal entered
+
 func enter() -> void:
-	visible = true
+	entered.emit()
 
 func exit() -> void:
-	visible = false
+	exited.emit()

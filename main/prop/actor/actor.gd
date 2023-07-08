@@ -18,6 +18,11 @@ var disabled: bool:
 		else:
 			enable()
 
+func _ready() -> void:
+	await get_tree().get_root().ready
+	CommonReference.main.disabled.connect(disable)
+	CommonReference.main.enabled.connect(enable)
+
 func disable() -> void:
 	hitbox.get_child(0).call_deferred("set", "disabled", true)
 	movement_timer.paused = true

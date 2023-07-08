@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ci427rwi47y3v"]
+[gd_scene load_steps=10 format=3 uid="uid://ci427rwi47y3v"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_7he0i"]
 [ext_resource type="PackedScene" uid="uid://bx16we0b51mtm" path="res://main/prop/canvas_mirror/CanvasMirror.tscn" id="2_qes7u"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" path="res://main/ui/component/fps_label/fps_label.gd" id="5_etifi"]
 [ext_resource type="Theme" uid="uid://bhdkt3j7lwgn1" path="res://main/ui/theme/main_theme.tres" id="5_xhmq2"]
 [ext_resource type="PackedScene" uid="uid://iee11vxs3gpy" path="res://main/ui/menu/effect_menu/EffectMenu.tscn" id="7_n8r1e"]
-[ext_resource type="Script" path="res://main/ui/menu/effect_menu/effect_menu.gd" id="9_4jbjk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5qfa"]
 content_margin_left = 4.0
@@ -54,4 +53,3 @@ script = ExtResource("5_etifi")
 autostart = true
 
 [node name="EffectMenu" parent="UI" instance=ExtResource("7_n8r1e")]
-script = ExtResource("9_4jbjk")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://iee11vxs3gpy"]
+[gd_scene load_steps=8 format=3 uid="uid://iee11vxs3gpy"]
 
 [ext_resource type="Theme" uid="uid://bhdkt3j7lwgn1" path="res://main/ui/theme/main_theme.tres" id="1_o1bro"]
 [ext_resource type="Script" path="res://main/ui/menu/effect_menu/effect_selector.gd" id="2_fgw8h"]
+[ext_resource type="Script" path="res://main/ui/menu/effect_menu/effect_menu.gd" id="2_ykuyh"]
 [ext_resource type="Texture2D" uid="uid://l0edgp4i0sjx" path="res://main/ui/menu/effect_menu/icons/normal.png" id="3_lntdq"]
 [ext_resource type="Texture2D" uid="uid://b6uqxw146pomg" path="res://main/ui/menu/effect_menu/icons/duckling.png" id="4_m18m7"]
 [ext_resource type="Texture2D" uid="uid://34pow4lay2x4" path="res://main/ui/menu/effect_menu/icons/empty.png" id="5_0i21m"]
@@ -15,6 +16,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_o1bro")
+script = ExtResource("2_ykuyh")
+transition_time = 0.06
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -41,6 +44,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 0
 script = ExtResource("2_fgw8h")
+shift_time = 0.1
 
 [node name="Normal" type="TextureRect" parent="EffectSelector"]
 layout_mode = 2
