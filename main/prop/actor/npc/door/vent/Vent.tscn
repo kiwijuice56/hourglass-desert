@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgceiwu4jqenl"]
+
+[ext_resource type="PackedScene" uid="uid://cp23pgq1h8gbh" path="res://main/prop/actor/npc/door/Door.tscn" id="1_ieofa"]
+[ext_resource type="Texture2D" uid="uid://diiad41kljekd" path="res://main/prop/actor/npc/door/vent/sprites/vent.png" id="2_oj3bg"]
+[ext_resource type="Texture2D" uid="uid://bfd5lhj7vij44" path="res://main/prop/actor/npc/door/vent/sprites/vent_normal.png" id="3_nav2d"]
+[ext_resource type="Texture2D" uid="uid://bybtqaaknhkfr" path="res://main/prop/actor/npc/door/vent/sprites/vent_specular.png" id="4_rjfmx"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_k7pth"]
+diffuse_texture = ExtResource("2_oj3bg")
+normal_texture = ExtResource("3_nav2d")
+specular_texture = ExtResource("4_rjfmx")
+specular_shininess = 0.28
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydfnj"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6b2g"]
+size = Vector2(32, 32)
+
+[node name="Vent" instance=ExtResource("1_ieofa")]
+
+[node name="Sprite2D" parent="." index="2"]
+texture = SubResource("CanvasTexture_k7pth")
+
+[node name="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]
+shape = SubResource("RectangleShape2D_ydfnj")
+
+[node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
+shape = SubResource("RectangleShape2D_h6b2g")
+
+[node name="NpcInteractTeleport" parent="Triggers" index="0"]
+allowed_direction = 1

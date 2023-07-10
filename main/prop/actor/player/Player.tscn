@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bncwc62wkr0vt"]
+[gd_scene load_steps=44 format=3 uid="uid://bncwc62wkr0vt"]
 
 [ext_resource type="Script" path="res://main/prop/actor/player/player.gd" id="1_gotwe"]
 [ext_resource type="PackedScene" uid="uid://bookvidqcl221" path="res://main/prop/actor/Actor.tscn" id="1_mpvfg"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://tsbuh0x8rdmn" path="res://main/prop/actor/player/sounds/05_fun_step.WAV" id="12_10m4k"]
 [ext_resource type="AudioStream" uid="uid://d17x7qjwft1k4" path="res://main/prop/actor/player/sounds/06_fluffy_step.WAV" id="13_vpxig"]
 [ext_resource type="AudioStream" uid="uid://bx6qmd7lplprt" path="res://main/prop/actor/player/sounds/quacik.wav" id="14_125i7"]
+[ext_resource type="AudioStream" uid="uid://dgkuafgs0t1dk" path="res://main/prop/actor/player/sounds/07_metal.wav" id="16_gokwh"]
 
 [sub_resource type="Animation" id="Animation_qxr6w"]
 length = 0.001
@@ -268,10 +269,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.12, 0.24),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [16, 17, 7]
+"values": [16, 17, 16, 7]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -436,6 +437,112 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_uek8a"]
+resource_name = "transform_in"
+length = 0.6
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransformSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TransformSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16, 0.24, 0.32, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(3, 3, 3, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_qvxa3"]
+resource_name = "transform_out"
+length = 0.7
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransformSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.32),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TransformSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.24, 0.48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(3, 3, 3, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.32),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="Animation" id="Animation_utaes"]
 resource_name = "walk_down_even"
 length = 0.24
@@ -572,112 +679,6 @@ tracks/0/keys = {
 "values": [11, 10]
 }
 
-[sub_resource type="Animation" id="Animation_uek8a"]
-resource_name = "transform_in"
-length = 0.6
-step = 0.08
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TransformSprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TransformSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.16, 0.24, 0.32, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(3, 3, 3, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_qvxa3"]
-resource_name = "transform_out"
-length = 0.7
-step = 0.08
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TransformSprite2D:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.32),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TransformSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.16, 0.24),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [3, 2, 1, 0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.24, 0.48),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(3, 3, 3, 1), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.32),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hb1mx"]
 _data = {
 "RESET": SubResource("Animation_qxr6w"),
@@ -778,7 +779,7 @@ one_shot = true
 [node name="StepStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 volume_db = -12.0
 script = ExtResource("7_ng2ce")
-sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc"), ExtResource("12_10m4k"), ExtResource("13_vpxig")])
+sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc"), ExtResource("12_10m4k"), ExtResource("13_vpxig"), ExtResource("16_gokwh")])
 
 [node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
 stream = ExtResource("14_125i7")

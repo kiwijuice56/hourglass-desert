@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dte57vtisb417"
-path="res://.godot/imported/rock4.png-16d8f513b4eea0b9a57dbb72ed2e6770.ctex"
+uid="uid://cjntc0r1j1jn7"
+path="res://.godot/imported/vent_normal.png-388d311838511d894b4da62c02c85344.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/decoration/rock4.png"
-dest_files=["res://.godot/imported/rock4.png-16d8f513b4eea0b9a57dbb72ed2e6770.ctex"]
+source_file="res://main/prop/decoration/metal/vent_normal.png"
+dest_files=["res://.godot/imported/vent_normal.png-388d311838511d894b4da62c02c85344.ctex"]
 
 [params]
 

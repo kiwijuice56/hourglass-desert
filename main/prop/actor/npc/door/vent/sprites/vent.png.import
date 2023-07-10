@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba2e174ud16qr"
-path="res://.godot/imported/rock1.png-5dd436bf3700d5ca8990e3357937cb79.ctex"
+uid="uid://diiad41kljekd"
+path="res://.godot/imported/vent.png-f1850f48a3a45f30e9cd77addf13d404.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/decoration/rock1.png"
-dest_files=["res://.godot/imported/rock1.png-5dd436bf3700d5ca8990e3357937cb79.ctex"]
+source_file="res://main/prop/actor/npc/door/vent/sprites/vent.png"
+dest_files=["res://.godot/imported/vent.png-f1850f48a3a45f30e9cd77addf13d404.ctex"]
 
 [params]
 

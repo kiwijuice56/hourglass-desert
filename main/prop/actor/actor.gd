@@ -20,8 +20,8 @@ var disabled: bool:
 
 func _ready() -> void:
 	await get_tree().get_root().ready
-	CommonReference.main.disabled.connect(disable)
-	CommonReference.main.enabled.connect(enable)
+	CommonReference.main.disabled.connect(set.bind("disabled", true))
+	CommonReference.main.enabled.connect(set.bind("disabled", false))
 
 func disable() -> void:
 	hitbox.get_child(0).call_deferred("set", "disabled", true)

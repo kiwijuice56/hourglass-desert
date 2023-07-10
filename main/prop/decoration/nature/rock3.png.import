@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw5oaumwrukka"
-path="res://.godot/imported/dots.png-1bd7319bbcfdba6f193284965a40fe5d.ctex"
+uid="uid://d0k38ry2vytt6"
+path="res://.godot/imported/rock3.png-d5151d208ad3ee66a134c813cb313321.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/decoration/dots.png"
-dest_files=["res://.godot/imported/dots.png-1bd7319bbcfdba6f193284965a40fe5d.ctex"]
+source_file="res://main/prop/decoration/nature/rock3.png"
+dest_files=["res://.godot/imported/rock3.png-d5151d208ad3ee66a134c813cb313321.ctex"]
 
 [params]
 

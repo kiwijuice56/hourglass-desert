@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqip3meem4m7j"
-path="res://.godot/imported/root.png-4a384c31736ce799e9c060708990f45e.ctex"
+uid="uid://bdyjdqghnigdj"
+path="res://.godot/imported/water_girl.png-803f998c6b1b5fc94ed2fb7631ecd2fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/decoration/root.png"
-dest_files=["res://.godot/imported/root.png-4a384c31736ce799e9c060708990f45e.ctex"]
+source_file="res://main/prop/decoration/creature/water_girl.png"
+dest_files=["res://.godot/imported/water_girl.png-803f998c6b1b5fc94ed2fb7631ecd2fd.ctex"]
 
 [params]
 

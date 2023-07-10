@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tnop2lgytyfw"
-path="res://.godot/imported/cluster.png-60ae4ecbe8a33a552347cb5bda75a671.ctex"
+uid="uid://bw5oaumwrukka"
+path="res://.godot/imported/dots.png-b33ff96183b8339de0f7fbaeba8a24f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/decoration/cluster.png"
-dest_files=["res://.godot/imported/cluster.png-60ae4ecbe8a33a552347cb5bda75a671.ctex"]
+source_file="res://main/prop/decoration/other/dots.png"
+dest_files=["res://.godot/imported/dots.png-b33ff96183b8339de0f7fbaeba8a24f7.ctex"]
 
 [params]
 

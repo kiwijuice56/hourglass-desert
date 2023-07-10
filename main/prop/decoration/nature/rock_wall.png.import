@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdyjdqghnigdj"
-path="res://.godot/imported/water_girl.png-8ecf1105c43db89647f56d202254d5d5.ctex"
+uid="uid://drmr7rttrab50"
+path="res://.godot/imported/rock_wall.png-0371cbb37fef3c192664dc248b70c77a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/decoration/water_girl.png"
-dest_files=["res://.godot/imported/water_girl.png-8ecf1105c43db89647f56d202254d5d5.ctex"]
+source_file="res://main/prop/decoration/nature/rock_wall.png"
+dest_files=["res://.godot/imported/rock_wall.png-0371cbb37fef3c192664dc248b70c77a.ctex"]
 
 [params]
 

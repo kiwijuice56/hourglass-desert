@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_jyntx"]
 [ext_resource type="Texture2D" uid="uid://b6b78ete7tgxi" path="res://main/prop/tileset/basic/basic.png" id="2_ggfxl"]
 [ext_resource type="PackedScene" uid="uid://bqrg5hqm65mjn" path="res://main/prop/actor/npc/shelmet/Shelmet.tscn" id="3_hxldm"]
-[ext_resource type="Texture2D" uid="uid://bw5oaumwrukka" path="res://main/prop/decoration/dots.png" id="3_r1c1i"]
+[ext_resource type="Texture2D" uid="uid://bw5oaumwrukka" path="res://main/prop/decoration/other/dots.png" id="3_r1c1i"]
 [ext_resource type="AudioStream" uid="uid://ccp00vh1hmfc2" path="res://main/prop/music/wind_hum.mp3" id="3_r7qia"]
 [ext_resource type="Shader" path="res://main/prop/shader/chromatic/chromatic.gdshader" id="6_3cjdt"]
 
