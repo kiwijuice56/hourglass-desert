@@ -3,9 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://i3ndgvf3xdxk" path="res://main/prop/actor/npc/Npc.tscn" id="1_qxb4d"]
 [ext_resource type="Script" path="res://main/prop/actor/npc/triggers/npc_interact_teleport.gd" id="2_8hcdt"]
 
-[sub_resource type="Animation" id="Animation_bh4xa"]
-resource_name = "npc_interact_teleport_trigger"
-length = 0.1
+[sub_resource type="Animation" id="Animation_0kyti"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,8 +18,9 @@ tracks/0/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_0kyti"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_bh4xa"]
+resource_name = "npc_interact_teleport_trigger"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

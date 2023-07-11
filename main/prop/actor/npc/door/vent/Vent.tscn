@@ -22,8 +22,14 @@ size = Vector2(32, 32)
 [node name="Sprite2D" parent="." index="2"]
 texture = SubResource("CanvasTexture_k7pth")
 
+[node name="RayCast2D2" parent="CollisionDetector" index="1"]
+collision_mask = 1
+
 [node name="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]
 shape = SubResource("RectangleShape2D_ydfnj")
+
+[node name="HitboxArea2D" parent="." index="5"]
+position = Vector2(0, 0)
 
 [node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
 shape = SubResource("RectangleShape2D_h6b2g")
