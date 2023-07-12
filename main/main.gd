@@ -14,7 +14,7 @@ signal enabled
 func _ready() -> void:
 	randomize()
 	GlobalMemory.reset_memory()
-	switch_world("Factory", "2")
+	switch_world("Factory", "1")
 
 # world_name must match the name of a folder within WORLD_PATH
 func switch_world(world_name: String, anchor_name: String, transition: int = -1) -> void:

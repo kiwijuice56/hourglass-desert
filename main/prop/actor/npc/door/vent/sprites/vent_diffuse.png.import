@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caag2ejxlved4"
-path="res://.godot/imported/vent_specular.png-623adb1af58798a3407eb2d6bc384f18.ctex"
+uid="uid://bybtqaaknhkfr"
+path="res://.godot/imported/vent_diffuse.png-da9f77da582402cd0e05f883c03d41bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/decoration/metal/vent_specular.png"
-dest_files=["res://.godot/imported/vent_specular.png-623adb1af58798a3407eb2d6bc384f18.ctex"]
+source_file="res://main/prop/actor/npc/door/vent/sprites/vent_diffuse.png"
+dest_files=["res://.godot/imported/vent_diffuse.png-da9f77da582402cd0e05f883c03d41bc.ctex"]
 
 [params]
 
