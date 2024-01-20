@@ -15,7 +15,7 @@ func _ready() -> void:
 	randomize()
 	get_window().position = Vector2(32, 32)
 	GlobalMemory.reset_memory()
-	switch_world("Factory", "Default")
+	switch_world("Molecule", "Default")
 
 # world_name must match the name of a folder within WORLD_PATH
 func switch_world(world_name: String, anchor_name: String, transition: int = -1) -> void:
@@ -47,6 +47,12 @@ func switch_world(world_name: String, anchor_name: String, transition: int = -1)
 	canvas_mirror.visible = current_world.mirrors
 	if current_world.mirrors:
 		canvas_mirror.mirror_world(CommonReference.player, current_world.bounding_box)
+	
+	# Set camera limits
+	CommonReference.player.camera.limit_left = current_world.camera_limit_left
+	CommonReference.player.camera.limit_top = current_world.camera_limit_top
+	CommonReference.player.camera.limit_right = current_world.camera_limit_right
+	CommonReference.player.camera.limit_bottom = current_world.camera_limit_bottom
 	
 	# Set the player's position
 	CommonReference.player.global_position = current_world.anchors.get_node(anchor_name).global_position

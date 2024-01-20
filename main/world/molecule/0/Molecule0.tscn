@@ -1,0 +1,347 @@
+[gd_scene load_steps=5 format=3 uid="uid://csbyp330xq3fb"]
+
+[ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_2m7d0"]
+[ext_resource type="PackedScene" uid="uid://cbl8vdjbijoyw" path="res://main/prop/decoration/other/molecule/Molecule.tscn" id="2_c31wh"]
+[ext_resource type="AudioStream" uid="uid://e67pomtchx8b" path="res://main/prop/music/science_funk.ogg" id="2_hb7li"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0tpfy"]
+size = Vector3(10, 0.05, 10)
+
+[node name="MoleculeWorld" instance=ExtResource("1_2m7d0")]
+camera_limit_left = 0
+camera_limit_top = 0
+camera_limit_right = 768
+camera_limit_bottom = 244
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." index="0"]
+custom_minimum_size = Vector2(768, 244)
+offset_right = 316.0
+offset_bottom = 244.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" index="0"]
+handle_input_locally = false
+size = Vector2i(768, 244)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport" index="0"]
+
+[node name="Molecule" parent="SubViewportContainer/SubViewport/Node3D" index="0" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01602, 0.414707, -0.973434)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule2" parent="SubViewportContainer/SubViewport/Node3D" index="1" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -0.973434)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule3" parent="SubViewportContainer/SubViewport/Node3D" index="2" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -1.37252)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule4" parent="SubViewportContainer/SubViewport/Node3D" index="3" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -1.37252)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule5" parent="SubViewportContainer/SubViewport/Node3D" index="4" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -0.952637)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule6" parent="SubViewportContainer/SubViewport/Node3D" index="5" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01602, 0.414707, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule7" parent="SubViewportContainer/SubViewport/Node3D" index="6" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule8" parent="SubViewportContainer/SubViewport/Node3D" index="7" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule9" parent="SubViewportContainer/SubViewport/Node3D" index="8" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule10" parent="SubViewportContainer/SubViewport/Node3D" index="9" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -1.63328)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule11" parent="SubViewportContainer/SubViewport/Node3D" index="10" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44667, 0.414707, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule12" parent="SubViewportContainer/SubViewport/Node3D" index="11" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12296, 0.447527, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule13" parent="SubViewportContainer/SubViewport/Node3D" index="12" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12296, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule14" parent="SubViewportContainer/SubViewport/Node3D" index="13" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611403, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule15" parent="SubViewportContainer/SubViewport/Node3D" index="14" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611403, 0.447527, -1.63328)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D" index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.277337, 0)
+mesh = SubResource("BoxMesh_0tpfy")
+skeleton = NodePath("../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D" index="16"]
+transform = Transform3D(1, 0, 0, 0, 0.194063, 0.980989, 0, -0.980989, 0.194063, 0, 2.46764, 0)
+light_color = Color(0.956863, 0.776471, 0.713726, 1)
+light_energy = 1.035
+shadow_enabled = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D" index="17"]
+transform = Transform3D(0.988512, 0.0649651, -0.136466, 0.15114, -0.424896, 0.892536, 0, -0.902908, -0.429834, -0.643954, 2.46764, -3.57472)
+light_color = Color(0.784314, 0.819608, 0.929412, 1)
+light_energy = 0.295
+shadow_enabled = true
+
+[node name="Node3D2" type="Node3D" parent="SubViewportContainer/SubViewport" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.69865)
+
+[node name="Molecule" parent="SubViewportContainer/SubViewport/Node3D2" index="0" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01602, 0.414707, -0.973434)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule2" parent="SubViewportContainer/SubViewport/Node3D2" index="1" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -0.973434)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule3" parent="SubViewportContainer/SubViewport/Node3D2" index="2" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -1.37252)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule4" parent="SubViewportContainer/SubViewport/Node3D2" index="3" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -1.37252)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule5" parent="SubViewportContainer/SubViewport/Node3D2" index="4" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -0.952637)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule6" parent="SubViewportContainer/SubViewport/Node3D2" index="5" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01602, 0.414707, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule7" parent="SubViewportContainer/SubViewport/Node3D2" index="6" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule8" parent="SubViewportContainer/SubViewport/Node3D2" index="7" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule9" parent="SubViewportContainer/SubViewport/Node3D2" index="8" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule10" parent="SubViewportContainer/SubViewport/Node3D2" index="9" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -1.63328)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule11" parent="SubViewportContainer/SubViewport/Node3D2" index="10" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44667, 0.414707, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule12" parent="SubViewportContainer/SubViewport/Node3D2" index="11" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12296, 0.447527, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule13" parent="SubViewportContainer/SubViewport/Node3D2" index="12" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12296, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule14" parent="SubViewportContainer/SubViewport/Node3D2" index="13" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611403, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule15" parent="SubViewportContainer/SubViewport/Node3D2" index="14" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611403, 0.447527, -1.63328)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D2" index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.277337, 0)
+mesh = SubResource("BoxMesh_0tpfy")
+skeleton = NodePath("../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2" index="16"]
+transform = Transform3D(1, 0, 0, 0, 0.194063, 0.980989, 0, -0.980989, 0.194063, 0, 2.46764, 0)
+light_color = Color(0.956863, 0.776471, 0.713726, 1)
+light_energy = 1.035
+shadow_enabled = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D2" index="17"]
+transform = Transform3D(0.988512, 0.0649651, -0.136466, 0.15114, -0.424896, 0.892536, 0, -0.902908, -0.429834, -0.643954, 2.46764, -3.57472)
+light_color = Color(0.784314, 0.819608, 0.929412, 1)
+light_energy = 0.295
+shadow_enabled = true
+
+[node name="Node3D3" type="Node3D" parent="SubViewportContainer/SubViewport" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.4824)
+
+[node name="Molecule" parent="SubViewportContainer/SubViewport/Node3D3" index="0" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01602, 0.414707, -0.973434)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule2" parent="SubViewportContainer/SubViewport/Node3D3" index="1" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -0.973434)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule3" parent="SubViewportContainer/SubViewport/Node3D3" index="2" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -1.37252)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule4" parent="SubViewportContainer/SubViewport/Node3D3" index="3" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -1.37252)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule5" parent="SubViewportContainer/SubViewport/Node3D3" index="4" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -0.952637)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule6" parent="SubViewportContainer/SubViewport/Node3D3" index="5" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01602, 0.414707, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule7" parent="SubViewportContainer/SubViewport/Node3D3" index="6" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule8" parent="SubViewportContainer/SubViewport/Node3D3" index="7" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692311, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule9" parent="SubViewportContainer/SubViewport/Node3D3" index="8" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule10" parent="SubViewportContainer/SubViewport/Node3D3" index="9" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042052, 0.447527, -1.63328)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule11" parent="SubViewportContainer/SubViewport/Node3D3" index="10" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44667, 0.414707, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule12" parent="SubViewportContainer/SubViewport/Node3D3" index="11" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12296, 0.447527, -1.65408)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule13" parent="SubViewportContainer/SubViewport/Node3D3" index="12" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12296, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule14" parent="SubViewportContainer/SubViewport/Node3D3" index="13" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611403, 0.447527, -2.05316)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="Molecule15" parent="SubViewportContainer/SubViewport/Node3D3" index="14" instance=ExtResource("2_c31wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611403, 0.447527, -1.63328)
+speed_median = 32.0
+speed_rand = 8.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D3" index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.277337, 0)
+mesh = SubResource("BoxMesh_0tpfy")
+skeleton = NodePath("../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D3" index="16"]
+transform = Transform3D(1, 0, 0, 0, 0.194063, 0.980989, 0, -0.980989, 0.194063, 0, 2.46764, 0)
+light_color = Color(0.956863, 0.776471, 0.713726, 1)
+light_energy = 1.035
+shadow_enabled = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D3" index="17"]
+transform = Transform3D(0.988512, 0.0649651, -0.136466, 0.15114, -0.424896, 0.892536, 0, -0.902908, -0.429834, -0.643954, 2.46764, -3.57472)
+light_color = Color(0.784314, 0.819608, 0.929412, 1)
+light_energy = 0.295
+shadow_enabled = true
+
+[node name="Node3D4" type="Node3D" parent="SubViewportContainer/SubViewport" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.5755)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.277337, 0)
+mesh = SubResource("BoxMesh_0tpfy")
+skeleton = NodePath("../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.194063, 0.980989, 0, -0.980989, 0.194063, 0, 2.46764, 0)
+light_color = Color(0.956863, 0.776471, 0.713726, 1)
+light_energy = 1.035
+shadow_enabled = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D4" index="2"]
+transform = Transform3D(0.988512, 0.0649651, -0.136466, 0.15114, -0.424896, 0.892536, 0, -0.902908, -0.429834, -0.643954, 2.46764, -3.57472)
+light_color = Color(0.784314, 0.819608, 0.929412, 1)
+light_energy = 0.295
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" index="4"]
+transform = Transform3D(1, 0, 0, 0, 0.997368, -0.0725071, 0, 0.0725071, 0.997368, 0, 0.660135, 2.17422)
+current = true
+
+[node name="CollisionTileMap" parent="." index="2"]
+collision_visibility_mode = 0
+layer_0/tile_data = PackedInt32Array(917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720929, 0, 0, 720930, 0, 0, 720931, 0, 0, 720932, 0, 0, 720933, 0, 0, 720934, 0, 0, 720935, 0, 0, 720936, 0, 0, 917538, 0, 0, 917539, 0, 0, 917540, 0, 0, 917541, 0, 0, 917542, 0, 0, 917543, 0, 0, 917544, 0, 0, 917545, 0, 0, 917546, 0, 0, 917547, 0, 0, 917548, 0, 0, 852012, 0, 0, 786476, 0, 0, 720940, 0, 0, 720939, 0, 0, 720938, 0, 0, 720937, 0, 0, 786431, 0, 0, 851967, 0, 0, 917503, 0, 0, 983039, 0, 0)
+
+[node name="MusicStreamPlayer" parent="." index="4"]
+stream = ExtResource("2_hb7li")
+volume_db = -16.0
+autoplay = true
+
+[node name="Default" type="Marker2D" parent="Anchors" index="0"]
+position = Vector2(136, 216)

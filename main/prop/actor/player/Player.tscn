@@ -813,6 +813,6 @@ bus = &"Sound Effects"
 
 [node name="TransformStreamPlayer" type="AudioStreamPlayer" parent="." index="14"]
 stream = ExtResource("18_4dykb")
-volume_db = -19.0
+volume_db = -16.0
 pitch_scale = 1.2
 bus = &"Sound Effects"

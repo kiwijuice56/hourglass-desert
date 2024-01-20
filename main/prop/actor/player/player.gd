@@ -32,6 +32,7 @@ signal interacted
 @onready var step_player: StepStreamPlayer = $StepStreamPlayer
 @onready var interact_hitbox: Area2D = $InteractHitboxArea2D
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var camera: Camera2D = $Camera2D
 
 var direction: String = "down"
 var effect: Effect = Effect.NORMAL

@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbl8vdjbijoyw"]
+
+[ext_resource type="Script" path="res://main/prop/decoration/other/molecule/molecule.gd" id="1_ja03e"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_28hi8"]
+radial_segments = 16
+rings = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bugt0"]
+albedo_color = Color(1, 0.180392, 0.423529, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5g8f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1y6di"]
+albedo_color = Color(0.219608, 0.592157, 0.886275, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xvup"]
+albedo_color = Color(0.223529, 0.219608, 0.231373, 1)
+
+[node name="Molecule" type="Node3D"]
+script = ExtResource("1_ja03e")
+max_x = 4.0
+min_x = -4.0
+max_y = 3.0
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+mesh = SubResource("SphereMesh_28hi8")
+surface_material_override/0 = SubResource("StandardMaterial3D_bugt0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Water"]
+transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 0, 0.4997, -0.457591)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_f5g8f")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Water"]
+transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 0, -0.531303, -0.500447)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_f5g8f")
+
+[node name="Water2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+mesh = SubResource("SphereMesh_28hi8")
+surface_material_override/0 = SubResource("StandardMaterial3D_bugt0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Water2"]
+transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 0, 0.4997, -0.457591)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_f5g8f")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Water2"]
+transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 0, -0.531303, -0.500447)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_f5g8f")
+
+[node name="O2" type="MeshInstance3D" parent="."]
+
+[node name="Water2" type="MeshInstance3D" parent="O2"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.0633675, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bugt0")
+
+[node name="Water3" type="MeshInstance3D" parent="O2"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.06421, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bugt0")
+
+[node name="N2" type="MeshInstance3D" parent="."]
+
+[node name="Water2" type="MeshInstance3D" parent="N2"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.0633675, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1y6di")
+
+[node name="Water3" type="MeshInstance3D" parent="N2"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.06421, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1y6di")
+
+[node name="CO2" type="MeshInstance3D" parent="."]
+
+[node name="Water2" type="MeshInstance3D" parent="CO2"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.122527, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bugt0")
+
+[node name="Water4" type="MeshInstance3D" parent="CO2"]
+transform = Transform3D(0.19, 0, 0, 0, 0.19, 0, 0, 0, 0.19, 0, -0.002296, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0xvup")
+
+[node name="Water3" type="MeshInstance3D" parent="CO2"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.129445, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_bugt0")
+
+[node name="HCN" type="MeshInstance3D" parent="."]
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="HCN"]
+transform = Transform3D(0.09, 0, 0, 0, -3.93402e-09, 0.09, 0, -0.09, -3.93402e-09, 0, -0.110924, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_f5g8f")
+
+[node name="Water5" type="MeshInstance3D" parent="HCN"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.104492, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1y6di")
+
+[node name="Water4" type="MeshInstance3D" parent="HCN"]
+transform = Transform3D(0.19, 0, 0, 0, 0.19, 0, 0, 0, 0.19, 0, -0.002296, 0)
+mesh = SubResource("SphereMesh_28hi8")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0xvup")
