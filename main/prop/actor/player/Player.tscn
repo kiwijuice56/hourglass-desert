@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bncwc62wkr0vt"]
+[gd_scene load_steps=45 format=3 uid="uid://bncwc62wkr0vt"]
 
 [ext_resource type="Script" path="res://main/prop/actor/player/player.gd" id="1_gotwe"]
 [ext_resource type="PackedScene" uid="uid://bookvidqcl221" path="res://main/prop/actor/Actor.tscn" id="1_mpvfg"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://d17x7qjwft1k4" path="res://main/prop/actor/player/sounds/06_fluffy_step.WAV" id="13_vpxig"]
 [ext_resource type="AudioStream" uid="uid://bx6qmd7lplprt" path="res://main/prop/actor/player/sounds/quacik.wav" id="14_125i7"]
 [ext_resource type="AudioStream" uid="uid://dgkuafgs0t1dk" path="res://main/prop/actor/player/sounds/07_metal.wav" id="16_gokwh"]
+[ext_resource type="AudioStream" uid="uid://cgb14a82hiqp8" path="res://main/prop/actor/player/sounds/transform.wav" id="18_4dykb"]
 
 [sub_resource type="Animation" id="Animation_qxr6w"]
 length = 0.001
@@ -79,6 +80,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TransformStreamPlayer:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_lfdrv"]
@@ -489,6 +502,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TransformStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_qvxa3"]
 resource_name = "transform_out"
@@ -784,4 +809,10 @@ sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtRes
 [node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
 stream = ExtResource("14_125i7")
 volume_db = -4.0
+bus = &"Sound Effects"
+
+[node name="TransformStreamPlayer" type="AudioStreamPlayer" parent="." index="14"]
+stream = ExtResource("18_4dykb")
+volume_db = -19.0
+pitch_scale = 1.2
 bus = &"Sound Effects"

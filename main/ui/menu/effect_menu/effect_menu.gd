@@ -10,6 +10,7 @@ func _ready() -> void:
 	selector.set_process_input(false)
 
 func enter() -> void:
+	$OpenPlayer.play()
 	selector.initialize()
 	modulate.a = 0.0
 	var tween: Tween = get_tree().create_tween()
@@ -19,6 +20,7 @@ func enter() -> void:
 	selector.prompt()
 
 func exit() -> void:
+	$ClosePlayer.play()
 	modulate.a = 1.0
 	selector.set_process_input(false)
 	var tween: Tween = get_tree().create_tween()

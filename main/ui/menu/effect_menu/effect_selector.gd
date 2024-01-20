@@ -9,6 +9,7 @@ const OFFSET: int = 139
 
 var tween: Tween
 var idx: int = 0
+var initial_idx: int = 0
 
 signal selected(effect)
 
@@ -25,6 +26,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel", false) or event.is_action_pressed("menu", false):
 		if idx >= len(GlobalMemory.data.unlocked_effects):
 			idx = CommonReference.player.effect
+		idx = initial_idx
 		selected.emit(GlobalMemory.data.unlocked_effects[idx])
 		return
 	
@@ -36,6 +38,7 @@ func _input(event: InputEvent) -> void:
 	idx = clamp(idx, 0, len(Player.Effect) - 1)
 	if idx == last_idx:
 		return
+	%SelectPlayer.play()
 	if tween != null:
 		tween.stop()
 	tween = get_tree().create_tween().set_trans(Tween.TRANS_QUAD)
@@ -58,6 +61,7 @@ func initialize() -> void:
 		add_child(rect)
 	
 	idx = GlobalMemory.data.unlocked_effects.find(CommonReference.player.effect)
+	initial_idx = idx
 	
 	position.x = OFFSET + idx * -ICON_SIZE
 
