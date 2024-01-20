@@ -132,10 +132,10 @@ idle_timer = NodePath("../../Timer")
 [node name="TeleportStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource("5_olo07")
 pitch_scale = 2.0
+bus = &"Sound Effects"
 
-[node name="NpcInteractTeleport" type="Node" parent="Triggers" index="0" node_paths=PackedStringArray("sound_player", "controller")]
+[node name="NpcInteractTeleport" type="Node" parent="Triggers" index="0" node_paths=PackedStringArray("controller")]
 script = ExtResource("4_kiqmu")
-sound_player = NodePath("../../TeleportStreamPlayer")
 world = "Fractal"
 anchor = "Default"
 supported_effects = 3

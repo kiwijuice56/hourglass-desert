@@ -758,10 +758,9 @@ shape = SubResource("RectangleShape2D_m3cx4")
 [node name="StateMachine" parent="." index="8" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("PlayerIdling")
 
-[node name="PlayerWalking" type="Node" parent="StateMachine" index="0" node_paths=PackedStringArray("bump_timer", "walk_timer")]
+[node name="PlayerWalking" type="Node" parent="StateMachine" index="0" node_paths=PackedStringArray("bump_timer")]
 script = ExtResource("4_gntfi")
 bump_timer = NodePath("../../BumpTimer")
-walk_timer = NodePath("")
 
 [node name="PlayerIdling" type="Node" parent="StateMachine" index="1"]
 script = ExtResource("3_1j4eo")
@@ -778,9 +777,11 @@ one_shot = true
 
 [node name="StepStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 volume_db = -12.0
+bus = &"Sound Effects"
 script = ExtResource("7_ng2ce")
 sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc"), ExtResource("12_10m4k"), ExtResource("13_vpxig"), ExtResource("16_gokwh")])
 
 [node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
 stream = ExtResource("14_125i7")
 volume_db = -4.0
+bus = &"Sound Effects"

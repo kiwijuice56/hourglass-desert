@@ -18,6 +18,7 @@ format = 2
 position = Vector2(352, 272)
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
 
 [node name="Anchors" type="Node" parent="."]
 
