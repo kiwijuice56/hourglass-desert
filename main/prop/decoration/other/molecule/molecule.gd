@@ -15,7 +15,7 @@ var speed: float
 var dir: Vector3 
 
 func _ready() -> void:
-	speed = speed + (randf() - 0.5) * 2.0 * speed_rand
+	speed = (speed_median + (randf() - 0.5) * 2.0 * speed_rand) * 0.1
 	dir = Vector3(randf() - 0.5, randf() - 0.5, randf() - 0.5).normalized()
 	var mol: int = randi() % get_child_count()
 	var to_kill: Array[MeshInstance3D] = []
@@ -28,18 +28,25 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += speed * dir * delta
 	
-	get_child(0).look_at(dir)
-	
 	if position.x > max_x:
+		position.x -= 0.01
 		dir = dir.bounce(Vector3(-1, 0, 0))
-	if position.x < min_x:
+	elif position.x < min_x:
+		position.x += 0.01
 		dir = dir.bounce(Vector3(1, 0, 0))
-	if position.y > max_y:
+	elif position.y > max_y:
+		position.y -= 0.01
 		dir = dir.bounce(Vector3(0, -1, 0))
-	if position.y <= min_y:
+	elif position.y <= min_y:
 		position.y += 0.01
 		dir = dir.bounce(Vector3(0, 1, 0))
-	if position.z > max_z:
+	elif position.z > max_z:
+		position.z -= 0.01
 		dir = dir.bounce(Vector3(0, 0, -1))
-	if position.z < min_z:
+	elif position.z < min_z:
+		position.z += 0.01
 		dir = dir.bounce(Vector3(0, 0, 1))
+	else:
+		return
+	
+	get_child(0).rotation = Vector3(randf()-0.5, randf()-0.5, randf()-0.5).normalized()
