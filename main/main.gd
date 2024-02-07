@@ -15,7 +15,7 @@ func _ready() -> void:
 	randomize()
 	get_window().position = Vector2(32, 32)
 	GlobalMemory.reset_memory()
-	switch_world("Molecule", "Default")
+	switch_world("Castle", "Default")
 
 # world_name must match the name of a folder within WORLD_PATH
 func switch_world(world_name: String, anchor_name: String, transition: int = -1) -> void:

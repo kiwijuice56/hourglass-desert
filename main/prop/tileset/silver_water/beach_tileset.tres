@@ -1,0 +1,59 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bmrp4gb6tjebt"]
+
+[ext_resource type="Texture2D" uid="uid://w3lw21abv5j1" path="res://main/prop/tileset/silver_water/silver_water.png" id="1_5jgfv"]
+[ext_resource type="Texture2D" uid="uid://clad74gdri8c0" path="res://main/prop/tileset/silver_water/sand.png" id="2_jkvx5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ky72m"]
+texture = ExtResource("1_5jgfv")
+texture_region_size = Vector2i(32, 32)
+0:1/animation_speed = 3.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_63r6r"]
+texture = ExtResource("2_jkvx5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/custom_data_0 = 1
+0:1/animation_speed = 3.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 16, 16, -16, 16)
+0:1/0/custom_data_0 = 2
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/custom_data_0 = 1
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/custom_data_0 = 1
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/custom_data_0 = 1
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+custom_data_layer_0/name = "sound"
+custom_data_layer_0/type = 2
+sources/0 = SubResource("TileSetAtlasSource_ky72m")
+sources/2 = SubResource("TileSetAtlasSource_63r6r")
