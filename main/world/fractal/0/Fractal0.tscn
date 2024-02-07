@@ -46,7 +46,7 @@ position = Vector2(376, 328)
 position = Vector2(376, 312)
 
 [node name="NpcInteractTeleport" parent="Life/Shelmet/Triggers" index="0"]
-world = "Neon"
+world = "Castle"
 anchor = "Shelmet"
 
 [node name="Fractal" type="ColorRect" parent="." index="8"]
