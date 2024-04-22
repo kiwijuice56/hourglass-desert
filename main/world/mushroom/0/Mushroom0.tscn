@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyf4tcpq3on63"]
+
+[ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_8eaxv"]
+[ext_resource type="TileSet" uid="uid://dbyx8lqgdu0bk" path="res://main/prop/tileset/mushroom/mushroom_tileset.tres" id="2_m5oqh"]
+
+[node name="Mushroom" instance=ExtResource("1_8eaxv")]
+
+[node name="FloorTileMap" parent="." index="0"]
+tile_set = ExtResource("2_m5oqh")
+layer_0/tile_data = PackedInt32Array(262150, 196608, 0, 327686, 196608, 1, 393222, 196608, 2, 262151, 262144, 0, 327687, 262144, 1, 393223, 262144, 2, 262152, 327680, 0, 327688, 327680, 1, 393224, 327680, 2, 458766, 196608, 0, 524302, 196608, 1, 589838, 196608, 2, 458767, 262144, 0, 524303, 262144, 1, 589839, 262144, 2, 458768, 327680, 0, 524304, 327680, 1, 589840, 327680, 2, 327690, 65536, 1, 131077, 0, 1, 524295, 65536, 1, 655365, 65536, 1, 720910, 65536, 0, 458764, 131072, 0, 589842, 0, 0, 917508, 0, 2, 1114118, 0, 2, 1048580, 131072, 2, 1114130, 65536, 4, 1179666, 65536, 5, 1114131, 131072, 4, 1179667, 131072, 5, 1114128, 0, 4, 917522, 0, 4, 1310734, 0, 5, 1114124, 0, 5, 1245204, 0, 5, 1572879, 0, 5, 1245193, 65536, 3)
+
+[node name="Default" type="Marker2D" parent="Anchors" index="0"]
+position = Vector2(8, 8)
