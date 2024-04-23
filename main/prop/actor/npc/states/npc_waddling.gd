@@ -1,6 +1,7 @@
 class_name NpcWaddling
 extends State
 
+@export var waddle_animation_name: String = "waddle"
 @export var waddle_time: float
 @export_range(1, 2) var speed_multiplier: int = 1
 
@@ -17,7 +18,7 @@ func enter(data: Dictionary = {}) -> void:
 		return
 	
 	npc.anim.speed_scale = speed_multiplier
-	npc.anim.play("waddle")
+	npc.anim.play(waddle_animation_name)
 	
 	npc.move(direction, waddle_time, speed_multiplier)
 	await npc.moved

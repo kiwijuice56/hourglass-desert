@@ -1,13 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyf4tcpq3on63"]
+[gd_scene load_steps=6 format=3 uid="uid://dyf4tcpq3on63"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_8eaxv"]
 [ext_resource type="TileSet" uid="uid://dbyx8lqgdu0bk" path="res://main/prop/tileset/mushroom/mushroom_tileset.tres" id="2_m5oqh"]
+[ext_resource type="PackedScene" uid="uid://bm4kjj18sdy5" path="res://main/prop/actor/npc/carrot/Carrot.tscn" id="3_aprhh"]
+[ext_resource type="AudioStream" uid="uid://drg2hojvv3jch" path="res://main/prop/music/droneee.ogg" id="3_g5mxu"]
+[ext_resource type="AudioStream" uid="uid://dr7to0gwtwoh6" path="res://main/prop/music/windyday.ogg" id="4_27b1o"]
 
 [node name="Mushroom" instance=ExtResource("1_8eaxv")]
 
 [node name="FloorTileMap" parent="." index="0"]
 tile_set = ExtResource("2_m5oqh")
-layer_0/tile_data = PackedInt32Array(262150, 196608, 0, 327686, 196608, 1, 393222, 196608, 2, 262151, 262144, 0, 327687, 262144, 1, 393223, 262144, 2, 262152, 327680, 0, 327688, 327680, 1, 393224, 327680, 2, 458766, 196608, 0, 524302, 196608, 1, 589838, 196608, 2, 458767, 262144, 0, 524303, 262144, 1, 589839, 262144, 2, 458768, 327680, 0, 524304, 327680, 1, 589840, 327680, 2, 327690, 65536, 1, 131077, 0, 1, 524295, 65536, 1, 655365, 65536, 1, 720910, 65536, 0, 458764, 131072, 0, 589842, 0, 0, 917508, 0, 2, 1114118, 0, 2, 1048580, 131072, 2, 1114130, 65536, 4, 1179666, 65536, 5, 1114131, 131072, 4, 1179667, 131072, 5, 1114128, 0, 4, 917522, 0, 4, 1310734, 0, 5, 1114124, 0, 5, 1245204, 0, 5, 1572879, 0, 5, 1245193, 65536, 3)
+layer_0/tile_data = PackedInt32Array(262150, 196608, 0, 327686, 196608, 1, 393222, 196608, 2, 262151, 262144, 0, 327687, 262144, 1, 393223, 262144, 2, 262152, 327680, 0, 327688, 327680, 1, 393224, 327680, 2, 458766, 196608, 0, 524302, 196608, 1, 589838, 196608, 2, 458767, 262144, 0, 524303, 262144, 1, 589839, 262144, 2, 458768, 327680, 0, 524304, 327680, 1, 589840, 327680, 2, 327690, 65536, 1, 131077, 0, 1, 720910, 65536, 0, 458764, 131072, 0, 524290, 65536, 1, 458757, 131072, 1, 917511, 196608, 0, 983047, 196608, 1, 1048583, 196608, 2, 917512, 262144, 0, 983048, 262144, 1, 1048584, 262144, 2, 917513, 327680, 0, 983049, 327680, 1, 1048585, 327680, 2, 1114123, 0, 2, 1048581, 0, 2, 1179654, 65536, 2, 1048594, 196608, 0, 1114130, 196608, 1, 1179666, 196608, 2, 1048595, 262144, 0, 1114131, 262144, 1, 1179667, 262144, 2, 1048596, 327680, 0, 1114132, 327680, 1, 1179668, 327680, 2, 1048599, 196608, 0, 1114135, 196608, 1, 1179671, 196608, 2, 1048600, 262144, 0, 1114136, 262144, 1, 1179672, 262144, 2, 1048601, 327680, 0, 1114137, 327680, 1, 1179673, 327680, 2, 1048604, 196608, 0, 1114140, 196608, 1, 1179676, 196608, 2, 1048605, 262144, 0, 1114141, 262144, 1, 1179677, 262144, 2, 1048606, 327680, 0, 1114142, 327680, 1, 1179678, 327680, 2, 1310737, 0, 1, 1376283, 131072, 1, 983067, 65536, 0, 851991, 0, 0, 917521, 131072, 0)
+
+[node name="MusicStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_g5mxu")
+volume_db = -24.0
+pitch_scale = 0.5
+autoplay = true
+
+[node name="Wind" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("4_27b1o")
+volume_db = -38.0
+autoplay = true
 
 [node name="Default" type="Marker2D" parent="Anchors" index="0"]
 position = Vector2(8, 8)
+
+[node name="Carrot" parent="Life" index="0" instance=ExtResource("3_aprhh")]
+position = Vector2(136, 136)
+
+[node name="Carrot2" parent="Life" index="1" instance=ExtResource("3_aprhh")]
+position = Vector2(200, 168)
+
+[node name="Carrot3" parent="Life" index="2" instance=ExtResource("3_aprhh")]
+position = Vector2(376, 328)
+
+[node name="Carrot4" parent="Life" index="3" instance=ExtResource("3_aprhh")]
+position = Vector2(416, 328)
+
+[node name="Carrot5" parent="Life" index="4" instance=ExtResource("3_aprhh")]
+position = Vector2(336, 328)
+
+[node name="Carrot6" parent="Life" index="5" instance=ExtResource("3_aprhh")]
+position = Vector2(432, 296)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Decoration" index="0"]
+energy = 0.25
+blend_mode = 1
