@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://dbyx8lqgdu0bk" path="res://main/world/mushroom/0/mushroom_tileset.tres" id="2_m5oqh"]
 [ext_resource type="PackedScene" uid="uid://bm4kjj18sdy5" path="res://main/prop/actor/npc/carrot/Carrot.tscn" id="3_aprhh"]
 [ext_resource type="AudioStream" uid="uid://drg2hojvv3jch" path="res://main/prop/music/droneee.ogg" id="3_g5mxu"]
-[ext_resource type="AudioStream" uid="uid://dr7to0gwtwoh6" path="res://main/prop/music/windyday.ogg" id="4_27b1o"]
+[ext_resource type="AudioStream" uid="uid://dr7to0gwtwoh6" path="res://main/prop/music/dry_wind.ogg" id="4_27b1o"]
 
 [node name="Mushroom" instance=ExtResource("1_8eaxv")]
 
