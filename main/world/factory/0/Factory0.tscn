@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bn1msh0q1088n"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_srxrn"]
-[ext_resource type="Texture2D" uid="uid://bplfunxbn5wkp" path="res://main/prop/tileset/factory/factory.tres" id="3_0jqp8"]
+[ext_resource type="Texture2D" uid="uid://bplfunxbn5wkp" path="res://main/world/factory/0/factory.tres" id="3_0jqp8"]
 [ext_resource type="AudioStream" uid="uid://da0wfpc8co72k" path="res://main/prop/music/factory.mp3" id="3_7ol11"]
 [ext_resource type="Texture2D" uid="uid://uidj82n1lqoi" path="res://main/prop/decoration/metal/vent.png" id="3_76fap"]
 [ext_resource type="PackedScene" uid="uid://bgceiwu4jqenl" path="res://main/prop/actor/npc/door/vent/Vent.tscn" id="3_cs76p"]

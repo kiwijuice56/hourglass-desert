@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_klj6d"]
 [ext_resource type="Texture2D" uid="uid://xkstbjv2iffb" path="res://main/prop/decoration/background/forest.png" id="2_v0twq"]
 [ext_resource type="Texture2D" uid="uid://drach6hnsbw3k" path="res://main/prop/light/point_light.webp" id="2_x8wbn"]
-[ext_resource type="TileSet" uid="uid://cbyt7sho8pntd" path="res://main/prop/tileset/highway/highway.tres" id="3_yhemt"]
+[ext_resource type="TileSet" uid="uid://cbyt7sho8pntd" path="res://main/world/highway/0/highway.tres" id="3_yhemt"]
 [ext_resource type="Texture2D" uid="uid://cnmitrbybvys0" path="res://icon.svg" id="4_ouwks"]
 
 [node name="Highway0" instance=ExtResource("1_klj6d")]

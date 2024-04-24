@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8mu08pxlsuhq"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_ba6ei"]
-[ext_resource type="Texture2D" uid="uid://b7dojm0rt6sd3" path="res://main/prop/tileset/gym/gym_tileset.png" id="2_fhxye"]
+[ext_resource type="Texture2D" uid="uid://b7dojm0rt6sd3" path="res://main/world/gym/0/gym_tileset.png" id="2_fhxye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6yy7"]
 texture = ExtResource("2_fhxye")

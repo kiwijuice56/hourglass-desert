@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt18kmbu6wpkk"
-path="res://.godot/imported/factory.png-641124e4458aca6387fc6a3ad55247ef.ctex"
+uid="uid://ctbja00rxakiv"
+path="res://.godot/imported/mushrooms.png-4baa6824e6348e8efb4338ced49288be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/factory/factory.png"
-dest_files=["res://.godot/imported/factory.png-641124e4458aca6387fc6a3ad55247ef.ctex"]
+source_file="res://main/world/mushroom/0/mushrooms.png"
+dest_files=["res://.godot/imported/mushrooms.png-4baa6824e6348e8efb4338ced49288be.ctex"]
 
 [params]
 

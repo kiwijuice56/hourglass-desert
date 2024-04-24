@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuw0nyhtud0ej"
-path="res://.godot/imported/factory_diffuse.png-e8b50da027e69bef8b5af91347c68ae0.ctex"
+uid="uid://clad74gdri8c0"
+path="res://.godot/imported/sand.png-73110ddb862b9b2314fdbedf7bb33bf3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/factory/factory_diffuse.png"
-dest_files=["res://.godot/imported/factory_diffuse.png-e8b50da027e69bef8b5af91347c68ae0.ctex"]
+source_file="res://main/world/silver_beach/0/sand.png"
+dest_files=["res://.godot/imported/sand.png-73110ddb862b9b2314fdbedf7bb33bf3.ctex"]
 
 [params]
 

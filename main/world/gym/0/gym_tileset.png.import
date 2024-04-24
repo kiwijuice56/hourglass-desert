@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpa8660hbddpf"
-path="res://.godot/imported/neon_tileset.png-026aef5d0060704e738cbda3effbe184.ctex"
+uid="uid://b7dojm0rt6sd3"
+path="res://.godot/imported/gym_tileset.png-369289c90e54edb29ab3012f120e3c62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/neon/neon_tileset.png"
-dest_files=["res://.godot/imported/neon_tileset.png-026aef5d0060704e738cbda3effbe184.ctex"]
+source_file="res://main/world/gym/0/gym_tileset.png"
+dest_files=["res://.godot/imported/gym_tileset.png-369289c90e54edb29ab3012f120e3c62.ctex"]
 
 [params]
 

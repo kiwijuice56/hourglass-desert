@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dyf4tcpq3on63"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_8eaxv"]
-[ext_resource type="TileSet" uid="uid://dbyx8lqgdu0bk" path="res://main/prop/tileset/mushroom/mushroom_tileset.tres" id="2_m5oqh"]
+[ext_resource type="TileSet" uid="uid://dbyx8lqgdu0bk" path="res://main/world/mushroom/0/mushroom_tileset.tres" id="2_m5oqh"]
 [ext_resource type="PackedScene" uid="uid://bm4kjj18sdy5" path="res://main/prop/actor/npc/carrot/Carrot.tscn" id="3_aprhh"]
 [ext_resource type="AudioStream" uid="uid://drg2hojvv3jch" path="res://main/prop/music/droneee.ogg" id="3_g5mxu"]
 [ext_resource type="AudioStream" uid="uid://dr7to0gwtwoh6" path="res://main/prop/music/windyday.ogg" id="4_27b1o"]
@@ -20,7 +20,7 @@ autoplay = true
 
 [node name="Wind" type="AudioStreamPlayer" parent="." index="4"]
 stream = ExtResource("4_27b1o")
-volume_db = -38.0
+volume_db = -32.0
 autoplay = true
 
 [node name="Default" type="Marker2D" parent="Anchors" index="0"]

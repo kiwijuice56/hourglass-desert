@@ -54,11 +54,10 @@ shader_parameter/img = ExtResource("3_3gmpc")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crvoh"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0jyy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0ex0"]
 size = Vector2(16, 16)
 
 [node name="Duckling" instance=ExtResource("1_bbajf")]
-visible = false
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
@@ -81,7 +80,7 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_crvoh")
 
 [node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
-shape = SubResource("RectangleShape2D_o0jyy")
+shape = SubResource("RectangleShape2D_w0ex0")
 
 [node name="StateMachine" parent="." index="6" node_paths=PackedStringArray("initial_state")]
 initial_state = NodePath("NpcIdling")
@@ -102,7 +101,7 @@ idle_timer = NodePath("../../IdleTimer")
 [node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource("8_rqfp8")
 volume_db = 4.0
-bus = &"Music"
+bus = &"Sound Effects"
 
 [node name="NpcInteractSound" type="Node" parent="Triggers" index="0" node_paths=PackedStringArray("sound_player", "controller")]
 script = ExtResource("6_n64tb")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_cx21k"]
 [ext_resource type="Shader" path="res://main/prop/shader/fractal/fractal.gdshader" id="3_0r4in"]
-[ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/prop/tileset/neon/neon_tileset.tres" id="3_4e57g"]
+[ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/world/neon/0/neon_tileset.tres" id="3_4e57g"]
 [ext_resource type="PackedScene" uid="uid://bqrg5hqm65mjn" path="res://main/prop/actor/npc/shelmet/Shelmet.tscn" id="3_wpit5"]
 [ext_resource type="AudioStream" uid="uid://ccp00vh1hmfc2" path="res://main/prop/music/wind_hum.mp3" id="3_yajxm"]
 [ext_resource type="Script" path="res://main/prop/shader/fractal/fractal_navigation.gd" id="4_yhv5s"]

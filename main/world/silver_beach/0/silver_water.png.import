@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7dojm0rt6sd3"
-path="res://.godot/imported/gym_tileset.png-05c27a97e7cbcd65d5cb607de55aaa55.ctex"
+uid="uid://w3lw21abv5j1"
+path="res://.godot/imported/silver_water.png-9244bef33dd134203feb979c91e1d041.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/gym/gym_tileset.png"
-dest_files=["res://.godot/imported/gym_tileset.png-05c27a97e7cbcd65d5cb607de55aaa55.ctex"]
+source_file="res://main/world/silver_beach/0/silver_water.png"
+dest_files=["res://.godot/imported/silver_water.png-9244bef33dd134203feb979c91e1d041.ctex"]
 
 [params]
 

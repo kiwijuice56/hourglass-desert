@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctbja00rxakiv"
-path="res://.godot/imported/mushrooms.png-81690396982c2ee6d395b211a29e2a75.ctex"
+uid="uid://c01h37cfdjdk1"
+path="res://.godot/imported/highway.png-037bf65a4bbc9035f91b6c9316ae7424.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/mushroom/mushrooms.png"
-dest_files=["res://.godot/imported/mushrooms.png-81690396982c2ee6d395b211a29e2a75.ctex"]
+source_file="res://main/world/highway/0/highway.png"
+dest_files=["res://.godot/imported/highway.png-037bf65a4bbc9035f91b6c9316ae7424.ctex"]
 
 [params]
 

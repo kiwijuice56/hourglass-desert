@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c3plwlwraeysl"]
 
-[ext_resource type="Texture2D" uid="uid://cn56gc3f3vdn2" path="res://main/prop/tileset/castle/castle_tilesheet.png" id="1_j3175"]
-[ext_resource type="Texture2D" uid="uid://clad74gdri8c0" path="res://main/prop/tileset/silver_water/sand.png" id="2_u3f3n"]
+[ext_resource type="Texture2D" uid="uid://cn56gc3f3vdn2" path="res://main/world/castle/0/castle_tilesheet.png" id="1_j3175"]
+[ext_resource type="Texture2D" uid="uid://clad74gdri8c0" path="res://main/world/silver_beach/0/sand.png" id="2_u3f3n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnql5"]
 texture = ExtResource("1_j3175")

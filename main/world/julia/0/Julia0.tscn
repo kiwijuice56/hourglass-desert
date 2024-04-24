@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://77c26kovsdhj"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_ldkps"]
-[ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/prop/tileset/neon/neon_tileset.tres" id="2_iikxy"]
+[ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/world/neon/0/neon_tileset.tres" id="2_iikxy"]
 [ext_resource type="AudioStream" uid="uid://ccp00vh1hmfc2" path="res://main/prop/music/wind_hum.mp3" id="3_efbmm"]
 [ext_resource type="PackedScene" uid="uid://bqrg5hqm65mjn" path="res://main/prop/actor/npc/shelmet/Shelmet.tscn" id="4_dfn8k"]
 [ext_resource type="Shader" path="res://main/prop/shader/julia/julia.gdshader" id="5_33h3d"]

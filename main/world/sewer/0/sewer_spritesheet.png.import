@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w3lw21abv5j1"
-path="res://.godot/imported/silver_water.png-bfd17030569eb92f1ec3532650b3f059.ctex"
+uid="uid://dcw4akn3f4qgs"
+path="res://.godot/imported/sewer_spritesheet.png-afbae0e6e809e4cfebce1f6522dd77ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/silver_water/silver_water.png"
-dest_files=["res://.godot/imported/silver_water.png-bfd17030569eb92f1ec3532650b3f059.ctex"]
+source_file="res://main/world/sewer/0/sewer_spritesheet.png"
+dest_files=["res://.godot/imported/sewer_spritesheet.png-afbae0e6e809e4cfebce1f6522dd77ae.ctex"]
 
 [params]
 

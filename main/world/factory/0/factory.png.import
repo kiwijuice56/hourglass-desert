@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn56gc3f3vdn2"
-path="res://.godot/imported/castle_tilesheet.png-e93f7d35c3e089f1e5ab5fe2d4a7d8ef.ctex"
+uid="uid://bt18kmbu6wpkk"
+path="res://.godot/imported/factory.png-eed9b23d387060fbb77b43e0f24ffa16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/castle/castle_tilesheet.png"
-dest_files=["res://.godot/imported/castle_tilesheet.png-e93f7d35c3e089f1e5ab5fe2d4a7d8ef.ctex"]
+source_file="res://main/world/factory/0/factory.png"
+dest_files=["res://.godot/imported/factory.png-eed9b23d387060fbb77b43e0f24ffa16.ctex"]
 
 [params]
 

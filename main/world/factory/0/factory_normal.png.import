@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c01h37cfdjdk1"
-path="res://.godot/imported/highway.png-c651315e01d6813d10d6d1b02aafed66.ctex"
+uid="uid://vudh1tckgspw"
+path="res://.godot/imported/factory_normal.png-a31a56920c95f5cd7adb4e6fcee0d66b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/highway/highway.png"
-dest_files=["res://.godot/imported/highway.png-c651315e01d6813d10d6d1b02aafed66.ctex"]
+source_file="res://main/world/factory/0/factory_normal.png"
+dest_files=["res://.godot/imported/factory_normal.png-a31a56920c95f5cd7adb4e6fcee0d66b.ctex"]
 
 [params]
 

@@ -24,11 +24,11 @@ func _ready() -> void:
 	CommonReference.main.enabled.connect(set.bind("disabled", false))
 
 func disable() -> void:
-	hitbox.get_child(0).call_deferred("set", "disabled", true)
+	# hitbox.get_child(0).call_deferred("set", "disabled", true)
 	movement_timer.paused = true
 
 func enable() -> void:
-	hitbox.get_child(0).call_deferred("set", "disabled", false)
+	# hitbox.get_child(0).call_deferred("set", "disabled", false)
 	movement_timer.paused = false
 
 # Moves this actor by 16 pixels, pixel-by-pixel to prevent jitter

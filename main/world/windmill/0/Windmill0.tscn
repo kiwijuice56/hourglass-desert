@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_lqt7j"]
 [ext_resource type="Texture2D" uid="uid://8nsckffcwljb" path="res://main/prop/decoration/background/windmills.png" id="2_xn4w0"]
-[ext_resource type="TileSet" uid="uid://cbyt7sho8pntd" path="res://main/prop/tileset/highway/highway.tres" id="3_73u6h"]
+[ext_resource type="TileSet" uid="uid://cbyt7sho8pntd" path="res://main/world/highway/0/highway.tres" id="3_73u6h"]
 
 [node name="Windmill0" instance=ExtResource("1_lqt7j")]
 

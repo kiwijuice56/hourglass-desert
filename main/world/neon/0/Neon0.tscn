@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_ejlcm"]
 [ext_resource type="Shader" path="res://main/prop/shader/neon/neon.gdshader" id="2_h71x5"]
 [ext_resource type="Texture2D" uid="uid://m704t6ie1p6" path="res://main/prop/shader/neon/stars.png" id="3_rfwa7"]
-[ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/prop/tileset/neon/neon_tileset.tres" id="4_h01bc"]
+[ext_resource type="TileSet" uid="uid://dg6hsy80bdyrp" path="res://main/world/neon/0/neon_tileset.tres" id="4_h01bc"]
 [ext_resource type="Texture2D" uid="uid://bbbo0xiekkrwp" path="res://main/prop/shader/neon/img.png" id="4_paw06"]
 [ext_resource type="PackedScene" uid="uid://gesp14e7bl63" path="res://main/prop/actor/npc/duckling/Duckling.tscn" id="5_ojtw5"]
 [ext_resource type="PackedScene" uid="uid://bqrg5hqm65mjn" path="res://main/prop/actor/npc/shelmet/Shelmet.tscn" id="5_om6dr"]
@@ -33,19 +33,15 @@ position = Vector2(1480, 1256)
 position = Vector2(1480, 1240)
 
 [node name="Duckling21" parent="Life" index="1" instance=ExtResource("5_ojtw5")]
-visible = true
 position = Vector2(1384, 824)
 
 [node name="Duckling22" parent="Life" index="2" instance=ExtResource("5_ojtw5")]
-visible = true
 position = Vector2(1416, 856)
 
 [node name="Duckling23" parent="Life" index="3" instance=ExtResource("5_ojtw5")]
-visible = true
 position = Vector2(1416, 808)
 
 [node name="Duckling24" parent="Life" index="4" instance=ExtResource("5_ojtw5")]
-visible = true
 position = Vector2(1448, 840)
 
 [editable path="Life/Shelmet"]

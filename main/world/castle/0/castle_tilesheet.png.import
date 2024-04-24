@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clad74gdri8c0"
-path="res://.godot/imported/sand.png-5693116cb672004d5210c730d7c79d5f.ctex"
+uid="uid://cn56gc3f3vdn2"
+path="res://.godot/imported/castle_tilesheet.png-5a64eb5b46aabac3a91beb3e0a0ed432.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/prop/tileset/silver_water/sand.png"
-dest_files=["res://.godot/imported/sand.png-5693116cb672004d5210c730d7c79d5f.ctex"]
+source_file="res://main/world/castle/0/castle_tilesheet.png"
+dest_files=["res://.godot/imported/castle_tilesheet.png-5a64eb5b46aabac3a91beb3e0a0ed432.ctex"]
 
 [params]
 

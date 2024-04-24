@@ -16,4 +16,4 @@ func enter(_data: Dictionary = {}) -> void:
 	else:
 		await player.switch_effect(new_effect)
 	CommonReference.main.enable_all_actors()
-	state_machine.transition_to("PlayerIdling")
+	state_machine.transition_to.call_deferred("PlayerIdling")
