@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://bakn4t32e3i0t"]
+
+[ext_resource type="PackedScene" uid="uid://cp23pgq1h8gbh" path="res://main/prop/actor/npc/door/Door.tscn" id="1_kglru"]
+[ext_resource type="Texture2D" uid="uid://cw8yj3o71fa31" path="res://main/prop/actor/npc/door/swing_door/desert_door.png" id="2_65j4t"]
+[ext_resource type="AudioStream" uid="uid://cp56b3q4yfvrp" path="res://main/prop/actor/npc/door/swing_door/door.wav" id="3_v0lp3"]
+
+[sub_resource type="Animation" id="Animation_s4upw"]
+resource_name = "open_door"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.0003, 0.0004, 0.0005, 0.0006, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0, 0, 0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DoorStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ceex7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DoorStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3cu7"]
+_data = {
+"RESET": SubResource("Animation_ceex7"),
+"open_door": SubResource("Animation_s4upw")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ele02"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f5jb"]
+size = Vector2(16, 32)
+
+[node name="SwingDoor" instance=ExtResource("1_kglru")]
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_o3cu7")
+}
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_65j4t")
+hframes = 3
+
+[node name="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]
+shape = SubResource("RectangleShape2D_ele02")
+
+[node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
+shape = SubResource("RectangleShape2D_2f5jb")
+
+[node name="NpcInteractTeleport" parent="Triggers" index="0"]
+interact_animation_name = "open_door"
+
+[node name="DoorStreamPlayer" parent="." index="9"]
+stream = ExtResource("3_v0lp3")
+volume_db = -12.0
+pitch_scale = 1.2
+bus = &"Sound Effects"

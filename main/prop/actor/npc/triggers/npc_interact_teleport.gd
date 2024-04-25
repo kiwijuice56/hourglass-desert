@@ -1,6 +1,7 @@
 class_name NpcInteractTeleport
 extends NpcInteract
 
+@export var interact_animation_name: String
 @export var world: String
 @export var anchor: String
 @export_flags("up", "left", "down", "right") var allowed_direction: int = 15
@@ -19,6 +20,6 @@ func _on_area_entered(area: Area2D) -> void:
 		return
 	
 	CommonReference.player.disabled = true
-	npc.anim.play("npc_interact_teleport_trigger")
+	npc.anim.play(interact_animation_name)
 	await npc.anim.animation_finished
 	CommonReference.main.call_deferred("switch_world", world, anchor, 0)

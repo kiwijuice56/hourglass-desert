@@ -18,7 +18,7 @@ func _ready() -> void:
 	switch_world("SilverBeach", "Default")
 
 # world_name must match the name of a folder within WORLD_PATH
-func switch_world(world_name: String, anchor_name: String, transition: int = -1) -> void:
+func switch_world(world_name: String, anchor_name: String, transition: int = -1, new_player_dir: String = "down") -> void:
 	disable_all_actors()
 	if transition != -1:
 		await CommonReference.transition.trans_in(transition)
@@ -54,8 +54,10 @@ func switch_world(world_name: String, anchor_name: String, transition: int = -1)
 	CommonReference.player.camera.limit_right = current_world.camera_limit_right
 	CommonReference.player.camera.limit_bottom = current_world.camera_limit_bottom
 	
-	# Set the player's position
+	# Set the player's position and direction
 	CommonReference.player.global_position = current_world.anchors.get_node(anchor_name).global_position
+	CommonReference.player.anim.play("idle_" + new_player_dir) 
+	CommonReference.player.direction = new_player_dir
 	if transition != -1:
 		await CommonReference.transition.trans_out(transition)
 	enable_all_actors()

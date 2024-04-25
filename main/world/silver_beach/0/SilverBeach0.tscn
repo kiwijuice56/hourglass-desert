@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://q0n3euyfn8jh"]
+[gd_scene load_steps=22 format=3 uid="uid://q0n3euyfn8jh"]
 
 [ext_resource type="PackedScene" uid="uid://xtqh5yahqo5k" path="res://main/world/World.tscn" id="1_2r11y"]
 [ext_resource type="TileSet" uid="uid://bmrp4gb6tjebt" path="res://main/world/silver_beach/0/beach_tileset.tres" id="2_mir0w"]
@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bqip3meem4m7j" path="res://main/prop/decoration/nature/root.png" id="4_7yx1v"]
 [ext_resource type="Texture2D" uid="uid://bdyjdqghnigdj" path="res://main/prop/decoration/creature/water_girl.png" id="4_h0c6t"]
 [ext_resource type="Texture2D" uid="uid://b0cuocjy2avk3" path="res://main/prop/decoration/nature/rock2.png" id="5_4dqel"]
-[ext_resource type="PackedScene" uid="uid://cp23pgq1h8gbh" path="res://main/prop/actor/npc/door/Door.tscn" id="5_hfd8w"]
-[ext_resource type="Texture2D" uid="uid://dpyc5rfx04fpa" path="res://main/prop/actor/npc/door/hole/hole.png" id="6_fb7db"]
+[ext_resource type="PackedScene" uid="uid://bakn4t32e3i0t" path="res://main/prop/actor/npc/door/swing_door/SwingDoor.tscn" id="5_myl0m"]
 [ext_resource type="Texture2D" uid="uid://ba2e174ud16qr" path="res://main/prop/decoration/nature/rock1.png" id="6_hy26d"]
 [ext_resource type="Texture2D" uid="uid://d0k38ry2vytt6" path="res://main/prop/decoration/nature/rock3.png" id="6_s3jf2"]
 [ext_resource type="Texture2D" uid="uid://dte57vtisb417" path="res://main/prop/decoration/nature/rock4.png" id="7_cetnt"]
@@ -36,9 +35,6 @@ texture = ExtResource("3_cjrq1")
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_5b7ra")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eura5"]
-size = Vector2(32, 32)
 
 [sub_resource type="Animation" id="Animation_2kqvd"]
 length = 0.001
@@ -113,21 +109,19 @@ autoplay = true
 [node name="Default" type="Marker2D" parent="Anchors" index="0"]
 position = Vector2(-568, -8)
 
-[node name="Door" parent="Doors" index="0" instance=ExtResource("5_hfd8w")]
-position = Vector2(-560, 48)
+[node name="Door" type="Marker2D" parent="Anchors" index="1"]
+position = Vector2(-488, 8)
 
-[node name="Sprite2D" parent="Doors/Door" index="2"]
-texture = ExtResource("6_fb7db")
+[node name="SwingDoor" parent="Doors" index="0" instance=ExtResource("5_myl0m")]
+position = Vector2(-488, -16)
 
-[node name="CollisionShape2D" parent="Doors/Door/InteractDetectionArea2D" index="0"]
-shape = SubResource("RectangleShape2D_eura5")
+[node name="Sprite2D" parent="Doors/SwingDoor" index="2"]
+script = null
 
-[node name="CollisionShape2D" parent="Doors/Door/HitboxArea2D" index="0"]
-shape = SubResource("RectangleShape2D_eura5")
-
-[node name="NpcInteractTeleport" parent="Doors/Door/Triggers" index="0"]
+[node name="NpcInteractTeleport" parent="Doors/SwingDoor/Triggers" index="0"]
 world = "Sewer"
 anchor = "Default"
+allowed_direction = 1
 
 [node name="Rocks" type="Node" parent="Decoration" index="0"]
 
@@ -731,4 +725,4 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("13_omqbh")
 
-[editable path="Doors/Door"]
+[editable path="Doors/SwingDoor"]

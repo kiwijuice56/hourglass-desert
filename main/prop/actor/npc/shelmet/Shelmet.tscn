@@ -52,7 +52,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_5b0td"]
-resource_name = "npc_interact_teleport_trigger"
+resource_name = "bop"
 length = 0.15
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -82,8 +82,8 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5qy57"]
 _data = {
 "RESET": SubResource("Animation_ujijr"),
-"idle": SubResource("Animation_juokj"),
-"npc_interact_teleport_trigger": SubResource("Animation_5b0td")
+"bop": SubResource("Animation_5b0td"),
+"idle": SubResource("Animation_juokj")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1dbm"]
@@ -95,11 +95,11 @@ size = Vector2(16, 32)
 [node name="Shelmet" instance=ExtResource("1_6m474")]
 
 [node name="AnimationPlayer" parent="." index="1"]
-autoplay = "idle"
-speed_scale = 0.4
 libraries = {
 "": SubResource("AnimationLibrary_5qy57")
 }
+autoplay = "idle"
+speed_scale = 0.4
 
 [node name="Sprite2D" parent="." index="2"]
 position = Vector2(0, -6)
@@ -136,6 +136,7 @@ bus = &"Sound Effects"
 
 [node name="NpcInteractTeleport" type="Node" parent="Triggers" index="0" node_paths=PackedStringArray("controller")]
 script = ExtResource("4_kiqmu")
+interact_animation_name = "bop"
 world = "Fractal"
 anchor = "Default"
 supported_effects = 3

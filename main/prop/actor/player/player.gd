@@ -18,7 +18,6 @@ const DIRECTION_MAP: Dictionary = {
 const EFFECT_MAP: Dictionary = {
 	Effect.NORMAL: "normal",
 	Effect.DUCKLING: "duckling"
-	
 }
 
 const SPRITE_DIR: String = "res://main/prop/actor/player/sprites/"
