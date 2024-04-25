@@ -110,13 +110,10 @@ autoplay = true
 position = Vector2(-568, -8)
 
 [node name="Door" type="Marker2D" parent="Anchors" index="1"]
-position = Vector2(-488, 8)
+position = Vector2(424, 8)
 
 [node name="SwingDoor" parent="Doors" index="0" instance=ExtResource("5_myl0m")]
-position = Vector2(-488, -16)
-
-[node name="Sprite2D" parent="Doors/SwingDoor" index="2"]
-script = null
+position = Vector2(424, -16)
 
 [node name="NpcInteractTeleport" parent="Doors/SwingDoor/Triggers" index="0"]
 world = "Sewer"
