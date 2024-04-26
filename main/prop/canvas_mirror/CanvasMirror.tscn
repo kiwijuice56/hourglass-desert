@@ -32,6 +32,8 @@ script = ExtResource("1_v6q1o")
 
 [node name="LeftMirror" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+process_priority = 1
+process_physics_priority = 1
 position = Vector2(-158, 122)
 texture = SubResource("ViewportTexture_mafs1")
 script = ExtResource("2_pfv0h")
@@ -39,24 +41,32 @@ copy_x = false
 
 [node name="RightMirror" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+process_priority = 1
+process_physics_priority = 1
 texture = SubResource("ViewportTexture_4of2v")
 script = ExtResource("2_pfv0h")
 copy_x = false
 
 [node name="TopMirror" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+process_priority = 1
+process_physics_priority = 1
 texture = SubResource("ViewportTexture_wiggp")
 script = ExtResource("2_pfv0h")
 copy_y = false
 
 [node name="BottomMirror" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+process_priority = 1
+process_physics_priority = 1
 texture = SubResource("ViewportTexture_6ywpu")
 script = ExtResource("2_pfv0h")
 copy_y = false
 
 [node name="TopLeftMirror" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+process_priority = 1
+process_physics_priority = 1
 position = Vector2(-157, -124)
 texture = SubResource("ViewportTexture_mom46")
 script = ExtResource("2_pfv0h")
@@ -65,6 +75,8 @@ copy_y = false
 
 [node name="TopRightMirror" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+process_priority = 1
+process_physics_priority = 1
 position = Vector2(-157, -124)
 texture = SubResource("ViewportTexture_s1bim")
 script = ExtResource("2_pfv0h")
@@ -73,6 +85,8 @@ copy_y = false
 
 [node name="BottomLeftMirror" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+process_priority = 1
+process_physics_priority = 1
 position = Vector2(-157, -124)
 texture = SubResource("ViewportTexture_ynwn6")
 script = ExtResource("2_pfv0h")
@@ -81,6 +95,8 @@ copy_y = false
 
 [node name="BottomRightMirror" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+process_priority = 1
+process_physics_priority = 1
 position = Vector2(-157, -124)
 texture = SubResource("ViewportTexture_o5aqt")
 script = ExtResource("2_pfv0h")
@@ -88,12 +104,16 @@ copy_x = false
 copy_y = false
 
 [node name="LeftViewport" type="SubViewport" parent="."]
+snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
 size = Vector2i(316, 244)
 render_target_update_mode = 4
 
 [node name="LeftCamera" type="Camera2D" parent="LeftViewport"]
 unique_name_in_owner = true
+process_priority = 2
+process_physics_priority = 2
 drag_left_margin = 0.0
 drag_top_margin = 0.0
 drag_right_margin = 0.0
@@ -102,75 +122,103 @@ script = ExtResource("2_pfv0h")
 copy_x = false
 
 [node name="RightViewport" type="SubViewport" parent="."]
+snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
 size = Vector2i(316, 244)
 render_target_update_mode = 4
 
 [node name="RightCamera" type="Camera2D" parent="RightViewport"]
 unique_name_in_owner = true
+process_priority = 2
+process_physics_priority = 2
 script = ExtResource("2_pfv0h")
 copy_x = false
 
 [node name="TopViewport" type="SubViewport" parent="."]
+snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
 size = Vector2i(316, 244)
 render_target_update_mode = 4
 
 [node name="TopCamera" type="Camera2D" parent="TopViewport"]
 unique_name_in_owner = true
+process_priority = 2
+process_physics_priority = 2
 script = ExtResource("2_pfv0h")
 copy_y = false
 
 [node name="BottomViewport" type="SubViewport" parent="."]
+snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
 size = Vector2i(316, 244)
 render_target_update_mode = 4
 
 [node name="BottomCamera" type="Camera2D" parent="BottomViewport"]
 unique_name_in_owner = true
+process_priority = 2
+process_physics_priority = 2
 script = ExtResource("2_pfv0h")
 copy_y = false
 
 [node name="TopLeftViewport" type="SubViewport" parent="."]
+snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
 size = Vector2i(316, 244)
 render_target_update_mode = 4
 
 [node name="TopLeftCamera" type="Camera2D" parent="TopLeftViewport"]
 unique_name_in_owner = true
+process_priority = 2
+process_physics_priority = 2
 script = ExtResource("2_pfv0h")
 copy_x = false
 copy_y = false
 
 [node name="TopRightViewport" type="SubViewport" parent="."]
+snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
 size = Vector2i(316, 244)
 render_target_update_mode = 4
 
 [node name="TopRightCamera" type="Camera2D" parent="TopRightViewport"]
 unique_name_in_owner = true
+process_priority = 2
+process_physics_priority = 2
 script = ExtResource("2_pfv0h")
 copy_x = false
 copy_y = false
 
 [node name="BottomLeftViewport" type="SubViewport" parent="."]
+snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
 size = Vector2i(316, 244)
 render_target_update_mode = 4
 
 [node name="BottomLeftCamera" type="Camera2D" parent="BottomLeftViewport"]
 unique_name_in_owner = true
+process_priority = 2
+process_physics_priority = 2
 script = ExtResource("2_pfv0h")
 copy_x = false
 copy_y = false
 
 [node name="BottomRightViewport" type="SubViewport" parent="."]
+snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
 size = Vector2i(316, 244)
 render_target_update_mode = 4
 
 [node name="BottomRightCamera" type="Camera2D" parent="BottomRightViewport"]
 unique_name_in_owner = true
+process_priority = 2
+process_physics_priority = 2
 script = ExtResource("2_pfv0h")
 copy_x = false
 copy_y = false

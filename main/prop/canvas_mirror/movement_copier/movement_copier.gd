@@ -8,13 +8,8 @@ extends Node2D
 @export var copy_y: bool = true
 @export var bounding_box: Vector2
 
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not is_instance_valid(target):
 		return
 	
-	global_position = Vector2()
-	if copy_x:
-		global_position.x = target.global_position.x
-	if copy_y:
-		global_position.y = target.global_position.y
-	global_position += shift
+	global_position = shift + Vector2(target.global_position.x if copy_x else 0, target.global_position.y if copy_y else 0)
