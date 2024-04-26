@@ -8,7 +8,7 @@ extends Node2D
 @export var copy_y: bool = true
 @export var bounding_box: Vector2
 
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not is_instance_valid(target):
 		return
 	

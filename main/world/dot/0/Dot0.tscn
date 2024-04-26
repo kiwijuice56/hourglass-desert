@@ -106,18 +106,18 @@ scale = Vector2(1.02632, 1.02632)
 texture = ExtResource("3_r1c1i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DotPlot/DotPlot" index="0"]
-autoplay = "waddle"
-speed_scale = 0.7
 libraries = {
 "": SubResource("AnimationLibrary_s8i4n")
 }
+autoplay = "waddle"
+speed_scale = 0.7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DotPlot" index="1"]
-autoplay = "spin"
-speed_scale = 0.01
 libraries = {
 "": SubResource("AnimationLibrary_nwrdb")
 }
+autoplay = "spin"
+speed_scale = 0.01
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="9"]
 
