@@ -13,7 +13,7 @@ config_version=5
 config/name="hourglass-desert"
 run/main_scene="res://main/Main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-run/max_fps=240
+run/max_fps=360
 config/icon="res://icon.svg"
 
 [autoload]

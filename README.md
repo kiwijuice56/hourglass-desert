@@ -16,4 +16,4 @@ A `disabled` `Actor` scene is intended to be uninteractable and unchangeable, al
 ## Known Bugs
 - The player can overlap with an NPC if both move into the same empty tile at roughly the same time
 - NPCs moving across a mirror border will sometimes flicker
-- CanvasMirror flickers at lower FPS
+- CanvasMirror flickers at lower FPS, or in some situations :(
