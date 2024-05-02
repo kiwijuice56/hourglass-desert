@@ -1,0 +1,207 @@
+[gd_scene load_steps=46 format=3 uid="uid://br1bkvnh1q7rl"]
+
+[ext_resource type="PackedScene" uid="uid://cp23pgq1h8gbh" path="res://main/prop/actor/npc/door/Door.tscn" id="1_2v8du"]
+[ext_resource type="Texture2D" uid="uid://lkr6tpp3sy1i" path="res://main/prop/actor/npc/door/cube/cube_sprites/0001.png" id="2_02n1c"]
+[ext_resource type="Texture2D" uid="uid://btnxqcqaq51ih" path="res://main/prop/actor/npc/door/cube/cube_sprites/0002.png" id="3_vq04a"]
+[ext_resource type="Texture2D" uid="uid://cc5ta4djdpicp" path="res://main/prop/actor/npc/door/cube/cube_sprites/0003.png" id="4_qqps6"]
+[ext_resource type="Texture2D" uid="uid://bxkc8ah1px3mq" path="res://main/prop/actor/npc/door/cube/cube_sprites/0004.png" id="5_8fubf"]
+[ext_resource type="Texture2D" uid="uid://te8hhqxw3ftj" path="res://main/prop/actor/npc/door/cube/cube_sprites/0005.png" id="6_mimka"]
+[ext_resource type="Texture2D" uid="uid://bhywvm01avqd4" path="res://main/prop/actor/npc/door/cube/cube_sprites/0006.png" id="7_tbmn1"]
+[ext_resource type="Texture2D" uid="uid://bux4egho7dbgi" path="res://main/prop/actor/npc/door/cube/cube_sprites/0007.png" id="8_lxpyc"]
+[ext_resource type="Texture2D" uid="uid://d2ulaxnk4brku" path="res://main/prop/actor/npc/door/cube/cube_sprites/0008.png" id="9_ipv3s"]
+[ext_resource type="Texture2D" uid="uid://dlnyq6isn5rfa" path="res://main/prop/actor/npc/door/cube/cube_sprites/0009.png" id="10_rqg6i"]
+[ext_resource type="Texture2D" uid="uid://cmw5cbhnvov3e" path="res://main/prop/actor/npc/door/cube/cube_sprites/0010.png" id="11_fjvl0"]
+[ext_resource type="Texture2D" uid="uid://bv1y1m0xdi3py" path="res://main/prop/actor/npc/door/cube/cube_sprites/0011.png" id="12_y3ib8"]
+[ext_resource type="Texture2D" uid="uid://brr1jvhil6wom" path="res://main/prop/actor/npc/door/cube/cube_sprites/0012.png" id="13_c5l6t"]
+[ext_resource type="Texture2D" uid="uid://chrns0r7fhh35" path="res://main/prop/actor/npc/door/cube/cube_sprites/0013.png" id="14_ee0nl"]
+[ext_resource type="Texture2D" uid="uid://dk4gva5b1y2ce" path="res://main/prop/actor/npc/door/cube/cube_sprites/0014.png" id="15_ru3jg"]
+[ext_resource type="Texture2D" uid="uid://ct6v3lfavg6jf" path="res://main/prop/actor/npc/door/cube/cube_sprites/0015.png" id="16_2scwt"]
+[ext_resource type="Texture2D" uid="uid://4nwg4ia3aqts" path="res://main/prop/actor/npc/door/cube/cube_sprites/0016.png" id="17_6xp01"]
+[ext_resource type="Texture2D" uid="uid://b2gmyo4b15nwp" path="res://main/prop/actor/npc/door/cube/cube_sprites/0017.png" id="18_37rgs"]
+[ext_resource type="Texture2D" uid="uid://bt6n6cxn5pmhn" path="res://main/prop/actor/npc/door/cube/cube_sprites/0018.png" id="19_vcc57"]
+[ext_resource type="Texture2D" uid="uid://yi3ngyubldy6" path="res://main/prop/actor/npc/door/cube/cube_sprites/0019.png" id="20_ohl14"]
+[ext_resource type="Texture2D" uid="uid://d278sl76bv404" path="res://main/prop/actor/npc/door/cube/cube_sprites/0020.png" id="21_wcyg3"]
+[ext_resource type="Texture2D" uid="uid://8e2dmmu4q00f" path="res://main/prop/actor/npc/door/cube/cube_sprites/0021.png" id="22_7lxuf"]
+[ext_resource type="Texture2D" uid="uid://cs71ysk2kkeep" path="res://main/prop/actor/npc/door/cube/cube_sprites/0022.png" id="23_k4s4h"]
+[ext_resource type="Texture2D" uid="uid://bhrd7imi3y1hv" path="res://main/prop/actor/npc/door/cube/cube_sprites/0023.png" id="24_8cnpv"]
+[ext_resource type="Texture2D" uid="uid://dea4abppxx04f" path="res://main/prop/actor/npc/door/cube/cube_sprites/0024.png" id="25_03sqg"]
+[ext_resource type="Texture2D" uid="uid://1ml3dym1o4kp" path="res://main/prop/actor/npc/door/cube/cube_sprites/0025.png" id="26_kmhos"]
+[ext_resource type="Texture2D" uid="uid://bc7vqjm3ngjbi" path="res://main/prop/actor/npc/door/cube/cube_sprites/0026.png" id="27_1c02t"]
+[ext_resource type="Texture2D" uid="uid://bon8dynocpl1y" path="res://main/prop/actor/npc/door/cube/cube_sprites/0027.png" id="28_ujlau"]
+[ext_resource type="Texture2D" uid="uid://cnt7yagaqq08f" path="res://main/prop/actor/npc/door/cube/cube_sprites/0028.png" id="29_yeie7"]
+[ext_resource type="Texture2D" uid="uid://gdmwrp7ol0uv" path="res://main/prop/actor/npc/door/cube/cube_sprites/0029.png" id="30_bag7g"]
+[ext_resource type="Texture2D" uid="uid://bfp8tl16ont6q" path="res://main/prop/actor/npc/door/cube/cube_sprites/0030.png" id="31_k4sd2"]
+[ext_resource type="Texture2D" uid="uid://smhhqdvop523" path="res://main/prop/actor/npc/door/cube/cube_sprites/0031.png" id="32_11w7h"]
+[ext_resource type="Texture2D" uid="uid://3ra1gfcd4mrg" path="res://main/prop/actor/npc/door/cube/cube_sprites/0032.png" id="33_eqc1x"]
+[ext_resource type="Texture2D" uid="uid://x07wcx60otxe" path="res://main/prop/actor/npc/door/cube/cube_sprites/0033.png" id="34_14rui"]
+[ext_resource type="Texture2D" uid="uid://dsm702rsaxlt1" path="res://main/prop/actor/npc/door/cube/cube_sprites/0034.png" id="35_uaawq"]
+[ext_resource type="Texture2D" uid="uid://2vasfgmk4xip" path="res://main/prop/actor/npc/door/cube/cube_sprites/0035.png" id="36_52l3b"]
+[ext_resource type="Texture2D" uid="uid://bpic0ns3balf2" path="res://main/prop/actor/npc/door/cube/cube_sprites/0036.png" id="37_v2fhe"]
+[ext_resource type="Texture2D" uid="uid://c1jm4rypyvxk5" path="res://main/prop/actor/npc/door/cube/cube_sprites/0037.png" id="38_p8rpv"]
+[ext_resource type="Texture2D" uid="uid://dwgcag4s60eb8" path="res://main/prop/actor/npc/door/cube/cube_sprites/0038.png" id="39_8rgfe"]
+[ext_resource type="Texture2D" uid="uid://bawhs0e1p6pt8" path="res://main/prop/actor/npc/door/cube/cube_sprites/0039.png" id="40_2rd48"]
+[ext_resource type="Texture2D" uid="uid://c3vx007vfdbqa" path="res://main/prop/actor/npc/door/cube/cube_sprites/0040.png" id="41_8nvun"]
+
+[sub_resource type="Animation" id="Animation_bkuej"]
+resource_name = "babloing"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pts45"]
+_data = {
+"babloing": SubResource("Animation_bkuej")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52pg5"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kb85g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_02n1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vq04a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qqps6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8fubf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mimka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tbmn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lxpyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ipv3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rqg6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fjvl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_y3ib8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_c5l6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ee0nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ru3jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2scwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6xp01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_37rgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vcc57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ohl14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wcyg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7lxuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_k4s4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8cnpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_03sqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_kmhos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_1c02t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ujlau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_yeie7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bag7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_k4sd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_11w7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_eqc1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_14rui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_uaawq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_52l3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_v2fhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_p8rpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_8rgfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_2rd48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_8nvun")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="Cube" instance=ExtResource("1_2v8du")]
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_pts45")
+}
+
+[node name="Sprite2D" parent="." index="2"]
+visible = false
+
+[node name="CollisionShape2D" parent="InteractDetectionArea2D" index="0"]
+shape = SubResource("RectangleShape2D_52pg5")
+
+[node name="CollisionShape2D" parent="HitboxArea2D" index="0"]
+shape = SubResource("RectangleShape2D_52pg5")
+
+[node name="NpcInteractTeleport" parent="Triggers" index="0"]
+interact_animation_name = "babloing"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="10"]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_kb85g")
+autoplay = "default"
+frame_progress = 0.441324
