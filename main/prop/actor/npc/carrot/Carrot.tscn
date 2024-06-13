@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bm4kjj18sdy5"]
+[gd_scene load_steps=14 format=3 uid="uid://bm4kjj18sdy5"]
 
 [ext_resource type="PackedScene" uid="uid://i3ndgvf3xdxk" path="res://main/prop/actor/npc/Npc.tscn" id="1_vvnrn"]
 [ext_resource type="Texture2D" uid="uid://dpb5huxbx8qs1" path="res://main/prop/actor/npc/carrot/carrot.png" id="2_t5uiq"]
@@ -69,6 +69,12 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifvv6"]
 size = Vector2(16, 16)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ka4q1"]
+random_pitch = 1.2
+streams_count = 1
+stream_0/stream = ExtResource("5_ildoh")
+stream_0/weight = 1.0
+
 [node name="Carrot" instance=ExtResource("1_vvnrn")]
 
 [node name="AnimationPlayer" parent="." index="1"]
@@ -112,12 +118,12 @@ idle_timer = NodePath("../../IdleTimer")
 
 [node name="IdleTimer" type="Timer" parent="." index="7"]
 
-[node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
-stream = ExtResource("5_ildoh")
+[node name="CrunchStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+stream = SubResource("AudioStreamRandomizer_ka4q1")
 volume_db = -12.0
 bus = &"Sound Effects"
 
 [node name="NpcInteractSound" type="Node" parent="Triggers" index="0" node_paths=PackedStringArray("sound_player", "controller")]
 script = ExtResource("8_s6t8m")
-sound_player = NodePath("../../QuackStreamPlayer")
+sound_player = NodePath("../../CrunchStreamPlayer")
 controller = NodePath("../..")

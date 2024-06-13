@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bncwc62wkr0vt"]
+[gd_scene load_steps=46 format=3 uid="uid://bncwc62wkr0vt"]
 
 [ext_resource type="Script" path="res://main/prop/actor/player/player.gd" id="1_gotwe"]
 [ext_resource type="PackedScene" uid="uid://bookvidqcl221" path="res://main/prop/actor/Actor.tscn" id="1_mpvfg"]
@@ -737,6 +737,12 @@ size = Vector2(12, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_duk8c"]
 size = Vector2(16, 16)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_15xqn"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("8_ihpny")
+stream_0/weight = 1.0
+
 [node name="Player" instance=ExtResource("1_mpvfg")]
 script = ExtResource("1_gotwe")
 
@@ -801,10 +807,10 @@ wait_time = 0.1
 one_shot = true
 
 [node name="StepStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
-volume_db = -12.0
+volume_db = -18.0
 bus = &"Sound Effects"
 script = ExtResource("7_ng2ce")
-sounds = Array[Resource]([ExtResource("8_ihpny"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc"), ExtResource("12_10m4k"), ExtResource("13_vpxig"), ExtResource("16_gokwh")])
+sounds = Array[Resource]([SubResource("AudioStreamRandomizer_15xqn"), ExtResource("9_ag2kn"), ExtResource("9_ag2kn"), ExtResource("10_jslu6"), ExtResource("11_664cc"), ExtResource("12_10m4k"), ExtResource("13_vpxig"), ExtResource("16_gokwh")])
 
 [node name="QuackStreamPlayer" type="AudioStreamPlayer" parent="." index="11"]
 stream = ExtResource("14_125i7")

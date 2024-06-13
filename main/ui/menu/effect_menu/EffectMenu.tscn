@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://iee11vxs3gpy"]
+[gd_scene load_steps=11 format=3 uid="uid://iee11vxs3gpy"]
 
 [ext_resource type="Theme" uid="uid://bhdkt3j7lwgn1" path="res://main/ui/theme/main_theme.tres" id="1_o1bro"]
 [ext_resource type="Script" path="res://main/ui/menu/effect_menu/effect_selector.gd" id="2_fgw8h"]
@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b6uqxw146pomg" path="res://main/ui/menu/effect_menu/icons/duckling.png" id="4_m18m7"]
 [ext_resource type="Texture2D" uid="uid://34pow4lay2x4" path="res://main/ui/menu/effect_menu/icons/empty.png" id="5_0i21m"]
 [ext_resource type="Texture2D" uid="uid://ddhtdv282tsmx" path="res://main/ui/menu/effect_menu/icons/highlight.png" id="6_raart"]
-[ext_resource type="AudioStream" uid="uid://dc46816ht4062" path="res://main/ui/menu/effect_menu/open_menu.wav" id="8_jwmvs"]
-[ext_resource type="AudioStream" uid="uid://c8nn3pqia1gpb" path="res://main/ui/menu/effect_menu/select.wav" id="9_30rw5"]
+[ext_resource type="AudioStream" uid="uid://jg660fyk8j35" path="res://main/ui/menu/effect_menu/menu_open.ogg" id="8_bm362"]
+[ext_resource type="AudioStream" uid="uid://dwpsvr7daumkv" path="res://main/ui/menu/effect_menu/select.ogg" id="9_vplke"]
+[ext_resource type="AudioStream" uid="uid://c44nntumg8d8n" path="res://main/ui/menu/effect_menu/menu_close.ogg" id="10_gdwqa"]
 
 [node name="EffectMenu" type="Control"]
 layout_mode = 3
@@ -92,19 +93,19 @@ grow_vertical = 2
 texture = ExtResource("6_raart")
 
 [node name="OpenPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_jwmvs")
+stream = ExtResource("8_bm362")
 volume_db = -4.0
 bus = &"Sound Effects"
 
 [node name="SelectPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("9_30rw5")
+stream = ExtResource("9_vplke")
 volume_db = -7.464
 pitch_scale = 1.2
 bus = &"Sound Effects"
 
 [node name="ClosePlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_jwmvs")
+stream = ExtResource("10_gdwqa")
 volume_db = -4.0
 pitch_scale = 0.6
 bus = &"Sound Effects"
